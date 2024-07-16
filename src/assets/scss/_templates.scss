@@ -1,0 +1,55 @@
+// Title
+%tplTitle {
+    font-family: 'space-age';
+    text-align: center;
+    @include adaptSize(42, 28);
+    color: $colorTextBlack;
+}
+
+// Section
+%tplSection {
+    padding: 80px 0;
+}
+
+// Btn
+%tplBtn-white {
+    @include btn($colorWhite, $colorBlack);
+	color: $colorTextBlack;
+
+	&:hover {
+		background-color: $colorBlack;
+		color: $colorTextWhite;
+	}
+}
+
+%tplBtn-black {
+    @include btn($colorBlack, $colorBlack);
+	color: $colorTextWhite;
+
+	&:hover {
+		background-color: $colorWhite;
+		color: $colorTextBlack;
+	}
+}
+
+// Input
+%tplInput {
+    background-color: $colorWhite;
+	border: 1px solid $colorBorder;
+	border-radius: 5px;
+	padding: 19px 22px;
+	font-size: 14px;
+	color: $colorTextBlack;
+	transition: all .2s linear;
+	width: 100%;
+
+	&:hover,
+	&:focus {
+		border: 1px solid $colorBlue;
+		color: $colorBlue;
+	}
+
+	&::placeholder {
+		color: $colorText;
+	}
+}

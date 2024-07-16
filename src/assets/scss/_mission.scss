@@ -1,0 +1,40 @@
+.mission {
+    padding: 150px 0 185px;
+    background-image: url('../images/mission_bg1.png'), url('../images/mission_bg2.png'), url('../images/mission_shadow.png'), url('../images/mission.png');
+    background-repeat: no-repeat;
+    background-color: $colorBlack;
+    background-position: 100% 0, 0 100%, 400px 0, 0 0;
+    background-size: auto auto, auto auto, 100px 100%, 495px auto;
+
+    &__inner {
+        padding-left: 50%;
+    }
+
+    &__title {
+        text-align: left;
+        color: $colorWhite;
+        margin-bottom: 40px;
+        @extend %tplTitle;
+    }
+
+    &__text {
+        @include adaptSize(14, 10);
+        line-height: 2;
+        margin-bottom: 15px;
+        color: $colorTextLight;
+    }
+
+    &__btn {
+        display: inline-block;
+        margin-top: 20px;
+        @include btn($colorBlue, $colorBlue);
+    }
+
+    &__img {
+        display: none;
+    }
+
+    &__img-bg {
+        display: none;
+    }
+}

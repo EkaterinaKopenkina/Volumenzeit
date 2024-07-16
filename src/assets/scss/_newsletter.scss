@@ -1,0 +1,71 @@
+.newsletter {
+    background: url('../images/newsletter_bg.png') no-repeat;
+    background-size: cover;
+    @extend %tplSection;
+
+    &__head {
+        max-width: 850px;
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
+
+    &__title {
+        @include adaptSize(36, 22);
+        font-weight: 700;
+        color: $colorTextWhite;
+        line-height: 1.25;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    &__subtitle {
+        @include adaptSize(14, 10);
+        line-height: 2;
+        color: $colorWhite;
+        text-align: center;
+    }
+
+    &__inputs {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+
+    &__input {
+        font-size: 14px;
+        background-color: $colorWhite;
+        border-radius: 5px;
+        padding: 20px 30px;
+        width: 100%;
+        max-width: 320px;
+        color: $colorTextBlack;
+        border: 3px solid $colorWhite;
+        transition: all .2s linear;
+
+        &:first-child {
+            margin-right: 20px;
+        }
+
+        &:hover,
+        &:focus {
+            border: 3px solid $colorBlue;
+            color: $colorBlue;
+        }
+    }
+
+    &__container-btn {
+        text-align: center;
+    }
+
+    &__btn {
+        margin-bottom: 20px;
+        @extend %tplBtn-black;
+    }
+
+    &__agree {
+        @include adaptSize(14, 10);
+        color: $colorTextWhite;
+        text-align: center;
+    }
+}

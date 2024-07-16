@@ -1,0 +1,50 @@
+.modal {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: $zModal;
+    background-color: rgba($colorWhite, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+
+    &__container {
+        max-width: 880px;
+        background-color: $colorBgGray;
+        border-radius: 25px;
+        border: 1px solid $colorBorder;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    &__content {
+        padding: 90px 100px 10px 100px;
+    }
+
+    &__title {
+        font-family: 'space-age';
+        color: $colorTextBlack;
+        @include adaptSize(42, 32);
+        line-height: .84;
+        margin-bottom: 25px;
+    }
+
+    &__subtitle {
+        @include adaptSize(14, 10);
+        line-height: 2;
+        margin-bottom: 35px;
+    }
+
+
+    &__btn {
+        @include btn ($colorBlue, $colorBlue);
+    }
+
+    &__img {
+        width: 100%;
+    }
+}

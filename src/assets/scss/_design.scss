@@ -1,0 +1,117 @@
+.design {
+    padding: 95px 0 80px;
+    background-color: $colorBlue;
+
+    &__title {
+        color: $colorTextWhite;
+        margin-bottom: 60px;
+        @extend %tplTitle;
+    }
+
+    &__inner {
+        position: relative;
+        max-width: 730px;
+        margin: 0 auto;
+        margin-bottom: 130px;
+    }
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__line {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: $colorWhite;
+        z-index: $zBg;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__bg {
+        position: absolute;
+        width: 86px;
+        height: 86px;
+        z-index: $zBg;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        border: 1px solid $colorWhite;
+        border-radius: 50%;
+        opacity: .2;
+        transition: all .2s linear;
+    }
+
+    &__item {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 2px solid $colorWhite;
+        font-family: 'space-age';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+        color: $colorTextWhite;
+        background-color: $colorBlue;
+        z-index: $zDefault;
+        position: relative;
+
+        &:hover {
+            &>.design__bg {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &::after {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: $zDefault;
+            font-family: 'poppins', sans-serif;
+            @include adaptSize(14, 12);
+            color: $colorTextWhite;
+            text-transform: capitalize;
+            padding-top: 10px;
+            white-space: nowrap
+        }
+
+        &:nth-child(1) {
+            &::after {
+                content: "Case Color";
+            }
+        }
+
+        &:nth-child(2) {
+            &::after {
+                content: "Dial Design";
+            }
+        }
+
+        &:nth-child(3) {
+            &::after {
+                content: "Dial Color";
+            }
+        }
+
+        &:nth-child(4) {
+            &::after {
+                content: "Strap Design";
+            }
+        }
+    }
+
+    &__btn-container {
+        text-align: center;
+    }
+
+    &__btn {
+        @extend %tplBtn-black;
+    }
+}

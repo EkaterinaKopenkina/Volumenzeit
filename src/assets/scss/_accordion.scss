@@ -1,0 +1,298 @@
+.accordion {
+    background-color: $colorBgGray;
+    border: 1px solid $colorBorder;
+    border-radius: 20px;
+    padding: 30px 40px;
+    cursor: pointer;
+
+    &__input {
+        @extend %tplInput;
+    }
+
+    &.active {
+        cursor: default;
+
+        & .accordion__arrow {
+            transform: rotate(0);
+        }
+
+        & .accordion__header {
+            cursor: pointer;
+        }
+
+        & .accordion__container {
+            height: auto;
+        }
+
+        & .input-form {
+            margin-bottom: 10px;
+        }
+
+        & .sort {
+            display: block;
+        }
+
+        & .sort__btn {
+            width: 100%;
+            background-color: $colorWhite;
+            padding: 19px 22px;
+            text-align: left;
+            border: 1px solid $colorBorder;
+            border-radius: 5px;
+            @include adaptSize(14, 10);
+
+            &::after {
+                right: 35px;
+                left: auto;
+            }
+
+            &:hover {
+                border: 1px solid $colorBlue;
+                border-radius: 5px;
+
+            }
+        }
+
+        & .sort__inner {
+            padding-top: 10px;
+            width: 100%;
+        }
+
+        & .sort-sub {
+            background-color: $colorWhite;
+            text-align: left;
+            border: 1px solid $colorBorder;
+            border-radius: 5px;
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        @include adaptSize(20, 15);
+        color: $colorTextBlack;
+        font-weight: 600;
+    }
+
+    &__arrow {
+        width: 15px;
+        height: 15px;
+        transform: rotate(180deg);
+        transition: transform .2s linear;
+    }
+
+    &__container {
+        height: 0;
+        overflow: hidden;
+        transition: height .2s linear;
+    }
+
+    &__inner {
+        padding: 30px 0 20px;
+    }
+
+    &__city {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        grid-gap: 12px;
+    }
+
+    &__card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 12px;
+    }
+
+    &__btn {
+        @include btn($colorBlue, $colorBlue);
+        width: 100%;
+        margin-top: 18px;
+    }
+
+    &__radio-label {
+        border: 1px solid $colorBorder;
+        border-radius: 5px;
+        padding: 35px 30px 35px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $colorWhite;
+        cursor: pointer;
+        transition: border .2s linear;
+
+        &:hover {
+            border: 1px solid $colorBlue;
+        }
+    }
+
+    &__radio-input {
+        display: none;
+
+        &:checked {
+            &~.accordion__radio-label {
+                border: 1px solid $colorBlue;
+
+                & .accordion__radio-checkbox {
+                    background-color: $colorBlue;
+                }
+            }
+        }
+    }
+
+    &__radio-price {
+        @include adaptSize(18, 14);
+        color: $colorTextBlack;
+    }
+
+    &__radio-checkbox {
+        width: 19px;
+        height: 19px;
+        border-radius: 5px;
+        border: 1px solid $colorBorder;
+        background-color: $colorWhite;
+        transition: background-color .2s linear;
+        flex-shrink: 0;
+    }
+
+    &__radio-content {
+        display: flex;
+        align-items: center;
+    }
+
+    &__radio-info {
+        padding: 0 19px;
+    }
+
+    &__radio-title {
+        @include adaptSize(14, 11);
+        color: $colorTextBlack;
+        margin-bottom: 10px;
+    }
+
+    &__radio-text {
+        @include adaptSize(14, 11);
+        line-height: 1.3;
+    }
+
+    &__radio-item {
+        margin-bottom: 15px;
+    }
+
+    &__payment-label {
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            & .accordion__payment-checkbox {
+                border: 1px solid $colorBlue;
+            }
+        }
+    }
+
+    &__payment-input {
+        display: none;
+
+        &:checked {
+            &~.accordion__payment-label {
+                & .accordion__payment-checkbox {
+                    border: 1px solid $colorBlue;
+                    
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    &__payment-checkbox {
+        width: 25px;
+        height: 25px;
+        border: 1px solid $colorBorder;
+        border-radius: 50%;
+        background-color: $colorWhite;
+        transition: border .2s linear;
+        position: relative;
+        flex-shrink: 0;
+
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: $zDefault;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: $colorBlue;
+            opacity: 0;
+            transition: opacity .2s linear;
+        }
+    }
+
+    &__payment-content {
+        padding-left: 10px;
+    }
+
+    &__payment-item {
+        margin-bottom: 10px;
+    }
+
+    &__payment-name {
+        font-size: 14px;
+        font-weight: 600;
+        color: $colorTextBlack;
+        margin-bottom: 8px;
+    }
+
+    &__payment-images {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    &__payment-bg {
+        width: 35px;
+        height: 22px;
+        background-color: $colorDarkBlue;
+        border-radius: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    &__payment-img {
+        max-width: 23px;
+        max-height: 14px;
+    }
+
+    &__payment-label {
+        cursor: pointer;
+    }
+
+    &__card-text {
+        @include adaptSize(14, 11);
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    &__card-agree {
+        @include adaptSize(10, 8);
+        text-align: center;
+        margin-top: 30px;
+
+        &>a {
+            color: $colorBlue;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

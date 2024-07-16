@@ -1,0 +1,97 @@
+.checkout {
+    padding: 35px 0;
+    background-color: $colorBgGray;
+
+    &__inner {
+        display: flex;
+        max-width: 930px;
+        margin: 0 auto;
+    }
+
+    &__accordions {
+        flex-grow: 1;
+
+        &>.accordion {
+            margin-bottom: 20px;
+        }
+
+        & .input-form {
+            @include adaptSize(14, 10);
+        }
+    }
+
+    &__right {
+        flex-shrink: 0;
+        max-width: 400px;
+        padding-left: 45px;
+        padding-top: 80px;
+    }
+
+    &__order {
+        background-color: $colorWhite;
+        box-shadow: 0px 4px 20px 0px #676A771A;
+        border-radius: 10px;
+        margin-bottom: 25px;
+    }
+
+    &__info {
+        padding: 20px 20px 10px 20px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        padding: 15px 0;
+        border-bottom: 1px solid $colorBorder;
+
+        &:last-child {
+            border: none;
+        }
+    }
+
+    &__content {
+        padding-left: 15px;
+    }
+
+    &__photo {
+        height: 100px;
+        width: 85px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $colorBgGray;
+    }
+
+    &__name {
+        font-size: 10px;
+        margin-bottom: 5px;
+    }
+
+    &__price {
+        font-size: 20px;
+        color: $colorTextBlack;
+    }
+
+    &__img {
+        max-height: 42px;
+        max-width: 44px;
+    }
+
+    &__sum {
+        @include btn($colorBlue, $colorBlue);
+        font-size: 10px;
+        width: 100%;
+
+        &>span {
+            font-size: 20px;
+        }
+    }
+
+    &__coupon-title {
+        color: $colorTextBlack;
+        font-weight: 600;
+        margin-bottom: 8px;
+        font-size: 20px;
+    }
+}

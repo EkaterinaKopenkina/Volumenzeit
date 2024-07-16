@@ -1,0 +1,119 @@
+// Photo
+@mixin photo ($width, $height, $br) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: $width;
+    height: $height;
+    border-radius: $br;
+}
+
+@mixin img () {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+// Font
+@mixin adaptSize ($sizeMax, $sizeMin) {
+    font-size: #{$sizeMax + px};
+
+    @media (max-width: 1200px) {
+        font-size: calc(#{$sizeMin + px} + ($sizeMax - $sizeMin) * ((100vw - 320px) / (1200 - 320)));
+    }
+}
+
+@mixin textRestriction ($count) {
+    -webkit-line-clamp: $count;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+}
+
+// Btn
+@mixin btn ($colorBg, $colorBor) {
+    display: inline-block;
+    color: $colorTextWhite;
+    padding: 18px 25px;
+    border-radius: 5px;
+    background-color: $colorBg;
+    border: 1px solid $colorBor;
+    transition: background-color .2s linear;
+    min-width: 175px;
+    text-align: center;
+    
+    &:hover {
+        background-color: darken($colorBg, 10%);
+    }
+
+    @include adaptSize(14, 12);
+}
+
+// Form
+@mixin input() {
+    max-width: 445px;
+    width: 100%;
+    background-color: $colorWhite;
+    border: 1px solid $colorBorder;
+    padding: 20px 18px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: $colorTextBlack;
+    transition: all .2s linear;
+    margin-bottom: 15px;
+
+    &::placeholder {
+        color: $colorText;
+    }
+
+    &:hover,
+    &:focus {
+        border: 1px solid $colorBlue;
+        color: $colorBlue;
+    }
+}
+
+// Scroll
+@mixin scroll() {
+    /* полоса прокрутки (скроллбар) */
+    &::-webkit-scrollbar {
+        width: 5px;
+        background-color: lighten($colorBlue, 53%);;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    &::-webkit-scrollbar:horizontal {
+        height: 4px;
+    }
+    
+    /* ползунок скроллбара */
+    &::-webkit-scrollbar-thumb {
+        background-color: $colorBlue;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: $colorBlue;
+    }
+    
+    /* Стрелки */
+    
+    &::-webkit-scrollbar-button:vertical:start:decrement {
+        display: none;
+    }
+
+    &::-webkit-scrollbar-button:vertical:end:increment {
+        display: none;
+    }
+
+    &::-webkit-scrollbar-button:horizontal:start:decrement {
+        display: none;
+    }
+
+    &::-webkit-scrollbar-button:horizontal:end:increment {
+        display: none;
+    }
+}

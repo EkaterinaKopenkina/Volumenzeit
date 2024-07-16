@@ -1,0 +1,89 @@
+<form action="" class="filter">
+    <button class="products__filter-btn">
+        <img src="../assets/images/arrow_top.svg" alt="Arrow top" class="products__arrow">
+    </button>
+
+    <section class="filter__section">
+        <h4 class="filter__title">Search</h4>
+        <input type="text" class="filter__search" placeholder="Type Here">
+    </section>
+
+    <section class="filter__section">
+        <h4 class="filter__title">Select Products</h4>
+
+        <div class="filter__radio">
+            <input type="radio" class="filter__radio-input" id="watches" name="product">
+            <label for="watches" class="filter__radio-label">Watches</label>
+        </div>
+
+        <div class="filter__radio">
+            <input type="radio" class="filter__radio-input" id="straps" name="product">
+            <label for="straps" class="filter__radio-label">Straps</label>
+        </div>
+    </section>
+
+    <section class="filter__section">
+        <h4 class="filter__title">Price Range</h4>
+        
+        <div class="filter__price">
+            <input type="number" class="filter__price-input" min="0" placeholder="$0">
+            <span class="filter__price-to">to</span>
+            <input type="number" class="filter__price-input" placeholder="$150">
+        </div>
+    </section>
+
+    <section class="filter__section">
+        <h4 class="filter__title">Case Color</h4>
+
+        <div class="filter__colors">
+            <div class="filter__color">
+                <input type="radio" class="filter__color-input" id="colorCase1" name="color_case">
+                <label for="colorCase1" class="filter__color-label black"></label>
+            </div>
+
+            <div class="filter__color">
+                <input type="radio" class="filter__color-input" id="colorCase2" name="color_case">
+                <label for="colorCase2" class="filter__color-label white"></label>
+            </div>
+
+            <div class="filter__color">
+                <input type="radio" class="filter__color-input" id="colorCase3" name="color_case">
+                <label for="colorCase3" class="filter__color-label blue"></label>
+            </div>
+        </div>
+    </section>
+
+    <section class="filter__section--last">
+        <h4 class="filter__title">Filter By Strap Colors</h4>
+
+        <div class="filter__colors">
+            <div class="filter__color">
+                <input type="radio" class="filter__color-input" id="colorStrap1" name="color_strap">
+                <label for="colorStrap1" class="filter__color-label orange"></label>
+            </div>
+
+            <div class="filter__color">
+                <input type="radio" class="filter__color-input" id="colorStrap2" name="color_strap">
+                <label for="colorStrap2" class="filter__color-label motley"></label>
+            </div>
+
+            <div class="filter__color">
+                <input type="radio" class="filter__color-input" id="colorStrap3" name="color_strap">
+                <label for="colorStrap3" class="filter__color-label violet"></label>
+            </div>
+
+            <div class="filter__color">
+                <input type="radio" class="filter__color-input" id="colorStrap4" name="color_strap">
+                <label for="colorStrap4" class="filter__color-label gray"></label>
+            </div>
+        </div>
+    </section>
+
+    <div class="filter__footer">
+        <button class="filter__btn">Apply Filters</button>
+
+        <button class="products__filter-btn">
+            <img src="../assets/images/arrow_top.png" alt="Arrow top" class="products__arrow">
+        </button>    
+    </div>
+</form>

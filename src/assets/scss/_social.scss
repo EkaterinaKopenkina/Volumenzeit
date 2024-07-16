@@ -1,0 +1,35 @@
+.social {
+    font-family: 'space-age';
+    color: $colorTextBlack;
+    text-align: center;
+
+    &__text {
+        transform: rotate(-180deg);
+        writing-mode: vertical-lr;
+        margin-top: 20px;
+    }
+
+    &__item {
+        display: block;
+        margin-bottom: 10px;
+        width: 25px;
+        height: 25px;
+        background-color: $colorWhite;
+        border-radius: 50%;
+        box-shadow: 0px 4px 4px 0px #0000000D;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: transform .2s linear;
+
+        &:hover {
+            transform: translateY(-4px)
+        }
+    }
+
+    &__svg {
+        max-height: 11px;
+        max-width: 11px;
+        fill: $colorBlack;
+    }
+}

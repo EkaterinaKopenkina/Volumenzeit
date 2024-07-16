@@ -1,0 +1,75 @@
+ <section class="account">
+    <div class="container">
+        <h1 class="account__title">Hey, John Smith</h1>
+        <p class="account__subtitle">Welcome to your dashboard, your one-stop-shop for all your recent Volumenzeit account activity.</p>
+    
+        <div class="account__block">
+            <div class="account__block-header">
+                <h3 class="account__block-title">Recent Orders</h3>
+            </div> 
+
+            <p class="account__text">You haven’t placed any order yet.</p>
+
+            <ul class="account__list">
+                <li class="account__item account__item--orders">
+                    <div class="account__order">
+                        <span class="account__date">15-07-2024:</span>
+                        <span class="account__products">item 1, item 2, item 3</span>
+                    </div>
+
+                    <div class="account__price">$10</div>
+                </li>
+
+                <li class="account__item account__item--orders">
+                    <div class="account__order">
+                        <span class="account__date">14-07-2024:</span>
+                        <span class="account__products">item 1, item 2, item 3, item 4, item 5</span>
+                    </div>
+
+                    <div class="account__price">$15</div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="account__block">
+            <div class="account__block-header">
+                <h3 class="account__block-title">My Info</h3>
+                <button class="account__btn active">Manage Info</button>
+                <button class="account__btn">Save Info</button>
+            </div> 
+
+            <p class="account__text active">Personal Information</p>
+
+            <form action="post" class="account__form">
+                <div class="account__item">
+                    <label for="accountName" class="account__label">Name:</label>
+                    <input type="text" class="account__input" name="name" id="accountName" value="John Smith">
+                </div>
+
+                <div class="account__item">
+                    <label for="accountName" class="account__label">Email:</label>
+                    <input type="email" class="account__input" name="email" id="accountEmail" value="johnsmith@gmail.com">
+                </div>
+
+                <div class="account__item">
+                    <label for="accountName" class="account__label">Phone Number:</label>
+                    <input type="tel" class="account__input" name="phone" id="accountPhone" value="8 800 555 35 35">
+                </div>
+            </form>
+        </div>
+
+        <div class="account__block">
+            <div class="account__block-header">
+                <h3 class="account__block-title">Address Book</h3>
+            </div> 
+
+            <p class="account__text">You have not yet added address.</p>
+
+            <ul class="account__list">
+                <li class="account__item">123 Main Street, Anytown, CA 91234</li>
+                <li class="account__item">456 Oak Avenue, Springfield, IL 62701</li>
+                <li class="account__item">789 Pine Lane, Sunnyville, TX 78701</li>
+            </ul>
+        </div>
+    </div>
+ </section> 

@@ -1,0 +1,96 @@
+.sort {
+	position: relative;
+    display: inline-block;
+
+	&:hover {
+        &>.sort__inner {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        &>.sort__btn:after {
+            border-color: $colorBlue;
+            transform: rotate(-45deg) translateY(-80%) translateX(-3px);
+        }
+    
+        &>.sort__btn {
+            color: $colorBlue;
+            border-color: $colorBlue;
+            border-radius: 5px 5px 0 0;
+        }
+    }
+
+    &-sub {
+        width: 100%;
+        font-size: 14px;
+        background-color: $colorBgGray;
+        border-radius: 0 0 5px 5px;
+        padding: 10px 0;
+        max-height: 250px;
+        overflow-y: auto;
+        @include scroll();
+
+        &__item {
+            width: 100%;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            padding: 5px 20px;
+            cursor: pointer;
+            transition: background-color .2s linear;
+            display: block;
+
+            &:hover {
+                background-color: darken($colorBgGray, 5%);
+            }
+        }
+
+        &__link {
+            font-size: 14px;
+            font-weight: 400;
+            white-space: nowrap;
+            cursor: pointer;
+            background: none;
+        }
+    }
+
+    &__inner {
+        position: absolute;
+        z-index: $z10;
+        width: 101%;
+        top: 100%;
+        left: 0;
+        opacity: 0;
+        text-align: center;
+        visibility: hidden;
+        transition: opacity .2s linear, transform .2s linear;  
+    }
+
+    &__btn {
+        background-color: $colorBgGray;
+        border-radius: 5px;
+        padding: 22px 55px;
+        padding-right: 71px;
+        font-size: 14px;
+        transition: all .2s linear;
+        width: 100%;
+        color: $colorText;
+        border: 2px solid transparent;
+
+        &:after {
+            content: "";
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-top: 2px solid $colorText;
+            border-right: 2px solid $colorText;
+            transform: rotate(135deg) translateY(100%);
+            position: absolute;
+            left: 35px;
+            top: 50%;
+            cursor: pointer;
+            transition: all .2s linear;
+        }
+    }
+}

@@ -1,0 +1,100 @@
+.nav {
+    display: flex;
+    align-items: center;
+
+    &__authorization {
+        @include btn($colorWhite, $colorWhite);
+        display: none;
+        color: $colorText;
+        min-width: 200px;
+    }
+
+    &__item {
+        font-size: 14px;
+        margin-right: 35px;
+        transition: color .2s linear;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        &--mobile {
+            display: none;
+
+            &>span {
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: -4px;
+                    z-index: $zDefault;
+                    height: 2px;
+                    width: 0;
+                    background-color: $colorBlue;
+                    transition: width .2s linear;
+                }
+            }
+
+            &.active {
+                &.nav__item::after {
+                    width: 0 !important;
+                }
+
+                &>span::after {
+                    width: 35%;
+                }
+            }
+        }
+
+        &.active {
+            font-weight: 600;
+            color: $colorTextBlack;
+
+            &.nav__item::after {
+                width: 35%;
+            }
+        }
+
+        &:hover {
+            color: $colorTextBlack;
+
+            &::after {
+                width: 35%;
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            z-index: $zDefault;
+            height: 2px;
+            width: 0;
+            background-color: $colorBlue;
+            transition: width .2s linear;
+        }
+    }
+
+    &__btn {
+        @include btn($colorBlue, $colorBlue);
+        margin-bottom: 20px;
+        min-width: 200px;
+        display: none;
+    }
+
+    &__svg {
+        margin-right: 10px;
+        height: 22px;
+        max-width: 24px;
+        fill: $colorBlue;
+        transition: fill .2s linear;
+        cursor: pointer;
+
+        &:hover {
+            fill: darken($colorBlue, 10%);
+        }
+    }
+}

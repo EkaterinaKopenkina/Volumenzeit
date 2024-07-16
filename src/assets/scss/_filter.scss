@@ -1,0 +1,198 @@
+.filter {
+    background-color: $colorBgGray;
+    padding: 45px 50px 90px 0;
+    position: relative;
+
+    &>.products__filter-btn {
+        display: none;
+    }
+
+    &__section {
+        padding: 12px 0 16px;
+        border-bottom: 1px solid rgba($colorGray, .2);
+        
+        &:first-child {
+            padding-top: 0;
+        }
+
+        &--last {
+            padding: 12px 0 16px;
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+        z-index: $zBg;
+        height: 100%;
+        width: 100vw;
+        background-color: $colorBgGray;
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 10px;
+        margin-bottom: 10px;
+        color: $colorTextBlack;
+    }
+
+    &__search {
+        width: 100%;
+        border-radius: 3px;
+        background-color: $colorWhite;
+        padding: 7px 15px;
+        color: $colorTextBlack;
+        @include adaptSize(12, 10);
+        border: 1px solid $colorWhite;
+        transition: all .2s linear;
+
+        &:hover,
+        &:focus {
+            border: 1px solid $colorBlue;
+            color: $colorBlue;
+        }
+    }
+
+    &__radio {
+        margin-bottom: 5px;
+        position: relative;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__radio-label {
+        @include adaptSize(12, 10);
+        cursor: pointer;
+        transition: color .2s linear;
+
+        &:hover {
+            color: $colorBlue;
+        }
+    }
+
+    &__radio-input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: $zLow;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+
+        &:focus,
+        &:checked {
+            &~.filter__radio-label {
+                color: $colorBlue;
+            }
+        }
+    }
+
+    &__price {
+        display: flex;
+        align-items: center;
+    }
+
+    &__price-input {
+        width: 100%;
+        text-align: center;
+        padding: 7px 15px;
+        border-radius: 3px;
+        border: 1px solid $colorWhite;
+        @include adaptSize(12, 10);
+        transition: all .2s linear;
+
+        &:hover,
+        &:focus {
+            border: 1px solid $colorBlue;
+            color: $colorBlue;
+        }
+    }
+
+    &__price-to {
+        @include adaptSize(12, 10);
+        margin: 0 10px;
+    }
+
+    &__colors {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+    }
+
+    &__color {
+        position: relative;
+    }
+
+    &__color-label {
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 7px;
+        cursor: pointer;
+        border: 3px solid inherit;
+        transition: border .2s linear;
+    
+        &.black {
+            background: linear-gradient(210.81deg, #555555 18.68%, #0A0A0A 98.45%);
+        }
+
+        &.white {
+            background: linear-gradient(210.81deg, #E3E3E3 18.68%, #7B838F 98.45%);
+        }
+
+        &.blue {
+            background: linear-gradient(210.81deg, #58B2CE 18.68%, #023C96 98.45%);
+        }
+
+        &.orange {
+            background: linear-gradient(210.81deg, #D39138 18.68%, #B95371 98.45%);
+        }
+
+        &.motley {
+            background: linear-gradient(210.81deg, #2D9B87 18.68%, #AF29CB 98.45%);
+        }
+
+        &.violet {
+            background: linear-gradient(210.81deg, #2184CE 18.68%, #9020AD 98.45%);
+        }
+
+        &.gray {
+            background: linear-gradient(210.81deg, #707885 18.68%, #363636 98.45%);
+        }
+
+        &:hover {
+            border: 3px solid $colorBlue;
+        }
+    }
+
+    &__color-input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: $zLow;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+
+        &:focus,
+        &:checked {
+            &~.filter__color-label {
+                border: 3px solid $colorBlue;
+            }
+        }
+    }
+
+    &__btn {
+        @include btn($colorBlue, $colorBlue);
+        width: 100%;
+    }
+
+    &__footer {
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,43 @@
+.guarantee {
+    background-color: $colorBlack;
+    padding: 78px 0;
+
+    &__inner {
+        display: flex;
+        margin: 0 -50px;
+    }
+
+    &__item {
+        flex: 1 1 33.333%;
+        border-right: 1px solid $colorText;
+        padding: 0 50px;
+        display: flex;
+        align-items: center;
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: 500;
+        color: $colorTextWhite;
+        margin-bottom: 10px;
+    }
+
+    &__content {
+        padding-left: 30px;
+    }
+
+    &__text {
+        color: $colorTextLight;
+        font-size: 14px;
+        line-height: 2;
+    }
+
+    &__img {
+        max-height: 68px;
+        max-width: 70px;
+    }
+}

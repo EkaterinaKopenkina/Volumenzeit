@@ -1,0 +1,25 @@
+.page-title {
+    padding: 90px 0 50px;
+    background-color: $colorBlue;
+
+    &__title {
+        font-family: 'space-age';
+        color: $colorTextWhite;
+        @include adaptSize(42, 28);
+        margin-bottom: 25px;
+    }
+
+    &__subtitle {
+        color: $colorWhite;
+        @include adaptSize(14, 10);
+    }
+
+    &--checkout {
+        padding: 90px 0;
+
+        & .page-title__title {
+            text-align: center;
+            margin-bottom: 0;
+        }
+    }
+}

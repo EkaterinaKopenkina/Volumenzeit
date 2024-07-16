@@ -1,0 +1,28 @@
+.delivery {
+    padding-top: 85px;
+    background-color: $colorBgGray;
+
+    &__title {
+        margin-bottom: 80px;
+    }
+
+    &__inner {
+        background-color: $colorWhite;
+        position: relative;
+        z-index: $zDefault;
+        padding: 90px 160px 160px;
+    }
+
+    &__title-text {
+        @include adaptSize(24, 20);
+        font-weight: 600;
+        color: $colorTextBlack;
+        margin-bottom: 15px;
+    }
+
+    &__text {
+        line-height: 2;
+        @include adaptSize(14, 10);
+        margin-bottom: 45px;
+    }
+}

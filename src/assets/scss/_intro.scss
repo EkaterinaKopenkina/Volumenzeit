@@ -1,0 +1,54 @@
+.intro {
+    padding: 30px 0;
+    position: relative;
+    background-color: $colorBgGray;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+
+    &__img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 520px;
+        z-index: $zBg;
+    }
+
+    &__inner {
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__content {
+        max-width: 560px;
+    }
+
+    &__title {
+        font-family: 'space-age';
+        @include adaptSize(60, 30);
+        line-height: .9;
+        margin-bottom: 20px;
+        color: $colorTextBlack;
+    }
+
+    &__subtitle {
+        @include adaptSize(14, 11);
+        line-height: 1.9;
+        margin-bottom: 60px;
+    }
+
+    &__btn {
+        @include btn($colorBlue, $colorBlue);
+    }
+
+    &__social {
+        position: absolute;
+        left: -60px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: $zDefault;
+    }
+}

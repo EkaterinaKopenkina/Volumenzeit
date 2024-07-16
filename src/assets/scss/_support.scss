@@ -1,0 +1,46 @@
+// Container
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding:  0 15px;
+	position: relative;
+}
+
+// Page
+.page {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	width: 100%;
+	min-height: 100vh;
+}
+
+// Colors
+.black {
+	background: linear-gradient(210.81deg, #555555 18.68%, #0A0A0A 98.45%);
+}
+
+.white {
+	background: linear-gradient(210.81deg, #E3E3E3 18.68%, #7B838F 98.45%);
+}
+
+.blue {
+	background: linear-gradient(210.81deg, #58B2CE 18.68%, #023C96 98.45%);
+}
+
+.orange {
+	background: linear-gradient(210.81deg, #D39138 18.68%, #B95371 98.45%);
+}
+
+.motley {
+	background: linear-gradient(210.81deg, #2D9B87 18.68%, #AF29CB 98.45%);
+}
+
+.fiolet {
+	background: linear-gradient(210.81deg, #2184CE 18.68%, #9020AD 98.45%);
+}
+
+.gray {
+	background: linear-gradient(210.81deg, #707885 18.68%, #363636 98.45%);
+}

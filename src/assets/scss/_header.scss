@@ -1,0 +1,77 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $zHeader;
+    background-color: $colorBgGray;
+    width: 100%;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+    }
+
+    &__img {
+        max-height: 27px;
+    }
+
+    &__left {
+        display: flex;
+        align-items: center;
+    }
+
+    &__btn {
+        @include btn($colorBlue, $colorBlue);
+        margin-right: 25px;
+    }
+
+    &__link-icon {
+        display: flex;
+        margin-right: 25px;
+        position: relative;
+
+        & a {
+            display: flex;
+            align-items: center;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__svg {
+        height: 22px;
+        max-width: 24px;
+        fill: $colorBlue;
+        transition: fill .2s linear;
+        cursor: pointer;
+
+        &:hover {
+            fill: darken($colorBlue, 10%);
+        }
+    }
+
+    &__notice {
+        position: absolute;
+        top: -10px;
+        right: -12px;
+        z-index: $zDefault;
+        width: 16px;
+        height: 16px;
+        background-color: $colorPink;
+        color: $colorWhite;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include adaptSize(9, 7);
+    }
+}

@@ -1,0 +1,41 @@
+.answer {
+    padding: 445px 0 125px;
+    background-image: url('../images/answer.png');
+    background-repeat: no-repeat;
+    background-color: $colorBlue;
+    background-size: 100% auto;
+    background-position: 0 100%;
+    margin-top: -250px;
+    position: relative;
+
+    &__inner {
+        text-align: center;
+    }
+
+    &__shadow {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 70%);
+        z-index: $zBg;
+        width: 860px;
+    }
+
+    &__title {
+        font-size: 700px;
+        color: $colorTextWhite;
+        margin-bottom: 15px;
+        @include adaptSize(36, 24);
+    }
+
+    &__subtitle {
+        line-height: 2;
+        color: $colorWhite;
+        @include adaptSize(14, 10);
+        margin-bottom: 40px;
+    }
+
+    &__btn {
+        @extend %tplBtn-black;
+    }
+}

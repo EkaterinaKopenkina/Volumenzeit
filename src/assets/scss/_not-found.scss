@@ -1,0 +1,38 @@
+.not-found {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding: 30px 0;
+
+    &__inner {
+        text-align: center;
+    }
+
+    &__text {
+        font-family: 'space-age';
+        @include adaptSize(42, 24);
+        line-height: 0.84;
+        margin-bottom: 25px;
+        color: $colorTextBlack;
+    }
+
+    &__img {
+        height: 350px;
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+
+    &__btn {
+        @include btn($colorBlue, $colorBlue);
+    }
+
+    &__pic {
+        @include photo(100px, 100px, 5px);
+    }
+
+    &__test {
+        @include img();
+    }
+}

@@ -1,0 +1,77 @@
+.watches {
+    padding-bottom: 100px;
+    @extend %tplSection;
+
+    &__title {
+        color: $colorTextBlack;
+        text-align: left;
+        margin-bottom: 35px;
+        @extend %tplTitle;
+    }
+
+    &__subtitle {
+        line-height: 2;
+        margin-bottom: 50px;
+        max-width: 690px;
+        @include adaptSize(14, 8);
+    }
+
+    &__slide {
+        width: 333px;
+        margin-right: 40px;
+    }
+
+    &__slider {
+        margin-bottom: 90px;
+    }
+
+    &__img-container {
+        @include photo(100%, 390px, 10px);
+        margin-bottom: 25px;
+    }
+
+    &__img {
+        @include img();
+    }
+
+    &__name {
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 23px;
+    }
+
+    &__price {
+        color: $colorTextBlack;
+        text-align: center;
+        font-size: 26px;
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__arrow-svg {
+        fill: $colorBlack;
+        width: 80px;
+        max-height: 20px;
+        transition: fill .2s linear;
+    }
+
+    &__arrow {
+        &--prev {
+            margin-right: 135px;
+        }
+
+        &:hover {
+            &>.watches__arrow-svg {
+                fill: $colorBlue;
+            }
+        }
+    }
+
+    &__btn {
+        @include btn($colorBlue, $colorBlue);
+    }
+}

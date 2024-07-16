@@ -1,0 +1,80 @@
+.features {
+    position: relative;
+    @extend %tplSection;
+
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: $zDefault;
+        bottom: 0;
+        right: 50%;
+        transform: translateX(50%) translateY(100%);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 46px 37.5px 0 37.5px;
+        border-color: $colorWhite transparent transparent transparent;
+    }
+
+    &__inner {
+        position: relative;
+        min-height: 630px;
+        background: url('../images/features.png') no-repeat center center;
+        background-size: auto 530px;
+    }
+
+    &__img {
+        display: none;
+        margin: 0 auto;
+        max-height: 600px;
+        margin-bottom: 15px;
+    }
+    
+    &__img-point {
+        display: none;
+        max-height: 35px;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+
+    &__title {
+        margin-bottom: 80px;
+        @extend %tplTitle;
+    }
+
+    &__item {
+        position: absolute;
+        z-index: $zDefault;
+        max-width: 250px;
+
+        &--one {
+            top: 130px;
+            left: 145px;
+            text-align: right;
+        }
+
+        &--two {
+            bottom: 50px;
+            left: 120px;
+            text-align: right;
+        }
+
+        &--three {
+            right: 40px;
+            top: 190px;
+        }
+    }
+
+    &__name {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 10px;
+        color: $colorTextBlack;
+    }
+
+    &__point {
+        font-size: 10px;
+        margin-bottom: 5px;
+        line-height: 2.4;
+    }
+}

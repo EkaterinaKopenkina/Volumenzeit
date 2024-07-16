@@ -1,0 +1,197 @@
+// Import
+@import "vars";
+@import "mixins";
+@import "templates";
+@import "support";
+@import "header";
+@import "nav";
+@import "authorization";
+@import "intro";
+@import "social";
+@import "features";
+@import "design";
+@import "mission";
+@import "watches";
+@import "about";
+@import "newsletter";
+@import "footer";
+@import "burger";
+@import "page-title";
+@import "products";
+@import "product-item";
+@import "filter";
+@import "sort";
+@import "product";
+@import "contact";
+@import "delivery";
+@import "answer";
+@import "not-found";
+@import "build-watch";
+@import "specification";
+@import "guarantee";
+@import "cart";
+@import "checkout";
+@import "accordion";
+@import "cart-product";
+@import "modal";
+@import "auth";
+@import "account";
+@import "media";
+
+// Fonts
+@font-face {
+    font-family: 'space-age';
+    src: url(../fonts/space_age.eot);
+    src: url(../fonts/space_age.eot?#iefix) format('embedded-opentype'),
+         url(../fonts/space_age.otf) format('otf'),
+         url(../fonts/space_age.svg#space%20age) format('svg'),
+         url(../fonts/space_age.ttf) format('truetype'),
+         url(../fonts/space_age.woff) format('woff'),
+         url(../fonts/space_age.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}  
+
+@font-face {
+    font-family: 'poppins';
+    src: url(../fonts/Poppins-Regular.eot);
+    src: url(../fonts/Poppins-Regular.eot?#iefix) format('embedded-opentype'),
+         url(../fonts/Poppins-Regular.svg#Poppins-Regular) format('svg'),
+         url(../fonts/Poppins-Regular.ttf) format('truetype'),
+         url(../fonts/Poppins-Regular.otf) format('otf'),
+         url(../fonts/Poppins-Regular.woff) format('woff'),
+         url(../fonts/Poppins-Regular.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'poppins';
+    src: url(../fonts/Poppins-Medium.eot);
+    src: url(../fonts/Poppins-Medium.eot?#iefix) format('embedded-opentype'),
+         url(../fonts/Poppins-Medium.otf) format('otf'),
+         url(../fonts/Poppins-Medium.svg#Poppins-Medium) format('svg'),
+         url(../fonts/Poppins-Medium.ttf) format('truetype'),
+         url(../fonts/Poppins-Medium.woff) format('woff'),
+         url(../fonts/Poppins-Medium.woff2) format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'poppins';
+    src: url(../fonts/Poppins-SemiBold.eot);
+    src: url(../fonts/Poppins-SemiBold.eot?#iefix) format('embedded-opentype'),
+         url(../fonts/Poppins-SemiBold.otf) format('otf'),
+         url(../fonts/Poppins-SemiBold.svg#Poppins-SemiBold) format('svg'),
+         url(../fonts/Poppins-SemiBold.ttf) format('truetype'),
+         url(../fonts/Poppins-SemiBold.woff) format('woff'),
+         url(../fonts/Poppins-SemiBold.woff2) format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'poppins';
+    src: url(../fonts/Poppins-Bold.eot);
+    src: url(../fonts/Poppins-Bold.eot?#iefix) format('embedded-opentype'),
+         url(../fonts/Poppins-Bold.otf) format('otf'),
+         url(../fonts/Poppins-Bold.svg#Poppins-Bold) format('svg'),
+         url(../fonts/Poppins-Bold.ttf) format('truetype'),
+         url(../fonts/Poppins-Bold.woff) format('woff'),
+         url(../fonts/Poppins-Bold.woff2) format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+// Style
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $colorBg;
+    font-size: 14px;
+    color: $colorText;
+    font-family: 'poppins', sans-serif;
+    font-weight: 400;
+
+    &.no-scroll {
+		overflow: hidden;
+	}
+}
+
+:focus, :active {
+    outline: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-weight: 400;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+
+    &:visited {
+        text-decoration: none;
+    }
+
+    &:focus,
+    &:active {
+        outline: none;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+button {
+	background: none;
+	border: none;
+	font-size: inherit;
+	cursor: pointer;
+	font-family: inherit;
+
+    &::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+    }
+}
+
+input,
+textarea {
+	font-family: inherit;
+	border: none;
+
+    &::-ms-clear {
+        display: none;
+    }
+
+	&:focus {
+		outline: none;
+	}
+
+	&:hover {
+		outline: none;
+	}
+}
+
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+ul, li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}

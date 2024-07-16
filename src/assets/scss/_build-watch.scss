@@ -1,0 +1,329 @@
+.build-watch {
+    background-color: $colorBgGray;
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+    }
+
+    &__main {
+        background-color: $colorWhite;
+        padding: 50px 45px 78px 0;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: $zBg;
+            transform: translateX(-100%);
+            background-color: $colorWhite;
+            width: 100vw;
+            height: 100%;
+        }
+    }
+
+    &__title {
+        @include adaptSize(32, 28);
+        font-weight: 500;
+        color: $colorTextBlack;
+        margin-bottom: 55px;
+    }
+
+    &__view {
+        margin-bottom: 70px;
+        display: grid;
+        grid-gap: 12px;
+        grid-template-areas: 
+            "main main main"
+            "s1 s2 s3";
+    }
+
+    &__photo-main {
+        grid-area: main;
+        @include photo(100%, 590px, 8px);
+    }
+
+    &__photo-secondary {
+        @include photo(100%, 170px, 2px);
+    }
+
+    &__img {
+        @include img();
+    }
+
+    &__about-title {
+        font-weight: 600;
+        font-size: 18px;
+        color: $colorTextBlack;
+        margin-bottom: 25px;
+    }
+
+    &__about-text {
+        @include adaptSize(14, 10);
+        line-height: 2;
+    }
+
+    &__about {
+        &--mobile {
+            text-align: center;
+            background-color: $colorWhite;
+            display: none;
+            padding: 50px 0;
+            position: relative;
+            z-index: $zDefault;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 50%;
+                z-index: $zLow;
+                transform: translateX(-50%);
+                background-color: $colorWhite;
+                width: 100vw;
+                height: 100%;
+            }
+
+        }
+    }
+
+    &__right {
+        padding-top: 20px;
+        text-align: right;
+    }
+
+    &__return {
+        @include btn($colorWhite, $colorWhite);
+        font-size: 14px;
+        color: $colorText;
+        vertical-align: middle;
+        margin-bottom: 45px;
+
+        &--mobile {
+            display: none;
+        }
+    }
+
+    &__arrow {
+        max-height: 7px;
+        fill: $colorText;
+        margin-right: 15px;
+        max-width: 22px;
+    }
+
+    &__form {
+        padding-left: 45px;
+        padding-bottom: 35px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #DFE2EC;
+    }
+
+    &__form-item {
+        background-color: $colorWhite;
+        padding: 15px 15px 15px 30px;
+        border-radius: 5px;
+        text-align: left;
+        margin-bottom: 8px;
+    }
+
+    &__form-title {
+        font-size: 10px;
+        color: $colorTextBlack;
+    }
+
+    &__inputs {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__color {
+        position: relative;
+    }
+
+    &__radio {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: $zLow;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+
+        &:focus,
+        &:checked {
+            &~.build-watch__label {
+                border: 2px solid $colorBlue;
+            }
+        }
+    }
+
+    &__label {
+        display: block;
+        cursor: pointer;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &--color {
+            @include photo(36px, 36px, 7px);
+            border: 3px solid inherit;
+            transition: border .2s linear;
+    
+            &:hover {
+                border: 2px solid $colorBlue;
+            } 
+        }
+    }
+
+    &__picture {
+        @include photo(36px, 36px, 7px);
+        border: 3px solid inherit;
+        transition: border .2s linear;
+
+        &:hover {
+            border: 2px solid $colorBlue;
+        }
+    }
+
+    &__color {
+        margin-right: 12px;
+        position: relative;
+        margin-top: 10px;
+
+        &:hover {
+            &>.build-watch__hint {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__hint {
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translate(-50%, 100%);
+        z-index: $z10;
+        opacity: 0;
+        transition: opacity .2s linear;
+        text-align: center;
+        pointer-events: none;
+    }
+
+    &__hint-inner {
+        padding: 7px 20px;
+        background-color: $colorBlack;
+        color: $colorTextWhite;
+        font-size: 8px;
+        border-radius: 3px;
+        display: inline-block;
+
+        &::before {
+            position: absolute;
+            content: "";
+            z-index: $z10;
+            width: 7px;
+            height: 7px;
+            background-color: $colorBlack;
+            left: 50%;
+            transform: rotate(45deg) translateX(-5px);
+            top: 0;
+        }
+    }
+
+    &__form-img {
+        @include img();
+    }
+
+    &__strap {
+        display: flex;
+        width: 100%;
+    }
+
+    &__extra {
+        margin-bottom: 7px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__extra-flag {
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        background-color: $colorBorder;
+        margin-right: 10px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color .2s linear;
+    }
+
+    &__extra-input {
+        display: none;
+
+        &:checked {
+            &~.build-watch__extra-label {
+                &>.build-watch__extra-flag {
+                    background-color: $colorBlue;
+                }
+            }
+        }
+    }
+
+    &__extra-check {
+        max-height: 9px;
+        max-width: 9px;
+    }
+
+    &__extra-label {
+        font-size: 10px;
+        color: $colorTextBlack;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            &>.build-watch__extra-flag {
+                background-color: $colorBlue;
+            }
+        }
+    }
+
+    &__form-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 12px;
+        padding-left: 30px;
+    }
+
+    &__price {
+        font-size: 20px;
+        color: $colorTextBlack;
+    }
+
+    &__btn {
+        @include btn($colorBlue, $colorBlue);
+    }
+
+    &__specifications {
+        padding-left: 75px;
+    }
+
+    &__specifications-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: $colorTextBlack;
+        margin-bottom: 30px;
+        text-align: left;
+    }
+
+    &__specification {
+        width: 100%;
+    }
+}

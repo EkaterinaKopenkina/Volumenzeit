@@ -1,0 +1,127 @@
+.account {
+    background-color: $colorBgGray;
+    padding: 90px 0;
+
+    &__title {
+        color: $colorTextBlack;
+        @include adaptSize(46, 32);
+        font-weight: 500;
+        margin-bottom: 15px;
+        line-height: 1;
+        text-align: center;
+    }
+
+    &__subtitle {
+        @include adaptSize(14, 12);
+        line-height: 2;
+        margin-bottom: 60px;
+        text-align: center;
+    }
+
+    &__block {
+        padding: 50px 65px;
+        border: 1px solid $colorBorder;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        background-color: $colorWhite;
+        max-height: 600px;
+        overflow-y: auto;
+        @include scroll();
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__block-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    &__block-title {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    &__btn {
+        color: $colorBlue;
+        display: none;
+
+        &.active {
+            display: block;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__text {
+        font-size: 14px;
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    &__form {
+        margin-top: 15px;
+    }
+
+    &__item {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        color: $colorTextBlack;
+
+        &--orders {
+            justify-content: space-between;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__input,
+    &__label,
+    &__date,
+    &__products,
+    &__price {
+        color: $colorTextBlack;
+        font-size: 14px;
+    }
+
+    &__label {
+        margin-right: 5px;
+    }
+
+    &__date {
+        margin-right: 15px;
+        flex-shrink: 0;
+    }
+
+    &__input {
+        padding: 2px 5px;
+        border-radius: 5px;
+        background-color: $colorWhite;
+        transition: background-color .2s linear;
+
+        &.active {
+            background-color: lighten($colorBlue, 20%);
+        }
+    }
+
+    &__order {
+        display: flex;
+        align-items: center;
+        padding-right: 20px;
+    }
+
+    &__products {
+        line-height: 1.3;
+    }
+}

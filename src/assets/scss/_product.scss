@@ -1,0 +1,119 @@
+.product {
+    padding: 65px 0;
+
+    &__inner {
+        display: flex;
+    }
+
+    &__photos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+        flex-shrink: 0;
+    }
+
+    &__photo {
+        @include photo(320px, 345px, 8px);
+        transition: transform .2s linear;
+        
+        &:hover {
+            transform: scale(150%);
+        }
+    }
+
+    &__img {
+        @include img();
+    }
+
+    &__info {
+        padding-left: 30px;
+    }
+
+    &__name {
+        font-weight: 500;
+        @include adaptSize(30, 26);
+        color: $colorTextBlack;
+        margin-bottom: 5px;
+    }
+
+    &__brand {
+        margin-bottom: 17px;
+    }
+
+    &__description {
+        font-size: 12px;
+        line-height: 2.16;
+        margin-bottom: 35px;
+    }
+
+    &__specifications {
+        padding: 14px 0 28px;
+        border-top: 1px solid rgba($colorGray, .2);
+        border-bottom: 1px solid rgba($colorGray, .2);
+        margin-bottom: 22px;
+    }
+
+    &__order {
+        display: flex;
+        align-items: center;
+        margin-bottom: 22px;
+    }
+
+    &__order-btn {
+        @include btn($colorBlue, $colorBlue);
+    }
+
+    &__order-price {
+        font-size: 20px;
+        text-align: center;
+        color: $colorTextBlack;
+        width: 100%;
+    }
+
+    &__btn {
+        width: 100%;
+        @extend %tplBtn-white;
+    }
+
+    &__slider-container {
+        display: none;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 15px;
+    }
+
+    &__slider {
+        margin-bottom: 15px;
+    }
+
+    &__slide-photo {
+        @include photo(100%, 370px, 8px);
+    }
+
+    &__slide-img {
+        @include img();
+    }
+
+    &__arrows {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 230px;
+        margin: 0 auto;
+    }
+
+    &__arrow-svg {
+        fill: $colorBlack;
+        width: 80px;
+        max-height: 20px;
+        transition: fill .2s linear;
+    }
+
+    &__arrow {
+        &:hover {
+            &>.watches__arrow-svg {
+                fill: $colorBlue;
+            }
+        }
+    }
+}
