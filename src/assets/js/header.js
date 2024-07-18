@@ -61,5 +61,5 @@ module.exports = {
     headerFake: headerFake,
     burger: burger,
     navAccount: navAccount,
-    cart: cart,
+    cart: cart
 }

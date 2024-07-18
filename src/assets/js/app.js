@@ -1,5 +1,6 @@
 var slider = require('./slider.js');
 var header = require('./header.js');
+var index = require('./index.js');
 
 const currentUrl = document.location.href.split('/');
 const currentPage = currentUrl[currentUrl.length - 1];
@@ -17,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Pages
     switch(currentPage) {
         case 'index.html':
+            index.video();
             //slider.initSlider();
             break;
         case 'watches.html':
