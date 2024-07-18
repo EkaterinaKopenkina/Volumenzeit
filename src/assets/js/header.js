@@ -6,6 +6,60 @@ const headerFake = () => {
     headerFake.style.height = `${headerHeight}px`;
 }
 
+const burger = () => {
+    const burgerItem = document.querySelector('.burger');
+    const nav = document.querySelector('.nav');
+    const body = document.querySelector('body');
+
+    burgerItem.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        burgerItem.classList.toggle('active');
+        nav.classList.toggle('active');
+        body.classList.toggle('no-scroll');
+    })
+}
+
+const navAccount = (cookieLogin) => {
+    const auth = document.querySelector('.authorization');
+    const accountTablet = document.querySelector('#accountTablet');
+    const accountMobile = document.querySelector('#accountMobile');
+    const authMobile = document.querySelector('#authMobile');
+
+    cookieLogin ? authMobile.style.display = 'none' : accountMobile.style.display = 'none';
+
+    accountTablet.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        cookieLogin ? window.location.replace('account.html') : auth.classList.toggle('active');
+    })
+
+    auth.addEventListener('click', (event) => {
+        event.stopPropagation();
+    })
+}
+
+const cart = () => {
+    const cartItem = document.querySelector('#cartTablet');
+    const cartAside = document.querySelector('.cart');
+    const cartClose = document.querySelector('.cart__close');
+
+    cartItem.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        cartAside.classList.add('active');
+    })
+
+    cartClose.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        cartAside.classList.remove('active');
+    })
+}
+
 module.exports = {
-    headerFake: headerFake
+    headerFake: headerFake,
+    burger: burger,
+    navAccount: navAccount,
+    cart: cart,
 }
