@@ -6,6 +6,21 @@ const headerFake = () => {
     headerFake.style.height = `${headerHeight}px`;
 }
 
+const burger = () => {
+    const burgerItem = document.querySelector('.burger');
+    const nav = document.querySelector('.nav');
+    const body = document.querySelector('body');
+
+    burgerItem.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        burgerItem.classList.toggle('active');
+        nav.classList.toggle('active');
+        body.classList.toggle('no-scroll');
+    })
+}
+
 module.exports = {
-    headerFake: headerFake
+    headerFake: headerFake,
+    burger: burger
 }

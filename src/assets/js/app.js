@@ -6,6 +6,7 @@ const currentPage = currentUrl[currentUrl.length - 1];
 
 document.addEventListener('DOMContentLoaded', () => {
     header.headerFake();
+    header.burger();
     window.addEventListener('resize', header.headerFake);
 
     switch(currentPage) {
