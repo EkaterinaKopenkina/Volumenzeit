@@ -20,7 +20,27 @@ const burger = () => {
     })
 }
 
+const navAccount = (cookieLogin) => {
+    const auth = document.querySelector('.authorization');
+    const accountTablet = document.querySelector('#accountTablet');
+    const accountMobile = document.querySelector('#accountMobile');
+    const authMobile = document.querySelector('#authMobile');
+
+    cookieLogin ? authMobile.style.display = 'none' : accountMobile.style.display = 'none';
+
+    accountTablet.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        cookieLogin ? window.location.replace('account.html') : auth.classList.toggle('active');
+    })
+
+    auth.addEventListener('click', (event) => {
+        event.stopPropagation();
+    })
+}
+
 module.exports = {
     headerFake: headerFake,
-    burger: burger
+    burger: burger,
+    navAccount: navAccount
 }
