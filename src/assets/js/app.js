@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     header.headerFake();
     header.burger();
     header.navAccount();
+    header.cart();
     window.addEventListener('resize', header.headerFake);
 
     // Pages

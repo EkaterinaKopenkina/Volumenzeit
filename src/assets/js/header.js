@@ -39,8 +39,27 @@ const navAccount = (cookieLogin) => {
     })
 }
 
+const cart = () => {
+    const cartItem = document.querySelector('#cartTablet');
+    const cartAside = document.querySelector('.cart');
+    const cartClose = document.querySelector('.cart__close');
+
+    cartItem.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        cartAside.classList.add('active');
+    })
+
+    cartClose.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        cartAside.classList.remove('active');
+    })
+}
+
 module.exports = {
     headerFake: headerFake,
     burger: burger,
-    navAccount: navAccount
+    navAccount: navAccount,
+    cart: cart,
 }
