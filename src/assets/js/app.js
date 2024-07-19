@@ -1,6 +1,7 @@
 var slider = require('./slider.js');
 var header = require('./header.js');
 var index = require('./index.js');
+var contact = require('./contact.js');
 
 const currentUrl = document.location.href.split('/');
 const currentPage = currentUrl[currentUrl.length - 1];
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             slider.initSlider();
             break;
         case 'contact.html':
+            contact.formContact();
             break;
         case 'buildWatch.html':
             break;

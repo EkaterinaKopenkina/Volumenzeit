@@ -37,7 +37,7 @@ const formNewsletter = () => {
 
         if (!rEmail.test(email.value)) {
             form.formError(email, 'Поле заполнено неверно');
-            form.formBlur(email);
+            form.formEmailBlur(email);
             return;
         }
 

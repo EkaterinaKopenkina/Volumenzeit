@@ -50,13 +50,13 @@
 
     &__inputs {
         max-width: 445px;
+        margin-bottom: 35px;
     }
 
     &__message {
         @extend %tplInput;
         min-height: 160px;
         max-height: 250px;
-        margin-bottom: 35px;
     }
 
     &__btn {
