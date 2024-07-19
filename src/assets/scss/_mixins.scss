@@ -50,30 +50,6 @@
     @include adaptSize(14, 12);
 }
 
-// Form
-@mixin input() {
-    max-width: 445px;
-    width: 100%;
-    background-color: $colorWhite;
-    border: 1px solid $colorBorder;
-    padding: 20px 18px;
-    border-radius: 5px;
-    font-size: 14px;
-    color: $colorTextBlack;
-    transition: all .2s linear;
-    margin-bottom: 15px;
-
-    &::placeholder {
-        color: $colorText;
-    }
-
-    &:hover,
-    &:focus {
-        border: 1px solid $colorBlue;
-        color: $colorBlue;
-    }
-}
-
 // Scroll
 @mixin scroll() {
     /* полоса прокрутки (скроллбар) */

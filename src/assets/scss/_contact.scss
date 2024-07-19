@@ -29,6 +29,7 @@
     }
 
     &__title {
+        @extend %tplTitle;
         text-align: left;
         margin-bottom: 20px;
     }
@@ -39,12 +40,20 @@
         @include adaptSize(14, 10);
     }
 
+    &__input-item {
+        margin-bottom: 15px;
+    }
+
     &__input {
-        @include input();
+        @extend %tplInput;
+    }
+
+    &__inputs {
+        max-width: 445px;
     }
 
     &__message {
-        @include input();
+        @extend %tplInput;
         min-height: 160px;
         max-height: 250px;
         margin-bottom: 35px;

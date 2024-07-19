@@ -1,12 +1,12 @@
 @charset "UTF-8";
-.about__title, .watches__title, .mission__title, .design__title, .features__title {
+.contact__title, .about__title, .watches__title, .mission__title, .design__title, .features__title {
   font-family: "space-age";
   text-align: center;
   font-size: 42px;
   color: #000;
 }
 @media (max-width: 1200px) {
-  .about__title, .watches__title, .mission__title, .design__title, .features__title {
+  .contact__title, .about__title, .watches__title, .mission__title, .design__title, .features__title {
     font-size: calc(28px + 14 * (100vw - 320px) / 880);
   }
 }
@@ -67,7 +67,7 @@
   color: #000;
 }
 
-.auth__input, .accordion__input {
+.auth__input, .accordion__input, .contact__message, .contact__input {
   background-color: #fff;
   border: 1px solid #EAECF5;
   border-radius: 5px;
@@ -77,11 +77,15 @@
   transition: all 0.2s linear;
   width: 100%;
 }
-.auth__input:hover, .accordion__input:hover, .auth__input:focus, .accordion__input:focus {
+.error.auth__input, .error.accordion__input, .error.contact__message, .error.contact__input {
+  border: 1px solid #c52020;
+  color: #c52020;
+}
+.auth__input:hover, .accordion__input:hover, .contact__message:hover, .contact__input:hover, .auth__input:focus, .accordion__input:focus, .contact__message:focus, .contact__input:focus {
   border: 1px solid #735CFF;
   color: #735CFF;
 }
-.auth__input::placeholder, .accordion__input::placeholder {
+.auth__input::placeholder, .accordion__input::placeholder, .contact__message::placeholder, .contact__input::placeholder {
   color: #939393;
 }
 
@@ -99,6 +103,19 @@
   overflow: hidden;
   width: 100%;
   min-height: 100vh;
+}
+
+.error__message {
+  padding-left: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #c52020;
+}
+.error__form {
+  font-size: 14px;
+  color: #c52020;
+  margin-bottom: 15px;
+  display: none;
 }
 
 .black {
@@ -1770,46 +1787,16 @@
     font-size: calc(10px + 4 * (100vw - 320px) / 880);
   }
 }
-.contact__input {
-  max-width: 445px;
-  width: 100%;
-  background-color: #fff;
-  border: 1px solid #EAECF5;
-  padding: 20px 18px;
-  border-radius: 5px;
-  font-size: 14px;
-  color: #000;
-  transition: all 0.2s linear;
+.contact__input-item {
   margin-bottom: 15px;
 }
-.contact__input::placeholder {
-  color: #939393;
-}
-.contact__input:hover, .contact__input:focus {
-  border: 1px solid #735CFF;
-  color: #735CFF;
+.contact__inputs {
+  max-width: 445px;
 }
 .contact__message {
-  max-width: 445px;
-  width: 100%;
-  background-color: #fff;
-  border: 1px solid #EAECF5;
-  padding: 20px 18px;
-  border-radius: 5px;
-  font-size: 14px;
-  color: #000;
-  transition: all 0.2s linear;
-  margin-bottom: 15px;
   min-height: 160px;
   max-height: 250px;
   margin-bottom: 35px;
-}
-.contact__message::placeholder {
-  color: #939393;
-}
-.contact__message:hover, .contact__message:focus {
-  border: 1px solid #735CFF;
-  color: #735CFF;
 }
 .contact__btn {
   display: inline-block;
@@ -3955,6 +3942,9 @@
   }
   .contact__inner {
     display: block;
+  }
+  .contact__inputs {
+    margin: 0 auto;
   }
   .contact__content {
     display: block;

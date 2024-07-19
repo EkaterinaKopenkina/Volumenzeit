@@ -16,6 +16,23 @@
 	min-height: 100vh;
 }
 
+// Error
+.error {
+	&__message {
+		padding-left: 8px;
+		margin-top: 8px;
+		font-size: 14px;
+		color: $colorError;
+	}
+
+	&__form {
+		font-size: 14px;
+		color: $colorError;
+		margin-bottom: 15px;
+		display: none;
+	}
+}
+
 // Colors
 .black {
 	background: linear-gradient(210.81deg, #555555 18.68%, #0A0A0A 98.45%);

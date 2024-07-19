@@ -42,6 +42,11 @@
 	color: $colorTextBlack;
 	transition: all .2s linear;
 	width: 100%;
+
+	&.error {
+		border: 1px solid $colorError;
+		color: $colorError;
+	}
 	
 	&:hover,
 	&:focus {
