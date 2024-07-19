@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Header
     header.headerFake();
     header.burger();
-    header.navAccount();
+    header.navAccount(cookieLogin);
     header.cart();
     window.addEventListener('resize', header.headerFake);
 
@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     switch(currentPage) {
         case 'index.html':
             index.video();
+            index.formNewsletter();
             //slider.initSlider();
             break;
         case 'watches.html':
