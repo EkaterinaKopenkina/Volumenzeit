@@ -19,6 +19,16 @@ eval("var slider = __webpack_require__(/*! ./slider.js */ \"./src/assets/js/slid
 
 /***/ }),
 
+/***/ "./src/assets/js/form.js":
+/*!*******************************!*\
+  !*** ./src/assets/js/form.js ***!
+  \*******************************/
+/***/ (function(module) {
+
+eval("const formError = (element, message) => {\r\n    const error = element.nextElementSibling;\r\n\r\n    element.classList.add('error');\r\n    error.innerHTML = message;\r\n    error.style.display = \"block\";\r\n}\r\n\r\nconst formClear = (inputs) => {\r\n    inputs.forEach(input => {\r\n        const error = input.nextElementSibling;\r\n\r\n        input.classList.remove('error');\r\n        error.style.display = 'none';\r\n    })\r\n}\r\n\r\nconst formBlur = (input) => {\r\n    input.addEventListener('blur', () => {\r\n        if (input.value != '') {\r\n            const error = input.nextElementSibling;\r\n\r\n            input.classList.remove('error');\r\n            error.style.display = \"none\";\r\n        }\r\n    })\r\n}\r\n\r\nmodule.exports = {\r\n    formError: formError,\r\n    formClear: formClear,\r\n    formBlur: formBlur,\r\n}\n\n//# sourceURL=webpack://brainscloud/./src/assets/js/form.js?");
+
+/***/ }),
+
 /***/ "./src/assets/js/header.js":
 /*!*********************************!*\
   !*** ./src/assets/js/header.js ***!
@@ -81,6 +91,7 @@ eval("const initSlider = () => {\r\n    const mySliders = document.querySelector
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	__webpack_require__("./src/assets/js/app.js");
+/******/ 	__webpack_require__("./src/assets/js/form.js");
 /******/ 	__webpack_require__("./src/assets/js/header.js");
 /******/ 	__webpack_require__("./src/assets/js/index.js");
 /******/ 	var __webpack_exports__ = __webpack_require__("./src/assets/js/slider.js");

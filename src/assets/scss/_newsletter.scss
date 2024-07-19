@@ -31,6 +31,30 @@
         margin: 0 auto;
         margin-bottom: 30px;
     }
+    
+    &__item {
+        width: 100%;
+        max-width: 320px;
+
+        &:first-child {
+            margin-right: 20px;
+        }
+    }
+
+    &__error {
+        font-size: 14px;
+        color: $colorError;
+        margin-top: 8px;
+        padding-left: 8px;
+        display: none;
+    }
+
+    &__error-form {
+        font-size: 14px;
+        color: $colorError;
+        margin-bottom: 10px;
+        display: none;
+    }
 
     &__input {
         font-size: 14px;
@@ -38,13 +62,13 @@
         border-radius: 5px;
         padding: 20px 30px;
         width: 100%;
-        max-width: 320px;
         color: $colorTextBlack;
         border: 3px solid $colorWhite;
         transition: all .2s linear;
 
-        &:first-child {
-            margin-right: 20px;
+        &.error {
+            border: 3px solid $colorError;
+            color: $colorError;
         }
 
         &:hover,

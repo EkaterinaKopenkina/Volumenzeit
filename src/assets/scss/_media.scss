@@ -115,18 +115,23 @@
     .about {
         &__title {
             margin-bottom: 35px;
+            text-align: center;
         }
 
         &__content {
-            padding-right: 40px;
+            padding: 0;
+            max-width: 600px;
+            text-align: center;
+            margin: 0 auto;
+            margin-bottom: 30px;
         }
 
         &__right {
             padding: 20px;
         }
 
-        &__video {
-            width: 410px;
+        &__inner {
+            flex-direction: column;
         }
     }
 
@@ -415,17 +420,8 @@
 
     // About
     .about {
-        &__title {
-            text-align: center;
-        }
-
-        &__subtitle {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
         &__video {
-            width: 100%;
+            width: 430px;
         }
     }
 
@@ -436,7 +432,7 @@
             align-items: center;
         }
 
-        &__input {
+        &__item {
             margin-bottom: 30px;
 
             &:first-child {
@@ -885,6 +881,19 @@
 
         &__arrows {
             margin-bottom: 35px;
+        }
+    }
+
+    // About
+    .about {
+        padding-bottom: 100px;
+        
+        &__right {
+            width: 100%;
+        }
+
+        &__video {
+            width: 100%;
         }
     }
 

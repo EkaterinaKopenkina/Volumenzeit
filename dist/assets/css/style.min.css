@@ -907,19 +907,39 @@
   margin: 0 auto;
   margin-bottom: 30px;
 }
+.newsletter__item {
+  width: 100%;
+  max-width: 320px;
+}
+.newsletter__item:first-child {
+  margin-right: 20px;
+}
+.newsletter__error {
+  font-size: 14px;
+  color: #c52020;
+  margin-top: 8px;
+  padding-left: 8px;
+  display: none;
+}
+.newsletter__error-form {
+  font-size: 14px;
+  color: #c52020;
+  margin-bottom: 10px;
+  display: none;
+}
 .newsletter__input {
   font-size: 14px;
   background-color: #fff;
   border-radius: 5px;
   padding: 20px 30px;
   width: 100%;
-  max-width: 320px;
   color: #000;
   border: 3px solid #fff;
   transition: all 0.2s linear;
 }
-.newsletter__input:first-child {
-  margin-right: 20px;
+.newsletter__input.error {
+  border: 3px solid #c52020;
+  color: #c52020;
 }
 .newsletter__input:hover, .newsletter__input:focus {
   border: 3px solid #735CFF;
@@ -3602,15 +3622,20 @@
   }
   .about__title {
     margin-bottom: 35px;
+    text-align: center;
   }
   .about__content {
-    padding-right: 40px;
+    padding: 0;
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 30px;
   }
   .about__right {
     padding: 20px;
   }
-  .about__video {
-    width: 410px;
+  .about__inner {
+    flex-direction: column;
   }
   .burger {
     display: flex;
@@ -3809,27 +3834,20 @@
   .watches {
     padding-bottom: 50px;
   }
-  .about__title {
-    text-align: center;
-  }
-  .about__subtitle {
-    text-align: center;
-    margin-bottom: 30px;
-  }
   .about__video {
-    width: 100%;
+    width: 430px;
   }
   .newsletter__inputs {
     flex-direction: column;
     align-items: center;
   }
-  .newsletter__input {
+  .newsletter__item {
     margin-bottom: 30px;
   }
-  .newsletter__input:first-child {
+  .newsletter__item:first-child {
     margin-right: 0;
   }
-  .newsletter__input:last-child {
+  .newsletter__item:last-child {
     margin-bottom: 0;
   }
   .page-title {
@@ -4146,6 +4164,15 @@
   }
   .watches__arrows {
     margin-bottom: 35px;
+  }
+  .about {
+    padding-bottom: 100px;
+  }
+  .about__right {
+    width: 100%;
+  }
+  .about__video {
+    width: 100%;
   }
   .footer {
     padding-top: 60px;
