@@ -1,5 +1,6 @@
 var slider = require('./slider.js');
 var header = require('./header.js');
+var sort = require('./sort.js');
 var index = require('./index.js');
 var contact = require('./contact.js');
 var checkout = require('./checkout.js');
@@ -37,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             break;
         case 'checkout.html':
             checkout.accordion();
+            sort.sort();
             break;
         case 'delivery.html':
             break;
