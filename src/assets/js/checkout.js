@@ -66,7 +66,6 @@ const formCheckout = () => {
 const formBasic = () => {
     const accordion = document.querySelector('#accordionBasic');
     const successForm = accordion.querySelector('.success__form');
-    const errorForm = accordion.querySelector('.error__form');
     const inputs = accordion.querySelectorAll('.accordion__inputs');
     const email = document.querySelector('#accordionEmail');
     const rEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
@@ -81,6 +80,9 @@ const formBasic = () => {
     const country = document.querySelector('#accordionCountry');
 
     form.formClear(inputs);
+
+    error.style.display = 'none';
+    success.style.display = 'none';
 
     if (!rEmail.test(email.value)) {
         form.formError(email, 'Поле заполнено неверно');
@@ -139,6 +141,24 @@ const formBasic = () => {
     }
 
     successForm.style.display = 'block';
+}
+
+const formShipping = () => {
+    const accordion = document.querySelector('#accordionShipping');
+    const error = accordion.querySelector('.error__form');
+    const success = accordion.querySelector('.success__form');
+    const delivery1 = document.querySelector('#delivery1');
+    const delivery2 = document.querySelector('#delivery2');
+
+    error.style.display = 'none';
+    success.style.display = 'none';
+
+    if ((delivery1.checked || delivery2.checked) == false) {
+        error.style.display = 'block';
+        return;
+    }
+
+    success.style.display = 'block';
 }
 
 module.exports = {
