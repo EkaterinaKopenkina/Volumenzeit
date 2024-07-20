@@ -2,6 +2,7 @@ var slider = require('./slider.js');
 var header = require('./header.js');
 var index = require('./index.js');
 var contact = require('./contact.js');
+var checkout = require('./checkout.js');
 
 const currentUrl = document.location.href.split('/');
 const currentPage = currentUrl[currentUrl.length - 1];
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         case 'buildWatch.html':
             break;
         case 'checkout.html':
+            checkout.accordion();
             break;
         case 'delivery.html':
             break;

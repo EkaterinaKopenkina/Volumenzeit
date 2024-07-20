@@ -1,1 +1,122 @@
-!function(){var e={913:function(e,t,r){var o=r(981),n=r(189),c=r(194),l=r(886);const a=document.location.href.split("/"),i=a[a.length-1];document.addEventListener("DOMContentLoaded",(()=>{const e=document.cookie.match(/login=(.+?)(;|$)/);switch(n.headerFake(),n.burger(),n.navAccount(e),n.cart(),window.addEventListener("resize",n.headerFake),i){case"index.html":c.video(),c.formNewsletter();break;case"watches.html":case"product.html":o.initSlider();break;case"contact.html":l.formContact();break;case"buildWatch.html":case"checkout.html":case"delivery.html":case"authorization.html#login":case"authorization.html#reg":case"account.html":break;default:window.location.replace("http://localhost:3000/404.html")}}))},886:function(e,t,r){var o=r(474);e.exports={formContact:()=>{document.querySelector(".contact__btn").addEventListener("click",(e=>{e.preventDefault();const t=document.querySelector(".contact__form").querySelectorAll(".contact__input"),r=document.querySelector("#contactName"),n=document.querySelector("#contactEmail"),c=document.querySelector("#contactMessage");return o.formClear(t),""==r.value?(o.formError(r,"Пустое поле"),void o.formBlur(r)):/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i.test(n.value)?""==c.value?(o.formError(c,"Пустое поле"),void o.formBlur(c)):void console.log("Отправка формы"):(o.formError(n,"Поле заполнено неверно"),void o.formEmailBlur(n))}))}}},474:function(e){e.exports={formError:(e,t)=>{const r=e.nextElementSibling;e.classList.add("error"),r.innerHTML=t,r.style.display="block"},formClear:e=>{e.forEach((e=>{const t=e.nextElementSibling;e.classList.remove("error"),t.style.display="none"}))},formBlur:e=>{e.addEventListener("blur",(()=>{if(""!=e.value){const t=e.nextElementSibling;e.classList.remove("error"),t.style.display="none"}}))},formEmailBlur:e=>{const t=/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;e.addEventListener("blur",(()=>{if(t.test(e.value)){const t=e.nextElementSibling;e.classList.remove("error"),t.style.display="none"}}))}}},189:function(e){e.exports={headerFake:()=>{const e=document.querySelector(".header"),t=document.querySelector(".header__fake"),r=e.offsetHeight;t.style.height=`${r}px`},burger:()=>{const e=document.querySelector(".burger"),t=document.querySelector(".nav"),r=document.querySelector("body");e.addEventListener("click",(o=>{o.preventDefault(),e.classList.toggle("active"),t.classList.toggle("active"),r.classList.toggle("no-scroll")}))},navAccount:e=>{const t=document.querySelector(".authorization"),r=document.querySelector("#accountTablet"),o=document.querySelector("#accountMobile"),n=document.querySelector("#authMobile");e?n.style.display="none":o.style.display="none",r.addEventListener("click",(r=>{r.preventDefault(),e?window.location.replace("account.html"):t.classList.toggle("active")})),t.addEventListener("click",(e=>{e.stopPropagation()}))},cart:()=>{const e=document.querySelector("#cartTablet"),t=document.querySelector(".cart"),r=document.querySelector(".cart__close");e.addEventListener("click",(e=>{e.preventDefault(),t.classList.add("active")})),r.addEventListener("click",(e=>{e.preventDefault(),t.classList.remove("active")}))}}},194:function(e,t,r){var o=r(474);e.exports={video:()=>{const e=document.querySelector(".about__video-bg"),t=document.querySelector(".about__video"),r=document.querySelector(".about__play");e.addEventListener("click",(()=>{e.style.display="none",r.style.display="none",t.setAttribute("controls",""),t.play()}))},formNewsletter:()=>{document.querySelector(".newsletter__btn").addEventListener("click",(e=>{e.preventDefault();const t=document.querySelector(".newsletter__form").querySelectorAll(".newsletter__input"),r=document.querySelector("#newsletterName"),n=document.querySelector("#newsletterEmail");return o.formClear(t),""==r.value?(o.formError(r,"Пустое поле"),void o.formBlur(r)):/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i.test(n.value)?void console.log("Отправка формы"):(o.formError(n,"Поле заполнено неверно"),void o.formEmailBlur(n))}))}}},981:function(e){e.exports={initSlider:()=>{document.querySelectorAll(".swiper-container").forEach((e=>{switch(e.classList[0]){case"watches__inner":let t="auto";window.innerWidth<427&&(t=1),new Swiper(e,{navigation:{nextEl:".watches__arrow--next",prevEl:".watches__arrow--prev"},slidesPerView:t,observer:!0,observeParents:!0,observeSlideChildren:!0});break;case"products__container":new Swiper(e,{pagination:{el:".swiper-pagination",clickable:!0,renderBullet:function(e,t){return'<span class="'+t+'">'+(e+1)+"</span>"}},slidesPerView:1,autoHeight:!0,allowTouchMove:!1,effect:"fade",spaceBetween:0,fadeEffect:{crossFade:!0,duration:200}});break;case"product__slider-container":new Swiper(e,{navigation:{nextEl:".product__arrow--next",prevEl:".product__arrow--prev"},slidesPerView:1,observer:!0,observeParents:!0,observeSlideChildren:!0})}}))}}}},t={};function r(o){var n=t[o];if(void 0!==n)return n.exports;var c=t[o]={exports:{}};return e[o](c,c.exports,r),c.exports}r(913),r(886),r(474),r(189),r(194),r(981)}();
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (function() { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/assets/js/app.js":
+/*!******************************!*\
+  !*** ./src/assets/js/app.js ***!
+  \******************************/
+/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+
+eval("var slider = __webpack_require__(/*! ./slider.js */ \"./src/assets/js/slider.js\");\r\nvar header = __webpack_require__(/*! ./header.js */ \"./src/assets/js/header.js\");\r\nvar index = __webpack_require__(/*! ./index.js */ \"./src/assets/js/index.js\");\r\nvar contact = __webpack_require__(/*! ./contact.js */ \"./src/assets/js/contact.js\");\r\nvar checkout = __webpack_require__(/*! ./checkout.js */ \"./src/assets/js/checkout.js\");\r\n\r\nconst currentUrl = document.location.href.split('/');\r\nconst currentPage = currentUrl[currentUrl.length - 1];\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n    const cookieLogin = document.cookie.match(/login=(.+?)(;|$)/);\r\n\r\n    // Header\r\n    header.headerFake();\r\n    header.burger();\r\n    header.navAccount(cookieLogin);\r\n    header.cart();\r\n    window.addEventListener('resize', header.headerFake);\r\n\r\n    // Pages\r\n    switch(currentPage) {\r\n        case 'index.html':\r\n            index.video();\r\n            index.formNewsletter();\r\n            //slider.initSlider();\r\n            break;\r\n        case 'watches.html':\r\n            slider.initSlider();\r\n            break;\r\n        case 'product.html':\r\n            slider.initSlider();\r\n            break;\r\n        case 'contact.html':\r\n            contact.formContact();\r\n            break;\r\n        case 'buildWatch.html':\r\n            break;\r\n        case 'checkout.html':\r\n            checkout.accordion();\r\n            break;\r\n        case 'delivery.html':\r\n            break;\r\n        case 'authorization.html#login':\r\n            break;\r\n        case 'authorization.html#reg':\r\n            break;\r\n        case 'account.html':\r\n            break;\r\n        default:\r\n            window.location.replace('http://localhost:3000/404.html')\r\n    }\r\n})\n\n//# sourceURL=webpack://brainscloud/./src/assets/js/app.js?");
+
+/***/ }),
+
+/***/ "./src/assets/js/checkout.js":
+/*!***********************************!*\
+  !*** ./src/assets/js/checkout.js ***!
+  \***********************************/
+/***/ (function(module) {
+
+eval("const accordion = () => {\r\n    const accordions = document.querySelectorAll('.accordion');\r\n\r\n    accordions.forEach(item => {\r\n        const container = item.querySelector('.accordion__container');\r\n        const header = item.querySelector('.accordion__header');\r\n        const heightContainer = container.offsetHeight;\r\n\r\n        item.classList.remove('active');\r\n\r\n        header.addEventListener('click', () => {\r\n            if (item.classList.contains('active')) {\r\n                item.classList.remove('active');\r\n                // container.style.height = 0;\r\n\r\n                container.style.opacity = 0;\r\n\r\n                setTimeout(() => {\r\n                    container.style.display = 'none';\r\n                }, 200)\r\n            } else {\r\n                item.classList.add('active');\r\n                // container.style.height = `${heightContainer}px`;\r\n                container.style.display = \"block\";\r\n\r\n                setTimeout(() => {\r\n                    container.style.opacity = 1;\r\n                }, 200)\r\n            }\r\n        })\r\n    })\r\n}\r\n\r\nmodule.exports = {\r\n    accordion: accordion,\r\n}\n\n//# sourceURL=webpack://brainscloud/./src/assets/js/checkout.js?");
+
+/***/ }),
+
+/***/ "./src/assets/js/contact.js":
+/*!**********************************!*\
+  !*** ./src/assets/js/contact.js ***!
+  \**********************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+eval("var form = __webpack_require__(/*! ./form.js */ \"./src/assets/js/form.js\");\r\n\r\nconst formContact = () => {\r\n    const btn = document.querySelector('.contact__btn');\r\n\r\n    btn.addEventListener('click', (event) => {\r\n        event.preventDefault();\r\n\r\n        const thisForm = document.querySelector('.contact__form');\r\n        const inputs = thisForm.querySelectorAll('.contact__input');\r\n\r\n        const name = document.querySelector('#contactName');\r\n        const email = document.querySelector('#contactEmail');\r\n        const rEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;\r\n        const message = document.querySelector('#contactMessage');\r\n\r\n        form.formClear(inputs);\r\n\r\n        if (name.value == '') {\r\n            form.formError(name, 'Пустое поле');\r\n            form.formBlur(name);\r\n            return;\r\n        }\r\n\r\n        if (!rEmail.test(email.value)) {\r\n            form.formError(email, 'Поле заполнено неверно');\r\n            form.formEmailBlur(email);\r\n            return;\r\n        }\r\n\r\n        if (message.value == '') {\r\n            form.formError(message, 'Пустое поле');\r\n            form.formBlur(message);\r\n            return;\r\n        }\r\n\r\n        console.log('Отправка формы');\r\n    })\r\n}\r\n\r\nmodule.exports = {\r\n    formContact: formContact,\r\n}\n\n//# sourceURL=webpack://brainscloud/./src/assets/js/contact.js?");
+
+/***/ }),
+
+/***/ "./src/assets/js/form.js":
+/*!*******************************!*\
+  !*** ./src/assets/js/form.js ***!
+  \*******************************/
+/***/ (function(module) {
+
+eval("const formError = (element, message) => {\r\n    const error = element.nextElementSibling;\r\n\r\n    element.classList.add('error');\r\n    error.innerHTML = message;\r\n    error.style.display = \"block\";\r\n}\r\n\r\nconst formClear = (inputs) => {\r\n    inputs.forEach(input => {\r\n        const error = input.nextElementSibling;\r\n\r\n        input.classList.remove('error');\r\n        error.style.display = 'none';\r\n    })\r\n}\r\n\r\nconst formBlur = (input) => {\r\n    input.addEventListener('blur', () => {\r\n        if (input.value != '') {\r\n            const error = input.nextElementSibling;\r\n\r\n            input.classList.remove('error');\r\n            error.style.display = \"none\";\r\n        }\r\n    })\r\n}\r\n\r\nconst formEmailBlur = (input) => {\r\n    const rEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;\r\n    input.addEventListener('blur', () =>  {\r\n        if (rEmail.test(input.value)) {\r\n            const error = input.nextElementSibling;\r\n\r\n            input.classList.remove('error');\r\n            error.style.display = 'none';\r\n        }     \r\n    })\r\n}\r\n\r\nmodule.exports = {\r\n    formError: formError,\r\n    formClear: formClear,\r\n    formBlur: formBlur,\r\n    formEmailBlur: formEmailBlur,\r\n}\n\n//# sourceURL=webpack://brainscloud/./src/assets/js/form.js?");
+
+/***/ }),
+
+/***/ "./src/assets/js/header.js":
+/*!*********************************!*\
+  !*** ./src/assets/js/header.js ***!
+  \*********************************/
+/***/ (function(module) {
+
+eval("const headerFake = () => {\r\n    const header = document.querySelector('.header');\r\n    const headerFake = document.querySelector('.header__fake');\r\n    const headerHeight = header.offsetHeight;\r\n\r\n    headerFake.style.height = `${headerHeight}px`;\r\n}\r\n\r\nconst burger = () => {\r\n    const burgerItem = document.querySelector('.burger');\r\n    const nav = document.querySelector('.nav');\r\n    const body = document.querySelector('body');\r\n\r\n    burgerItem.addEventListener('click', (event) => {\r\n        event.preventDefault();\r\n\r\n        burgerItem.classList.toggle('active');\r\n        nav.classList.toggle('active');\r\n        body.classList.toggle('no-scroll');\r\n    })\r\n}\r\n\r\nconst navAccount = (cookieLogin) => {\r\n    const auth = document.querySelector('.authorization');\r\n    const accountTablet = document.querySelector('#accountTablet');\r\n    const accountMobile = document.querySelector('#accountMobile');\r\n    const authMobile = document.querySelector('#authMobile');\r\n\r\n    cookieLogin ? authMobile.style.display = 'none' : accountMobile.style.display = 'none';\r\n\r\n    accountTablet.addEventListener('click', (event) => {\r\n        event.preventDefault();\r\n\r\n        cookieLogin ? window.location.replace('account.html') : auth.classList.toggle('active');\r\n    })\r\n\r\n    auth.addEventListener('click', (event) => {\r\n        event.stopPropagation();\r\n    })\r\n}\r\n\r\nconst cart = () => {\r\n    const cartItem = document.querySelector('#cartTablet');\r\n    const cartAside = document.querySelector('.cart');\r\n    const cartClose = document.querySelector('.cart__close');\r\n\r\n    cartItem.addEventListener('click', (event) => {\r\n        event.preventDefault();\r\n\r\n        cartAside.classList.add('active');\r\n    })\r\n\r\n    cartClose.addEventListener('click', (event) => {\r\n        event.preventDefault();\r\n\r\n        cartAside.classList.remove('active');\r\n    })\r\n}\r\n\r\nmodule.exports = {\r\n    headerFake: headerFake,\r\n    burger: burger,\r\n    navAccount: navAccount,\r\n    cart: cart\r\n}\n\n//# sourceURL=webpack://brainscloud/./src/assets/js/header.js?");
+
+/***/ }),
+
+/***/ "./src/assets/js/index.js":
+/*!********************************!*\
+  !*** ./src/assets/js/index.js ***!
+  \********************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+eval("var form = __webpack_require__(/*! ./form.js */ \"./src/assets/js/form.js\");\r\n\r\nconst video = () => {\r\n    const bg = document.querySelector('.about__video-bg');\r\n    const thisVideo = document.querySelector('.about__video');\r\n    const btnPlay = document.querySelector('.about__play');\r\n\r\n    bg.addEventListener('click', () => {\r\n        bg.style.display = 'none';\r\n        btnPlay.style.display = 'none';\r\n\r\n        thisVideo.setAttribute('controls', '');\r\n        thisVideo.play();\r\n    })\r\n}\r\n\r\nconst formNewsletter = () => {\r\n    const btn = document.querySelector('.newsletter__btn');\r\n\r\n    btn.addEventListener('click', (event) => {\r\n        event.preventDefault();\r\n\r\n        const thisForm = document.querySelector('.newsletter__form');\r\n        const inputs = thisForm.querySelectorAll('.newsletter__input');\r\n\r\n        const name = document.querySelector('#newsletterName');\r\n        const email = document.querySelector('#newsletterEmail');\r\n        const rEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;\r\n\r\n        form.formClear(inputs);\r\n\r\n        if (name.value == '') {\r\n            form.formError(name, 'Пустое поле');\r\n            form.formBlur(name);\r\n            return;\r\n        }\r\n\r\n        if (!rEmail.test(email.value)) {\r\n            form.formError(email, 'Поле заполнено неверно');\r\n            form.formEmailBlur(email);\r\n            return;\r\n        }\r\n\r\n        console.log('Отправка формы');\r\n    })\r\n}\r\n\r\nmodule.exports = {\r\n    video: video,\r\n    formNewsletter: formNewsletter,\r\n}\n\n//# sourceURL=webpack://brainscloud/./src/assets/js/index.js?");
+
+/***/ }),
+
+/***/ "./src/assets/js/slider.js":
+/*!*********************************!*\
+  !*** ./src/assets/js/slider.js ***!
+  \*********************************/
+/***/ (function(module) {
+
+eval("const initSlider = () => {\r\n    const mySliders = document.querySelectorAll('.swiper-container');\r\n\r\n    mySliders.forEach(mySlider => {\r\n        const slider = mySlider.classList[0];\r\n        \r\n        switch(slider) {\r\n            case 'watches__inner':\r\n                let perView = 'auto';\r\n\r\n                if (window.innerWidth < 427) {\r\n                    perView = 1;\r\n                }\r\n\r\n                const swiperWatches = new Swiper(mySlider, { \r\n                    navigation: {\r\n                        nextEl: '.watches__arrow--next',\r\n                        prevEl: '.watches__arrow--prev',\r\n                    },\r\n            \r\n                    slidesPerView: perView,\r\n                    observer: true,\r\n                    observeParents: true,\r\n                    observeSlideChildren: true,\r\n                });\r\n\r\n                break;\r\n            \r\n            case 'products__container':\r\n                const swiperProducts = new Swiper(mySlider, { \r\n                    pagination: {\r\n                        el: \".swiper-pagination\",\r\n                        clickable: true,\r\n                        renderBullet: function (index, className) {\r\n                          return '<span class=\"' + className + '\">' + (index + 1) + \"</span>\";\r\n                        },\r\n                    },\r\n\r\n                    slidesPerView: 1,\r\n                    autoHeight: true,\r\n                    allowTouchMove: false, // Запрет на перетаскивание мышью\r\n                    effect: 'fade',\r\n                    spaceBetween: 0,\r\n                    fadeEffect: {\r\n                        crossFade: true, // предыдущий слайд исчезает\r\n                        duration: 200 // время перехода\r\n                    }\r\n                });\r\n\r\n                break;\r\n            case 'product__slider-container':\r\n                const swiperProduct = new Swiper(mySlider, { \r\n                    navigation: {\r\n                        nextEl: '.product__arrow--next',\r\n                        prevEl: '.product__arrow--prev',\r\n                    },\r\n            \r\n                    slidesPerView: 1,\r\n                    observer: true,\r\n                    observeParents: true,\r\n                    observeSlideChildren: true,\r\n                });\r\n\r\n                break;\r\n        }\r\n    })\r\n}\r\n\r\nmodule.exports = {\r\n    initSlider: initSlider\r\n}\n\n//# sourceURL=webpack://brainscloud/./src/assets/js/slider.js?");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	__webpack_require__("./src/assets/js/app.js");
+/******/ 	__webpack_require__("./src/assets/js/checkout.js");
+/******/ 	__webpack_require__("./src/assets/js/contact.js");
+/******/ 	__webpack_require__("./src/assets/js/form.js");
+/******/ 	__webpack_require__("./src/assets/js/header.js");
+/******/ 	__webpack_require__("./src/assets/js/index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/assets/js/slider.js");
+/******/ 	
+/******/ })()
+;

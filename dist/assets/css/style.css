@@ -3222,6 +3222,11 @@
     margin: 0 auto;
 }
 
+.checkout__error {
+    text-align: center;
+    padding: 0;
+}
+
 .checkout__accordions {
     -ms-flex-positive: 1;
     flex-grow: 1;
@@ -3349,6 +3354,10 @@
     cursor: pointer;
 }
 
+.accordion__input-item {
+    margin-bottom: 10px;
+}
+
 .accordion.active {
     cursor: default;
 }
@@ -3445,8 +3454,8 @@
 
 .accordion__container {
     height: 0;
-    overflow: hidden;
     transition: height 0.2s linear;
+    overflow: hidden;
 }
 
 .accordion__inner {
@@ -3808,8 +3817,7 @@
     background-color: rgba(255, 255, 255, 0.5);
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
-    display: -ms-flexbox;
-    display: flex;
+    display: none;
     -ms-flex-align: center;
     align-items: center;
     -ms-flex-pack: center;
