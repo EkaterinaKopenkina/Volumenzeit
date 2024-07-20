@@ -118,6 +118,13 @@
   display: none;
 }
 
+.success__form {
+  font-size: 14px;
+  color: #1b8517;
+  margin-bottom: 15px;
+  display: none;
+}
+
 .black {
   background: linear-gradient(210.81deg, #555555 18.68%, #0A0A0A 98.45%);
 }

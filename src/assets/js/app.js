@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             break;
         case 'checkout.html':
             checkout.accordion();
+            checkout.formCheckout();
             sort.sort();
             break;
         case 'delivery.html':

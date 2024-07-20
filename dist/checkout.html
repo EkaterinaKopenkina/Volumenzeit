@@ -260,7 +260,7 @@
                 <div class="container">
                     <form action="post" class="checkout__inner">
                         <div class="checkout__accordions">
-                            <div class="accordion active">
+                            <div class="accordion active" id="accordionBasic">
                                 <div class="accordion__header">
                                     <h3 class="accordion__title">Basic Info</h3>
             
@@ -362,12 +362,14 @@
                                         <div class="error__message"></div> 
                                         
                                         <div class="error__form">Произошла ошибка</div>
+                                        <div class="success__form">Форма заполена верно</div>
+            
                                         <button class="accordion__btn" id="btnBasic">Continue</button>
                                     </div>
                                 </div>
                             </div>
             
-                            <div class="accordion active">
+                            <div class="accordion active" id="accordionShipping">
                                 <div class="accordion__header">
                                     <h3 class="accordion__title">Shipping</h3>
             
@@ -418,7 +420,7 @@
                                 </div>
                             </div>
             
-                            <div class="accordion active">
+                            <div class="accordion active" id="accordionPayment">
                                 <div class="accordion__header">
                                     <h3 class="accordion__title">Payment</h3>
             
