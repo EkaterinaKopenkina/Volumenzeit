@@ -9,6 +9,10 @@
         @extend %tplInput;
     }
 
+    &__input-item {
+        margin-bottom: 10px;
+    }
+
     &.active {
         cursor: default;
 
@@ -87,7 +91,6 @@
 
     &__container {
         height: 0;
-        overflow: hidden;
         transition: height .2s linear;
     }
 

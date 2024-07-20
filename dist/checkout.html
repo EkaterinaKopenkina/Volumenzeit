@@ -269,20 +269,50 @@
             
                                 <div class="accordion__container">
                                     <div class="accordion__inner">
-                                        <input type="email" class="accordion__input" placeholder="Email" name="email">
-                                        <input type="text" class="accordion__input" placeholder="First Name" name="firstname">
-                                        <input type="text" class="accordion__input" placeholder="Last Name" name="lastname">
-                                        <input type="tel" class="accordion__input" placeholder="Phone Number" name="phone">
-                                        <input type="text" class="accordion__input" placeholder="Address 1" name="address1">
-                                        <input type="text" class="accordion__input" placeholder="Address 2" name="address2">
+                                        <div class="accordion__input-item">
+                                            <input type="email" class="accordion__input" placeholder="Email" name="email" id="accordionEmail">
+                                            <div class="error__message"></div> 
+                                        </div>
+            
+                                        <div class="accordion__input-item">
+                                            <input type="text" class="accordion__input" placeholder="First Name" name="firstname" id="accordionName">
+                                            <div class="error__message"></div> 
+                                        </div>
+            
+                                        <div class="accordion__input-item">
+                                            <input type="text" class="accordion__input" placeholder="Last Name" name="lastname" id="accordionLastname">
+                                            <div class="error__message"></div> 
+                                        </div>
+            
+                                        <div class="accordion__input-item">
+                                            <input type="tel" class="accordion__input" placeholder="Phone Number" name="phone" id="accordionPhone">
+                                            <div class="error__message"></div> 
+                                        </div>
+            
+                                        <div class="accordion__input-item">
+                                            <input type="text" class="accordion__input" placeholder="Address 1" name="address1" id="accordionAddress1">
+                                            <div class="error__message"></div> 
+                                        </div>
+            
+                                        <div class="accordion__input-item">
+                                            <input type="text" class="accordion__input" placeholder="Address 2" name="address2" id="accordionAddress2">
+                                            <div class="error__message"></div> 
+                                        </div>
                                     
                                         <div class="accordion__city">
-                                            <input type="text" class="accordion__input" placeholder="City" name="city">
-                                            <input type="number" class="accordion__input" placeholder="Zip Code" name="zip_code">
+                                            <div class="accordion__input-item">
+                                                <input type="text" class="accordion__input" placeholder="City" name="city" id="accordionCity">
+                                                <div class="error__message"></div> 
+                                            </div>
+            
+                                            <div class="accordion__input-item">
+                                                <input type="number" class="accordion__input" placeholder="Zip Code" name="zip_code" id="accordionCode">
+                                                <div class="error__message"></div> 
+                                            </div>
                                         </div>
             
                                         <div class="sort">
-                                            <button class="sort__btn">Country</button>
+                                            <button class="sort__btn" id="accordionCountry">Country</button>
                                         
                                             <div class="sort__inner">
                                                 <ul class="sort-sub">
@@ -329,7 +359,10 @@
                                             </div>
                                         </div>
             
-                                        <button class="accordion__btn">Continue</button>
+                                        <div class="error__message"></div> 
+                                        
+                                        <div class="error__form">Произошла ошибка</div>
+                                        <button class="accordion__btn" id="btnBasic">Continue</button>
                                     </div>
                                 </div>
                             </div>
@@ -379,7 +412,8 @@
                                             </label>
                                         </div>
             
-                                        <button class="accordion__btn">Continue</button>
+                                        <div class="error__form">Произошла ошибка</div>
+                                        <button class="accordion__btn" id="btnShipping">Continue</button>
                                     </div>
                                 </div>
                             </div>
@@ -459,24 +493,37 @@
                                                     </div>
                                                 </div>
                                             </label>
+            
+                                            <div class="error__message"></div> 
                                         </div>
             
-                                        <input type="number" class="accordion__input" placeholder="Card Number" name="card_number">
+                                        <div class="accordion__input-item">
+                                            <input type="number" class="accordion__input" placeholder="Card Number" name="card_number" id="accordionCard">
+                                            <div class="error__message"></div> 
+                                        </div>
                                     
                                         <div class="accordion__card">
-                                            <input type="text" class="accordion__input" placeholder="Expiry Date" name="date">
-                                            <input type="number" class="accordion__input" placeholder="CVC / CVV" name="cvc">
+                                            <div class="accordion__input-item">
+                                                <input type="text" class="accordion__input" placeholder="Expiry Date" name="date" id="accordionDate">
+                                                <div class="error__message"></div> 
+                                            </div>
+            
+                                            <div class="accordion__input-item">
+                                                <input type="number" class="accordion__input" placeholder="CVC / CVV" name="cvc" id="accordionCVC">
+                                                <div class="error__message"></div> 
+                                            </div>
                                         </div>
             
                                         <p class="accordion__card-text">
                                             Non-EU countries are subject to certain VAT and customs duties.
                                         </p>
             
-                                        <button class="accordion__btn">Complete Payment</button>
+                                        <div class="error__form">Произошла ошибка</div>
+                                        <button class="accordion__btn" id="btnPayment">Complete Payment</button>
             
                                         <p class="accordion__card-agree">
                                             By placing your order you agree to our <a href="#" target="_blank">Terms & Conditions</a> and you understand that we will 
-            pr                              ocess your personal data on the basis of our <a href="#" target="_black">Privacy Policy</a>. 
+                                            process your personal data on the basis of our <a href="#" target="_black">Privacy Policy</a>. 
                                         </p>
                                     </div>
                                 </div>
@@ -565,11 +612,13 @@
                                     </div>
                                 </div>
             
-                                <button class="checkout__sum"><span>$24,588</span> <br> Grand Total</button>
+                                <div class="error__form checkout__error">Произошла ошибка</div>
+                                <button class="checkout__sum" id="btnTotal"><span>$24,588</span> <br> Grand Total</button>
                             </div>
             
                             <h3 class="checkout__coupon-title">Apply Coupon</h3>
-                            <input type="text" class="accordion__input" placeholder="Coupon Code" name="coupon">
+                            <input type="text" class="accordion__input" placeholder="Coupon Code" name="coupon" id="accordionCoupon">
+                            <div class="error__message"></div> 
                         </div>
                     </form>
                 </div>

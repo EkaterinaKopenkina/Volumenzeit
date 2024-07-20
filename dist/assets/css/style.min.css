@@ -2595,6 +2595,10 @@
   max-width: 930px;
   margin: 0 auto;
 }
+.checkout__error {
+  text-align: center;
+  padding: 0;
+}
 .checkout__accordions {
   flex-grow: 1;
 }
@@ -2696,6 +2700,9 @@
   padding: 30px 40px;
   cursor: pointer;
 }
+.accordion__input-item {
+  margin-bottom: 10px;
+}
 .accordion.active {
   cursor: default;
 }
@@ -2769,7 +2776,6 @@
 }
 .accordion__container {
   height: 0;
-  overflow: hidden;
   transition: height 0.2s linear;
 }
 .accordion__inner {
@@ -3053,7 +3059,7 @@
   z-index: 100000;
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(4px);
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   padding: 15px;
