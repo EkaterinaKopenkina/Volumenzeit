@@ -9,8 +9,8 @@ const formContact = () => {
         const thisForm = document.querySelector('.contact__form');
         const inputs = thisForm.querySelectorAll('.contact__input');
 
-        const error = thisForm.querySelector('error__form');
-        const success = thisForm.querySelector('success__form');
+        const error = thisForm.querySelector('.error__form');
+        const success = thisForm.querySelector('.success__form');
 
         const name = document.querySelector('#contactName');
         const email = document.querySelector('#contactEmail');
@@ -39,6 +39,7 @@ const formContact = () => {
             return;
         }
 
+        success.style.display = 'block';
         console.log('Отправка формы');
     })
 }

@@ -54,15 +54,17 @@ const formCheckout = () => {
 
     btnTotal.addEventListener('click', (event) => {
         event.preventDefault();
+        const error = document.querySelector('.checkout__error');
 
+        error.style.display = 'none';
         errorCount = 0;
+        
         formBasic();
         formShipping();
         formPayment();
         formCoupon();
 
         if (errorCount > 0) {
-            const error = document.querySelector('.checkout__error');
             error.style.display = 'block';
             return;
         }
@@ -74,6 +76,7 @@ const formCheckout = () => {
 const formBasic = () => {
     const accordion = document.querySelector('#accordionBasic');
     const successForm = accordion.querySelector('.success__form');
+    const errorForm = accordion.querySelector('.error__form');
     const inputs = accordion.querySelectorAll('.accordion__inputs');
     const email = document.querySelector('#accordionEmail');
     const rEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
@@ -89,8 +92,8 @@ const formBasic = () => {
 
     form.formClear(inputs);
 
-    error.style.display = 'none';
-    success.style.display = 'none';
+    errorForm.style.display = 'none';
+    successForm.style.display = 'none';
 
     if (!rEmail.test(email.value)) {
         form.formError(email, 'The field is filled in incorrectly');
@@ -148,7 +151,7 @@ const formBasic = () => {
         return;
     }
 
-    if (country.innerHTMLL == 'Country') {
+    if (country.innerHTML == 'Country') {
         const error = country.parentElement.nextElementSibling;
 
         form.formError(code, 'Empty field', error);
@@ -240,7 +243,7 @@ const formPayment = () => {
 const formCoupon = () => {
     const coupon = document.querySelector('#accordionCoupon');
 
-    form.formClear(coupon);
+    form.formClear([coupon]);
 
     if (coupon.value == '') {
         form.formError(coupon, 'Empty field');
