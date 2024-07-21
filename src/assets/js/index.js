@@ -35,13 +35,13 @@ const formNewsletter = () => {
         success.style.display = 'none';
 
         if (name.value == '') {
-            form.formError(name, 'Пустое поле');
+            form.formError(name, 'Empty field');
             form.formBlur(name);
             return;
         }
 
         if (!rEmail.test(email.value)) {
-            form.formError(email, 'Поле заполнено неверно');
+            form.formError(email, 'The field is filled in incorrectly');
             form.formRBlur(email, rEmail);
             return;
         }

@@ -93,56 +93,56 @@ const formBasic = () => {
     success.style.display = 'none';
 
     if (!rEmail.test(email.value)) {
-        form.formError(email, 'Поле заполнено неверно');
+        form.formError(email, 'The field is filled in incorrectly');
         form.formEmailBlur(email);
         errorCount ++;
         return;
     }
 
     if (name.value == '') {
-        form.formError(name, 'Пустое поле');
+        form.formError(name, 'Empty field');
         form.formBlur(name);
         errorCount ++;
         return;
     }
 
     if (lastname.value == '') {
-        form.formError(lastname, 'Пустое поле');
+        form.formError(lastname, 'Empty field');
         form.formBlur(lastname);
         errorCount ++;
         return;
     }
 
     if (!rPhone.test(phone.value)) {
-        form.formError(phone, 'Поле заполнено неверно');
+        form.formError(phone, 'The field is filled in incorrectly');
         form.formPhoneBlur(phone);
         errorCount ++;
         return;
     }
 
     if (address1.value == '') {
-        form.formError(address1, 'Пустое поле');
+        form.formError(address1, 'Empty field');
         form.formBlur(address1);
         errorCount ++;
         return;
     }
 
     if (address2.value == '') {
-        form.formError(address2, 'Пустое поле');
+        form.formError(address2, 'Empty field');
         form.formBlur(address2);
         errorCount ++;
         return;
     }
 
     if (city.value == '') {
-        form.formError(city, 'Пустое поле');
+        form.formError(city, 'Empty field');
         form.formBlur(city);
         errorCount ++;
         return;
     }
 
     if (code.value == '') {
-        form.formError(code, 'Пустое поле');
+        form.formError(code, 'Empty field');
         form.formBlur(code);
         errorCount ++;
         return;
@@ -151,7 +151,7 @@ const formBasic = () => {
     if (country.innerHTMLL == 'Country') {
         const error = country.parentElement.nextElementSibling;
 
-        form.formError(code, 'Пустое поле', error);
+        form.formError(code, 'Empty field', error);
         form.formBlur(code, error);
         errorCount ++;
         return;
@@ -208,27 +208,27 @@ const formPayment = () => {
 
     if ((payment1.checked || payment2.checked) == false) {
         const error = payment2.nextElementSibling.nextElementSibling;
-        form.formError(payment2, 'Выбор не сделан', error);
+        form.formError(payment2, 'No choice made', error);
         errorCount ++;
         return;
     }
 
     if (!rCard.test(card.value)) {
-        form.formError(card, 'Поле заполнено неверно');
+        form.formError(card, 'The field is filled in incorrectly');
         form.formRBlur(card, rCard);
         errorCount ++;
         return;
     }
 
     if (!rDate.test(date.value)) {
-        form.formError(date, 'Поле заполнено неверно');
+        form.formError(date, 'The field is filled in incorrectly');
         form.formRBlur(date);
         errorCount ++;
         return;
     }
 
     if ((cvc.value < 100) || (cvc.value > 999)) {
-        form.formError(cvc, 'Поле заполнено неверно');
+        form.formError(cvc, 'The field is filled in incorrectly');
         form.formBlur(cvc);
         errorCount ++;
         return;
@@ -243,7 +243,7 @@ const formCoupon = () => {
     form.formClear(coupon);
 
     if (coupon.value == '') {
-        form.formError(coupon, 'Пустое поле');
+        form.formError(coupon, 'Empty field');
         form.formBlur(coupon);
         errorCount ++;
         return;

@@ -22,19 +22,19 @@ const formContact = () => {
         success.style.display = 'none';
 
         if (name.value == '') {
-            form.formError(name, 'Пустое поле');
+            form.formError(name, 'Empty field');
             form.formBlur(name);
             return;
         }
 
         if (!rEmail.test(email.value)) {
-            form.formError(email, 'Поле заполнено неверно');
+            form.formError(email, 'The field is filled in incorrectly');
             form.formRBlur(email, rEmail);
             return;
         }
 
         if (message.value == '') {
-            form.formError(message, 'Пустое поле');
+            form.formError(message, 'Empty field');
             form.formBlur(message);
             return;
         }
