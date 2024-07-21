@@ -42,11 +42,12 @@ const formNewsletter = () => {
 
         if (!rEmail.test(email.value)) {
             form.formError(email, 'Поле заполнено неверно');
-            form.formEmailBlur(email);
+            form.formRBlur(email, rEmail);
             return;
         }
 
         console.log('Отправка формы');
+        success.style.display = 'block';
     })
 }
 
