@@ -3087,7 +3087,7 @@
   border: 1px solid #EAECF5;
   text-align: center;
   overflow: hidden;
-  transition: transform 0.2s linear;
+  transition: transform 0.3s linear;
   transform: scale(0);
 }
 .modal__content {

@@ -71,6 +71,7 @@ const formCheckout = () => {
         // }
 
         modal.modalOpen(btnTotal);
+        modal.modalClose(btnTotal);
     })
 }
 
