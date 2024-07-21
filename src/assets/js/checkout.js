@@ -94,7 +94,7 @@ const formBasic = () => {
 
     if (!rEmail.test(email.value)) {
         form.formError(email, 'The field is filled in incorrectly');
-        form.formEmailBlur(email);
+        form.formRBlur(email, rEmail);
         errorCount ++;
         return;
     }
@@ -115,7 +115,7 @@ const formBasic = () => {
 
     if (!rPhone.test(phone.value)) {
         form.formError(phone, 'The field is filled in incorrectly');
-        form.formPhoneBlur(phone);
+        form.formRBlur(phone, rPhone);
         errorCount ++;
         return;
     }
