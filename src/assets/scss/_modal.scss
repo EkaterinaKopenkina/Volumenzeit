@@ -1,7 +1,7 @@
 .modal {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
+    width: 100%;
+    height: 100%;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: $zModal;
@@ -12,6 +12,10 @@
     justify-content: center;
     padding: 15px;
 
+    &.active {
+        display: flex;
+    }
+
     &__container {
         max-width: 880px;
         background-color: $colorBgGray;
@@ -19,6 +23,8 @@
         border: 1px solid $colorBorder;
         text-align: center;
         overflow: hidden;
+        transition: transform .2s linear;
+        transform: scale(0);
     }
 
     &__content {
