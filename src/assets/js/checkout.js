@@ -54,15 +54,17 @@ const formCheckout = () => {
 
     btnTotal.addEventListener('click', (event) => {
         event.preventDefault();
+        const error = document.querySelector('.checkout__error');
 
+        error.style.display = 'none';
         errorCount = 0;
+        
         formBasic();
         formShipping();
         formPayment();
         formCoupon();
 
         if (errorCount > 0) {
-            const error = document.querySelector('.checkout__error');
             error.style.display = 'block';
             return;
         }
@@ -74,6 +76,7 @@ const formCheckout = () => {
 const formBasic = () => {
     const accordion = document.querySelector('#accordionBasic');
     const successForm = accordion.querySelector('.success__form');
+    const errorForm = accordion.querySelector('.error__form');
     const inputs = accordion.querySelectorAll('.accordion__inputs');
     const email = document.querySelector('#accordionEmail');
     const rEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
@@ -89,69 +92,69 @@ const formBasic = () => {
 
     form.formClear(inputs);
 
-    error.style.display = 'none';
-    success.style.display = 'none';
+    errorForm.style.display = 'none';
+    successForm.style.display = 'none';
 
     if (!rEmail.test(email.value)) {
-        form.formError(email, 'Поле заполнено неверно');
-        form.formEmailBlur(email);
+        form.formError(email, 'The field is filled in incorrectly');
+        form.formRBlur(email, rEmail);
         errorCount ++;
         return;
     }
 
     if (name.value == '') {
-        form.formError(name, 'Пустое поле');
+        form.formError(name, 'Empty field');
         form.formBlur(name);
         errorCount ++;
         return;
     }
 
     if (lastname.value == '') {
-        form.formError(lastname, 'Пустое поле');
+        form.formError(lastname, 'Empty field');
         form.formBlur(lastname);
         errorCount ++;
         return;
     }
 
     if (!rPhone.test(phone.value)) {
-        form.formError(phone, 'Поле заполнено неверно');
-        form.formPhoneBlur(phone);
+        form.formError(phone, 'The field is filled in incorrectly');
+        form.formRBlur(phone, rPhone);
         errorCount ++;
         return;
     }
 
     if (address1.value == '') {
-        form.formError(address1, 'Пустое поле');
+        form.formError(address1, 'Empty field');
         form.formBlur(address1);
         errorCount ++;
         return;
     }
 
     if (address2.value == '') {
-        form.formError(address2, 'Пустое поле');
+        form.formError(address2, 'Empty field');
         form.formBlur(address2);
         errorCount ++;
         return;
     }
 
     if (city.value == '') {
-        form.formError(city, 'Пустое поле');
+        form.formError(city, 'Empty field');
         form.formBlur(city);
         errorCount ++;
         return;
     }
 
     if (code.value == '') {
-        form.formError(code, 'Пустое поле');
+        form.formError(code, 'Empty field');
         form.formBlur(code);
         errorCount ++;
         return;
     }
 
-    if (country.innerHTMLL == 'Country') {
+    if (country.innerHTML == 'Country') {
         const error = country.parentElement.nextElementSibling;
 
-        form.formError(code, 'Пустое поле', error);
+        form.formError(code, 'Empty field', error);
         form.formBlur(code, error);
         errorCount ++;
         return;
@@ -208,27 +211,27 @@ const formPayment = () => {
 
     if ((payment1.checked || payment2.checked) == false) {
         const error = payment2.nextElementSibling.nextElementSibling;
-        form.formError(payment2, 'Выбор не сделан', error);
+        form.formError(payment2, 'No choice made', error);
         errorCount ++;
         return;
     }
 
     if (!rCard.test(card.value)) {
-        form.formError(card, 'Поле заполнено неверно');
+        form.formError(card, 'The field is filled in incorrectly');
         form.formRBlur(card, rCard);
         errorCount ++;
         return;
     }
 
     if (!rDate.test(date.value)) {
-        form.formError(date, 'Поле заполнено неверно');
+        form.formError(date, 'The field is filled in incorrectly');
         form.formRBlur(date);
         errorCount ++;
         return;
     }
 
     if ((cvc.value < 100) || (cvc.value > 999)) {
-        form.formError(cvc, 'Поле заполнено неверно');
+        form.formError(cvc, 'The field is filled in incorrectly');
         form.formBlur(cvc);
         errorCount ++;
         return;
@@ -240,10 +243,10 @@ const formPayment = () => {
 const formCoupon = () => {
     const coupon = document.querySelector('#accordionCoupon');
 
-    form.formClear(coupon);
+    form.formClear([coupon]);
 
     if (coupon.value == '') {
-        form.formError(coupon, 'Пустое поле');
+        form.formError(coupon, 'Empty field');
         form.formBlur(coupon);
         errorCount ++;
         return;

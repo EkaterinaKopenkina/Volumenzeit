@@ -1156,11 +1156,18 @@
     display: none;
 }
 
-.newsletter__error-form {
+.newsletter__error-form, .newsletter__success-form {
     font-size: 14px;
-    color: #c52020;
     margin-bottom: 10px;
     display: none;
+}
+
+.newsletter__error-form {
+    color: #c52020;
+}
+
+.newsletter__success-form {
+    color: #1b8517;
 }
 
 .newsletter__input {
