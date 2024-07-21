@@ -1,5 +1,7 @@
 var form = require('./form.js');
 
+var errorCount = 0;
+
 const accordion = () => {
     const accordions = document.querySelectorAll('.accordion');
 
@@ -52,10 +54,20 @@ const formCheckout = () => {
 
     btnTotal.addEventListener('click', (event) => {
         event.preventDefault();
+
+        errorCount = 0;
         formBasic();
         formShipping();
         formPayment();
         formCoupon();
+
+        if (errorCount > 0) {
+            const error = document.querySelector('.checkout__error');
+            error.style.display = 'block';
+            return;
+        }
+
+        // Модалка
     })
 }
 
@@ -83,48 +95,56 @@ const formBasic = () => {
     if (!rEmail.test(email.value)) {
         form.formError(email, 'Поле заполнено неверно');
         form.formEmailBlur(email);
+        errorCount ++;
         return;
     }
 
     if (name.value == '') {
         form.formError(name, 'Пустое поле');
         form.formBlur(name);
+        errorCount ++;
         return;
     }
 
     if (lastname.value == '') {
         form.formError(lastname, 'Пустое поле');
         form.formBlur(lastname);
+        errorCount ++;
         return;
     }
 
     if (!rPhone.test(phone.value)) {
         form.formError(phone, 'Поле заполнено неверно');
         form.formPhoneBlur(phone);
+        errorCount ++;
         return;
     }
 
     if (address1.value == '') {
         form.formError(address1, 'Пустое поле');
         form.formBlur(address1);
+        errorCount ++;
         return;
     }
 
     if (address2.value == '') {
         form.formError(address2, 'Пустое поле');
         form.formBlur(address2);
+        errorCount ++;
         return;
     }
 
     if (city.value == '') {
         form.formError(city, 'Пустое поле');
         form.formBlur(city);
+        errorCount ++;
         return;
     }
 
     if (code.value == '') {
         form.formError(code, 'Пустое поле');
         form.formBlur(code);
+        errorCount ++;
         return;
     }
 
@@ -133,6 +153,7 @@ const formBasic = () => {
 
         form.formError(code, 'Пустое поле', error);
         form.formBlur(code, error);
+        errorCount ++;
         return;
     }
 
@@ -151,6 +172,7 @@ const formShipping = () => {
 
     if ((delivery1.checked || delivery2.checked) == false) {
         error.style.display = 'block';
+        errorCount ++;
         return;
     }
 
@@ -187,24 +209,28 @@ const formPayment = () => {
     if ((payment1.checked || payment2.checked) == false) {
         const error = payment2.nextElementSibling.nextElementSibling;
         form.formError(payment2, 'Выбор не сделан', error);
+        errorCount ++;
         return;
     }
 
     if (!rCard.test(card.value)) {
         form.formError(card, 'Поле заполнено неверно');
         form.formRBlur(card, rCard);
+        errorCount ++;
         return;
     }
 
     if (!rDate.test(date.value)) {
         form.formError(date, 'Поле заполнено неверно');
         form.formRBlur(date);
+        errorCount ++;
         return;
     }
 
     if ((cvc.value < 100) || (cvc.value > 999)) {
         form.formError(cvc, 'Поле заполнено неверно');
         form.formBlur(cvc);
+        errorCount ++;
         return;
     }
 
@@ -219,6 +245,8 @@ const formCoupon = () => {
     if (coupon.value == '') {
         form.formError(coupon, 'Пустое поле');
         form.formBlur(coupon);
+        errorCount ++;
+        return;
     }
 }
 
