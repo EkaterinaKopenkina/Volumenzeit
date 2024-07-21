@@ -6,15 +6,12 @@ const accordion = () => {
     accordions.forEach(item => {
         const container = item.querySelector('.accordion__container');
         const header = item.querySelector('.accordion__header');
-        // const heightContainer = container.offsetHeight;
 
         item.classList.remove('active');
 
         header.addEventListener('click', () => {
             if (item.classList.contains('active')) {
                 item.classList.remove('active');
-                // container.style.height = 0;
-
                 container.style.opacity = 0;
 
                 setTimeout(() => {
@@ -22,7 +19,6 @@ const accordion = () => {
                 }, 200)
             } else {
                 item.classList.add('active');
-                // container.style.height = `${heightContainer}px`;
                 container.style.display = "block";
 
                 setTimeout(() => {
@@ -160,6 +156,64 @@ const formShipping = () => {
 
     success.style.display = 'block';
 }
+
+const formPayment = () => {
+    const accordion = document.querySelector('#accordionPayment');
+    const inputs = accordion.querySelectorAll('.accordion__input');
+    const errorForm = accordion.querySelector('.error__form');
+    const successForm = accordion.querySelector('.success__form');
+
+    const payment1 = document.querySelector('#payment1');
+    const payment2 = document.querySelector('#payment2');
+    const card = document.querySelector('#accordionCard');
+    const date = document.querySelector('#accordionDate');
+    const cvc = document.querySelector('#accordionCVC');
+
+    const rCard = /^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}| (?:2131|1800|35\d{3})\d{11})$/;
+    const rDate = /^(\d{2})-(\d{2})$/;
+
+    // Clear -------
+    form.formClear(inputs);
+
+    const errorPayment = payment2.nextElementSibling.nextElementSibling;
+    payment1.classList.remove('error');
+    payment2.classList.remove('error');
+    errorPayment.style.display = 'none';
+
+    errorForm.style.display = 'none';
+    successForm.style.display = 'none';
+    // -------
+
+    if ((payment1.checked || payment2.checked) == false) {
+        const error = payment2.nextElementSibling.nextElementSibling;
+        form.formError(payment2, 'Выбор не сделан', error);
+        return;
+    }
+
+    if (!rCard.test(card.value)) {
+        form.formError(card, 'Поле заполнено неверно');
+        form.formRBlur(card, rCard);
+        return;
+    }
+
+    if (!rDate.test(date.value)) {
+        form.formError(date, 'Поле заполнено неверно');
+        form.formRBlur(date);
+        return;
+    }
+
+    if ((cvc.value < 100) || (cvc.value > 999)) {
+        form.formError(cvc, 'Поле заполнено неверно');
+        form.formBlur(cvc);
+        return;
+    }
+
+    successForm.style.display = 'block';
+}
+
+
+// НЕ ЗАБЫТЬ СДЕЛАТЬ ОБНУЛЕНИЕ СООБЩЕНИЙ В FORMCONTACT!!!!
+// А ТАКЖЕ ИСПРАВИТЬ РУССКИЙ ТЕКСТ ОШИБОК НА АНГЛИЙСКИЙ
 
 module.exports = {
     accordion: accordion,
