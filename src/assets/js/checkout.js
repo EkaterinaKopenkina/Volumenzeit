@@ -211,6 +211,17 @@ const formPayment = () => {
     successForm.style.display = 'block';
 }
 
+const formCoupon = () => {
+    const coupon = document.querySelector('#accordionCoupon');
+
+    form.formClear(coupon);
+
+    if (coupon.value == '') {
+        form.formError(coupon, 'Пустое поле');
+        form.formBlur(coupon);
+    }
+}
+
 
 // НЕ ЗАБЫТЬ СДЕЛАТЬ ОБНУЛЕНИЕ СООБЩЕНИЙ В FORMCONTACT!!!!
 // А ТАКЖЕ ИСПРАВИТЬ РУССКИЙ ТЕКСТ ОШИБОК НА АНГЛИЙСКИЙ
