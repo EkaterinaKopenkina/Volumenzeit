@@ -49,11 +49,19 @@
         display: none;
     }
 
-    &__error-form {
+    &__error-form,
+    &__success-form {
         font-size: 14px;
-        color: $colorError;
         margin-bottom: 10px;
         display: none;
+    }
+
+    &__error-form {
+        color: $colorError;
+    }
+
+    &__success-form {
+        color: $colorSuccess;
     }
 
     &__input {
