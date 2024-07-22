@@ -49,10 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
         case 'authorization.html#login':
             auth.tab();
             auth.formLogin();
+            auth.formReg();
+            sort.sort();
             break;
         case 'authorization.html#reg':
             auth.tab();
             auth.formLogin();
+            auth.formReg();
+            sort.sort();
             break;
         case 'account.html':
             break;

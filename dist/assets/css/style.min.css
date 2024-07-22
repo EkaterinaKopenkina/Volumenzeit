@@ -3357,6 +3357,7 @@
 }
 .auth__signup {
   margin-top: 20px;
+  margin-bottom: 10px;
 }
 .auth__signup-input {
   display: none;

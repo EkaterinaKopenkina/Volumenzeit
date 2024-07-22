@@ -44,10 +44,22 @@ const formPassBlur = (input) => {
     })
 }
 
+const formConfirmBlur = (input1, input2) => {
+    const error = input1.nextElementSibling;
+
+    input1.addEventListener('blur', () => {
+        if (input1.value == input2.value) {
+            input1.classList.remove('error');
+            error.style.display = "none";
+        }
+    })
+}
+
 module.exports = {
     formError: formError,
     formClear: formClear,
     formBlur: formBlur,
     formRBlur: formRBlur,
     formPassBlur: formPassBlur,
+    formConfirmBlur: formConfirmBlur,
 }

@@ -55,20 +55,20 @@ const formCheckout = () => {
 
     btnTotal.addEventListener('click', (event) => {
         event.preventDefault();
-        // const error = document.querySelector('.checkout__error');
+        const error = document.querySelector('.checkout__error');
 
-        // error.style.display = 'none';
-        // errorCount = 0;
+        error.style.display = 'none';
+        errorCount = 0;
         
-        // formBasic();
-        // formShipping();
-        // formPayment();
-        // formCoupon();
+        formBasic();
+        formShipping();
+        formPayment();
+        formCoupon();
 
-        // if (errorCount > 0) {
-        //     error.style.display = 'block';
-        //     return;
-        // }
+        if (errorCount > 0) {
+            error.style.display = 'block';
+            return;
+        }
 
         modal.modalOpen(btnTotal);
         modal.modalClose(btnTotal);
