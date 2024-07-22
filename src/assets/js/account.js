@@ -20,11 +20,7 @@ const manageMode = (btnManage, btnSave) => {
         input.style.cursor = 'text';
     })
 
-    btnManage.style.transform = 'scale(0)';
-
-    setTimeout(() => {
-        btnManage.classList.remove('active');
-    }, 200)
+    accountHide(btnManage);
 
     setTimeout(() => {
         btnSave.classList.add('active');
@@ -32,6 +28,14 @@ const manageMode = (btnManage, btnSave) => {
         setTimeout(() => {
             btnSave.style.transform = 'scale(100%)'
         }, 200)
+    }, 200)
+}
+
+const accountHide = (btn) => {
+    btn.style.transform = 'scale(0)';
+
+    setTimeout(() => {
+        btn.classList.remove('active');
     }, 200)
 }
 
