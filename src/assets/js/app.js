@@ -1,9 +1,12 @@
+'use strict'
+
 var slider = require('./slider.js');
 var header = require('./header.js');
 var sort = require('./sort.js');
 var index = require('./index.js');
 var contact = require('./contact.js');
 var checkout = require('./checkout.js');
+var auth = require('./auth.js');
 
 const currentUrl = document.location.href.split('/');
 const currentPage = currentUrl[currentUrl.length - 1];
@@ -44,12 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
         case 'delivery.html':
             break;
         case 'authorization.html#login':
+            auth.tab();
             break;
         case 'authorization.html#reg':
+            auth.tab();
             break;
         case 'account.html':
             break;
         default:
-            window.location.replace('http://localhost:3000/404.html')
+            window.location.replace('http://localhost:3000/404.html');
     }
 })

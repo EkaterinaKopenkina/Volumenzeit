@@ -3822,9 +3822,9 @@
 }
 
 .modal {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
+    width: 100%;
+    height: 100%;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 100000;
@@ -3839,6 +3839,11 @@
     padding: 15px;
 }
 
+.modal.active {
+    display: -ms-flexbox;
+    display: flex;
+}
+
 .modal__container {
     max-width: 880px;
     background-color: #F9FAFE;
@@ -3846,6 +3851,11 @@
     border: 1px solid #EAECF5;
     text-align: center;
     overflow: hidden;
+    transition: -webkit-transform 0.3s linear;
+    transition: transform 0.3s linear;
+    transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+    -webkit-transform: scale(0);
+    transform: scale(0);
 }
 
 .modal__content {
