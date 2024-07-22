@@ -4,16 +4,8 @@ const tab = () => {
     const thisTabHead = document.querySelector(`#${thisTabName}`);
     const thisTabBlockName = thisTabHead.dataset.tab;
     const thisTabBlock = document.querySelector(thisTabBlockName);
-    const tabItems = document.querySelectorAll('.auth__tab');
-    const blockItems = document.querySelectorAll('.auth__block');
 
-    tabItems.forEach(item => {
-        item.classList.remove('active');
-    })
-
-    blockItems.forEach(item => {
-        item.classList.remove('active');
-    })
+    tabClear();
 
     thisTabHead.classList.add('active');
     thisTabBlock.classList.add('active');
@@ -24,13 +16,7 @@ const tab = () => {
         event.preventDefault();
         const tabItem = event.target.closest('.auth__tab');
 
-        tabItems.forEach(item => {
-            item.classList.remove('active');
-        })
-    
-        blockItems.forEach(item => {
-            item.classList.remove('active');
-        })
+        tabClear();
 
         if (tabItem) {
             const blockName = tabItem.dataset.tab;
@@ -39,6 +25,19 @@ const tab = () => {
             tabItem.classList.add('active');
             block.classList.add('active');
         }
+    })
+}
+
+const tabClear = () => {
+    const tabs = document.querySelectorAll('.auth__tab');
+    const blocks = document.querySelectorAll('.auth__block');
+
+    tabs.forEach(item => {
+        item.classList.remove('active');
+    })
+
+    blocks.forEach(item => {
+        item.classList.remove('active');
     })
 }
 
