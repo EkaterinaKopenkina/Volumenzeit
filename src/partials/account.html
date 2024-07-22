@@ -34,8 +34,8 @@
         <div class="account__block">
             <div class="account__block-header">
                 <h3 class="account__block-title">My Info</h3>
-                <button class="account__btn active">Manage Info</button>
-                <button class="account__btn">Save Info</button>
+                <button class="account__btn active" id="accountManage">Manage Info</button>
+                <button class="account__btn" id="accountSave">Save Info</button>
             </div> 
 
             <p class="account__text active">Personal Information</p>
@@ -43,17 +43,17 @@
             <form action="post" class="account__form">
                 <div class="account__item">
                     <label for="accountName" class="account__label">Name:</label>
-                    <input type="text" class="account__input" name="name" id="accountName" value="John Smith">
+                    <input type="text" class="account__input" name="name" id="accountName" value="John Smith" disabled>
                 </div>
 
                 <div class="account__item">
                     <label for="accountName" class="account__label">Email:</label>
-                    <input type="email" class="account__input" name="email" id="accountEmail" value="johnsmith@gmail.com">
+                    <input type="email" class="account__input" name="email" id="accountEmail" value="johnsmith@gmail.com" disabled>
                 </div>
 
                 <div class="account__item">
                     <label for="accountName" class="account__label">Phone Number:</label>
-                    <input type="tel" class="account__input" name="phone" id="accountPhone" value="8 800 555 35 35">
+                    <input type="tel" class="account__input" name="phone" id="accountPhone" value="8 800 555 35 35" disabled>
                 </div>
             </form>
         </div>

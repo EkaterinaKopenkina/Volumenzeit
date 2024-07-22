@@ -3537,6 +3537,7 @@
   border-radius: 5px;
   background-color: #fff;
   transition: background-color 0.2s linear;
+  cursor: default;
 }
 .account__input.active {
   background-color: #cbc2ff;
