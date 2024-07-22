@@ -59,6 +59,8 @@ const formAccount = (btn) => {
             form.formRBlur(phone, rPhone, error);
             return;
         }
+
+        defaultMode();
     })
 }
 
@@ -75,6 +77,24 @@ const manageMode = (btnManage, btnSave) => {
 
     setTimeout(() => {
         accountShow(btnSave);
+    }, 200)
+}
+
+const defaultMode = () => {
+    const btnManage = document.querySelector('#accountManage');
+    const btnSave = document.querySelector('#accountSave');
+    const inputs = document.querySelectorAll('.account__input');
+
+    inputs.forEach(input => {
+        input.setAttribute('disabled', '');
+        input.style.cursor = 'default';
+        input.classList.remove('active');
+    })
+
+    accountHide(btnSave);
+
+    setTimeout(() => {
+        accountShow(btnManage);
     }, 200)
 }
 

@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             break;
         case 'account.html':
             account.account();
+            index.formNewsletter();
             break;
         default:
             window.location.replace('http://localhost:3000/404.html');
