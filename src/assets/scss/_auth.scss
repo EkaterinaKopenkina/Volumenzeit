@@ -146,9 +146,12 @@
     }
 
     &__input {
-        margin-bottom: 10px;
         @extend %tplInput;
         @include adaptSize(14, 12);
+    }
+
+    &__form-item {
+        margin-bottom: 10px;
     }
 
     &__submit {

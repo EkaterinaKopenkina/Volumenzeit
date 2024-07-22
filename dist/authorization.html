@@ -292,9 +292,18 @@
                                     <h2 class="auth__title">WELCOME BACK</h2>
                                     <p class="auth__subtitle">Sign into your existing account to earn rewards, check existing orders and more</p>
                                     
-                                    <form action="post" class="auth__form">
-                                        <input type="email" class="auth__input" name="email" placeholder="Email">
-                                        <input type="password" class="auth__input" name="pass" placeholder="Password">
+                                    <form action="post" class="auth__form" id="formLogin">
+                                        <div class="auth__form-item">
+                                            <input type="email" class="auth__input" name="email" placeholder="Email" id="loginEmail">
+                                            <div class="error__message"></div>
+                                        </div>
+                                        
+                                        <div class="auth__form-item">
+                                            <input type="password" class="auth__input" name="pass" placeholder="Password" id="loginPass">
+                                            <div class="error__message"></div>
+                                        </div>
+            
+                                        <div class="error__form">An error has occurred</div>
                                         <button class="auth__submit">Sign in</button>
             
                                         <h3 class="auth__express-title">Express sign in</h3>
@@ -323,7 +332,7 @@
                                     <h2 class="auth__title">new to volumenzeit?</h2>
                                     <p class="auth__subtitle">Create a new account</p>
                                     
-                                    <form action="post" class="auth__form">
+                                    <form action="post" class="auth__form" id="formReg">
                                         <input type="text" class="auth__input" name="firstname" placeholder="First Name">
                                         <input type="text" class="auth__input" name="lastname" placeholder="Last Name">
                                         
