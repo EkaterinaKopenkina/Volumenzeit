@@ -7,6 +7,7 @@ var index = require('./index.js');
 var contact = require('./contact.js');
 var checkout = require('./checkout.js');
 var auth = require('./auth.js');
+var account = require('./account.js');
 
 const currentUrl = document.location.href.split('/');
 const currentPage = currentUrl[currentUrl.length - 1];
@@ -59,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             sort.sort();
             break;
         case 'account.html':
+            account.account();
             break;
         default:
             window.location.replace('http://localhost:3000/404.html');

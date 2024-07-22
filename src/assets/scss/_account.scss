@@ -48,6 +48,8 @@
     &__btn {
         color: $colorBlue;
         display: none;
+        transform: scale(0);
+        transition: transform .2s linear;
 
         &.active {
             display: block;

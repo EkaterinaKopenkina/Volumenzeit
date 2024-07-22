@@ -3492,6 +3492,8 @@
 .account__btn {
   color: #735CFF;
   display: none;
+  transform: scale(0);
+  transition: transform 0.2s linear;
 }
 .account__btn.active {
   display: block;
