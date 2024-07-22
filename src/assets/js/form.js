@@ -33,9 +33,21 @@ const formRBlur = (input, r) => {
     })
 }
 
+const formPassBlur = (input) => {
+    const error = input.nextElementSibling;
+
+    input.addEventListener('blur', () => {
+        if (input.value.length >= 8) {
+            input.classList.remove('error');
+            error.style.display = "none";
+        }
+    })
+}
+
 module.exports = {
     formError: formError,
     formClear: formClear,
     formBlur: formBlur,
     formRBlur: formRBlur,
+    formPassBlur: formPassBlur,
 }
