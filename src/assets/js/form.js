@@ -22,11 +22,9 @@ const formBlur = (input, error = input.nextElementSibling) => {
     })
 }
 
-const formRBlur = (input, r) => {
+const formRBlur = (input, r, error = input.nextElementSibling) => {
     input.addEventListener('blur', () =>  {
         if (r.test(input.value)) {
-            const error = input.nextElementSibling;
-
             input.classList.remove('error');
             error.style.display = 'none';
         }     

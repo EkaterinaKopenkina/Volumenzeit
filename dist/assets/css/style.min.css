@@ -3513,15 +3513,17 @@
 }
 .account__item {
   margin-bottom: 10px;
+}
+.account__item:last-child {
+  margin-bottom: 0;
+}
+.account__item-input {
   display: flex;
   align-items: center;
   color: #000;
 }
-.account__item--orders {
+.account__item-input--orders {
   justify-content: space-between;
-}
-.account__item:last-child {
-  margin-bottom: 0;
 }
 .account__input, .account__label, .account__date, .account__products, .account__price {
   color: #000;
@@ -3542,7 +3544,10 @@
   cursor: default;
 }
 .account__input.active {
-  background-color: #cbc2ff;
+  background-color: #e1dcff;
+}
+.account__input.error {
+  background-color: #f1a7a7;
 }
 .account__order {
   display: flex;

@@ -75,16 +75,19 @@
 
     &__item {
         margin-bottom: 10px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__item-input {
         display: flex;
         align-items: center;
         color: $colorTextBlack;
 
         &--orders {
             justify-content: space-between;
-        }
-
-        &:last-child {
-            margin-bottom: 0;
         }
     }
 
@@ -114,7 +117,11 @@
         cursor: default;
 
         &.active {
-            background-color: lighten($colorBlue, 20%);
+            background-color: lighten($colorBlue, 25%);
+        }
+
+        &.error {
+            background-color: lighten($colorError, 35%);
         }
     }
 

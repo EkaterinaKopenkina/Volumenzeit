@@ -269,7 +269,7 @@
                         <p class="account__text">You haven’t placed any order yet.</p>
             
                         <ul class="account__list">
-                            <li class="account__item account__item--orders">
+                            <li class="account__item-input account__item-input--orders">
                                 <div class="account__order">
                                     <span class="account__date">15-07-2024:</span>
                                     <span class="account__products">item 1, item 2, item 3</span>
@@ -278,7 +278,7 @@
                                 <div class="account__price">$10</div>
                             </li>
             
-                            <li class="account__item account__item--orders">
+                            <li class="account__item-input account__item-input--orders">
                                 <div class="account__order">
                                     <span class="account__date">14-07-2024:</span>
                                     <span class="account__products">item 1, item 2, item 3, item 4, item 5</span>
@@ -300,19 +300,30 @@
             
                         <form action="post" class="account__form">
                             <div class="account__item">
-                                <label for="accountName" class="account__label">Name:</label>
-                                <input type="text" class="account__input" name="name" id="accountName" value="John Smith" disabled>
+                                <div class="account__item-input">
+                                    <label for="accountName" class="account__label">Name:</label>
+                                    <input type="text" class="account__input" name="name" id="accountName" value="John Smith" disabled>
+                                </div>
+                                <div class="error__message"></div>
                             </div>
             
                             <div class="account__item">
-                                <label for="accountName" class="account__label">Email:</label>
-                                <input type="email" class="account__input" name="email" id="accountEmail" value="johnsmith@gmail.com" disabled>
+                                <div class="account__item-input">
+                                    <label for="accountName" class="account__label">Email:</label>
+                                    <input type="email" class="account__input" name="email" id="accountEmail" value="johnsmith@gmail.com" disabled>
+                                </div>
+                                <div class="error__message"></div>
                             </div>
             
                             <div class="account__item">
-                                <label for="accountName" class="account__label">Phone Number:</label>
-                                <input type="tel" class="account__input" name="phone" id="accountPhone" value="8 800 555 35 35" disabled>
+                                <div class="account__item-input">
+                                    <label for="accountName" class="account__label">Phone Number:</label>
+                                    <input type="tel" class="account__input" name="phone" id="accountPhone" value="8 800 555 35 35" disabled>
+                                </div>
+                                <div class="error__message"></div>
                             </div>
+            
+                            <div class="error__form">An error has occurred</div>
                         </form>
                     </div>
             
