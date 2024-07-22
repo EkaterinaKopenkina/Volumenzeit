@@ -23,11 +23,7 @@ const manageMode = (btnManage, btnSave) => {
     accountHide(btnManage);
 
     setTimeout(() => {
-        btnSave.classList.add('active');
-
-        setTimeout(() => {
-            btnSave.style.transform = 'scale(100%)'
-        }, 200)
+        accountShow(btnSave);
     }, 200)
 }
 
@@ -36,6 +32,14 @@ const accountHide = (btn) => {
 
     setTimeout(() => {
         btn.classList.remove('active');
+    }, 200)
+}
+
+const accountShow = (btn) => {
+    btn.classList.add('active');
+
+    setTimeout(() => {
+        btn.style.transform = 'scale(100%)'
     }, 200)
 }
 
