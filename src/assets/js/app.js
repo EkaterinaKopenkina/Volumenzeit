@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Cart
     cart.cartMatching();
+    cart.cartDelete();
 
     // Pages
     switch(currentPage) {

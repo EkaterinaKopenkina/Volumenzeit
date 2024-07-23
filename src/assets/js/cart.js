@@ -7,7 +7,7 @@ const cartMatching = () => {
 
     btn.addEventListener('click', (event) => {
         event.preventDefault();
-        
+
         btn.classList.add('active');
         item.style.height = 0;
         item.classList.add('active');
@@ -20,6 +20,25 @@ const cartMatching = () => {
     })
 }
 
+const cartDelete = () => {
+    const products = document.querySelector('.cart__products');
+
+    products.addEventListener('click', (event) => {
+        const delBtn = event.target.closest('.cart__delete-btn');
+
+        if (delBtn) {
+            const product = delBtn.parentElement;
+
+            product.style.transform = 'translateX(500px)';
+
+            setTimeout(() => {
+                product.style.display = 'none';
+            }, 400)
+        }
+    })
+}
+
 module.exports = {
     cartMatching: cartMatching,
+    cartDelete: cartDelete,
 }

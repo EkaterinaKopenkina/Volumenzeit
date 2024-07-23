@@ -3005,6 +3005,7 @@
   padding: 15px 0;
   border-bottom: 1px solid #EAECF5;
   position: relative;
+  transition: transform 0.3s linear;
 }
 .cart-product__photo {
   display: flex;

@@ -5,6 +5,7 @@
         padding: 15px 0;
         border-bottom: 1px solid $colorBorder;
         position: relative;
+        transition: transform .3s linear;
     }
 
     &__photo {
