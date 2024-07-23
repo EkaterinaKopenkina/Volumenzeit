@@ -8,6 +8,7 @@ var contact = require('./contact.js');
 var checkout = require('./checkout.js');
 var auth = require('./auth.js');
 var account = require('./account.js');
+var cart = require('./cart.js');
 
 const currentUrl = document.location.href.split('/');
 const currentPage = currentUrl[currentUrl.length - 1];
@@ -21,6 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     header.navAccount(cookieLogin);
     header.cart();
     window.addEventListener('resize', header.headerFake);
+
+    // Cart
+    cart.cartMatching();
 
     // Pages
     switch(currentPage) {

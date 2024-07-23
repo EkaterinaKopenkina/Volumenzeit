@@ -4178,6 +4178,7 @@
 
 .auth__signup {
     margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .auth__signup-input {
@@ -4347,6 +4348,11 @@
 .account__btn {
     color: #735CFF;
     display: none;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    transition: -webkit-transform 0.2s linear;
+    transition: transform 0.2s linear;
+    transition: transform 0.2s linear, -webkit-transform 0.2s linear;
 }
 
 .account__btn.active {
@@ -4372,6 +4378,13 @@
 
 .account__item {
     margin-bottom: 10px;
+}
+
+.account__item:last-child {
+    margin-bottom: 0;
+}
+
+.account__item-input {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
@@ -4379,13 +4392,9 @@
     color: #000;
 }
 
-.account__item--orders {
+.account__item-input--orders {
     -ms-flex-pack: justify;
     justify-content: space-between;
-}
-
-.account__item:last-child {
-    margin-bottom: 0;
 }
 
 .account__input, .account__label, .account__date, .account__products, .account__price {
@@ -4408,10 +4417,15 @@
     border-radius: 5px;
     background-color: #fff;
     transition: background-color 0.2s linear;
+    cursor: default;
 }
 
 .account__input.active {
-    background-color: #cbc2ff;
+    background-color: #e1dcff;
+}
+
+.account__input.error {
+    background-color: #f1a7a7;
 }
 
 .account__order {
