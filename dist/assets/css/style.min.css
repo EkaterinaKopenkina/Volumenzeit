@@ -3305,8 +3305,6 @@
   min-width: 175px;
   text-align: center;
   font-size: 14px;
-  margin-top: 30px;
-  margin-bottom: 40px;
 }
 .auth__submit:hover {
   background-color: #4729ff;
@@ -3315,6 +3313,10 @@
   .auth__submit {
     font-size: calc(12px + 2 * (100vw - 320px) / 880);
   }
+}
+.auth__submit-container {
+  margin-top: 30px;
+  margin-bottom: 40px;
 }
 .auth__create {
   margin-bottom: 0;
