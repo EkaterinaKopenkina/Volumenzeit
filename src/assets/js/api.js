@@ -53,3 +53,20 @@ const deleteData = async (url, data) => {
         throw new Error(response.status);
     }
 }
+
+const pathData = async (url, data) => {
+    const response = await fetch(url, {
+        method: 'PATH',
+        headers: {
+            'X-API-KEY': 'FC52783F63184532B379EECD56DFC009E0131854354C4FA293EC5581CC6547F7',
+            'Authorization': 'Bearer ' + getToken(),
+        },
+        body: data,
+    });
+
+    if (!response.ok) {
+        throw new Error(response.status);
+    }
+
+    return await response.json();
+}
