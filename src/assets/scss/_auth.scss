@@ -156,6 +156,9 @@
 
     &__submit {
         @include btn($colorBlue, $colorBlue);
+    }
+
+    &__submit-container {
         margin-top: 30px;
         margin-bottom: 40px;
     }
