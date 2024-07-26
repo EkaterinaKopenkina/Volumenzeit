@@ -3,12 +3,14 @@
 var slider = require('./slider.js');
 var header = require('./header.js');
 var sort = require('./sort.js');
+var cart = require('./cart.js');
+var api = require('./api.js');
+
 var index = require('./index.js');
 var contact = require('./contact.js');
 var checkout = require('./checkout.js');
 var auth = require('./auth.js');
 var account = require('./account.js');
-var cart = require('./cart.js');
 
 const currentUrl = document.location.href.split('/');
 const currentPage = currentUrl[currentUrl.length - 1];
