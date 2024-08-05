@@ -14,6 +14,12 @@ var account = require('./account.js');
 const currentUrl = document.location.href.split('/');
 const currentPage = currentUrl[currentUrl.length - 1];
 
+window.addEventListener('load', () => {
+    if (currentPage == 'index.html' || currentPage == 'watches.html' || currentPage == 'product.html') {
+        slider.initSlider();
+    }
+})
+
 document.addEventListener('DOMContentLoaded', () => {
     const cookieLogin = document.cookie.match(/login=(.+?)(;|$)/);
 
@@ -33,13 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
         case 'index.html':
             index.video();
             index.formNewsletter();
-            //slider.initSlider();
             break;
         case 'watches.html':
-            slider.initSlider();
             break;
         case 'product.html':
-            slider.initSlider();
             break;
         case 'contact.html':
             contact.formContact();
