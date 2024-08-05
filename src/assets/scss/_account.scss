@@ -88,7 +88,67 @@
 
         &--orders {
             justify-content: space-between;
+            margin-bottom: 40px;
+            border-radius: 5px;
+            padding: 10px 15px;
+            position: relative;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
+
+        &--delivered {
+            border: 2px solid $colorBlue;
+
+            & .account__status {
+                color: $colorBlue;
+            }
+        }
+
+        &--processing {
+            border: 2px solid $colorProcessing;
+
+            & .account__status {
+                color: $colorProcessing;
+            }
+        }
+
+        &--received {
+            border: 2px solid $colorReceived;
+
+            & .account__status {
+                color: $colorReceived;
+            }
+        }
+
+        &--shipped {
+            border: 2px solid $colorShipped;
+
+            & .account__status {
+                color: $colorShipped;
+            }
+        }
+
+        &--canceled {
+            border: 2px solid $colorCanceled;
+
+            & .account__status {
+                color: $colorCanceled;
+            }
+        }
+    }
+
+    &__status {
+        position: absolute;
+        background-color: $colorWhite;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: $zDefault;
+        padding: 0 20px;
+        font-size: 16px;
+        font-weight: 500;
     }
 
     &__input,

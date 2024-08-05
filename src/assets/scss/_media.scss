@@ -1495,6 +1495,7 @@
         &__order {
             flex-direction: column;
             padding: 0;
+            padding-right: 15px;
         }
 
         &__date {
@@ -1502,11 +1503,15 @@
         }
 
         &__date,
-        &__products,
-        &__price {
+        &__products {
             align-items: start;
             text-align: left;
             width: 100%;
+        }
+
+        &__price {
+            align-items: start;
+            text-align: left;
         }
 
         &__item {
