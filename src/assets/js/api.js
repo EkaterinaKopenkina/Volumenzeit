@@ -1,6 +1,8 @@
+let count429 = 0;
+
 const getToken = () => {
     const token = document.cookie.match(/login=(.+?)(;|$)/)[1];
-    
+
     if (token) {
         return token
     }
@@ -22,4 +24,37 @@ const sendRequest = async (met, url, data = null) => {
     }
 
     return await response.json();
+}
+
+const handleErrors = (errCode, err) => {
+    if (errCode >= 500) {
+        err.innerHTML = 'An error has occurred on the server';
+        err.style.display = 'block';
+        return;
+    }
+
+    switch (errCode) {
+        case 401 || 403:
+            err.innerHTML = 'Access is denied';
+            err.style.display = 'block';
+            break;
+        case 422:
+            err.innerHTML = 'Data validation error';
+            err.style.display = 'block';
+            break;
+        case 429:
+            err.innerHTML = 'You make requests too often';
+            err.style.display = 'block';
+
+            if (count429 > 2) {
+                window.location.replace('http://localhost:3000/404.html');
+                break;
+            }
+
+            count429++;
+            break;
+        default:
+            err.innerHTML = 'An error has occurred';
+            err.style.display = 'block';
+    }
 }

@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Pages
     switch(currentPage) {
-        case 'index.html':
+        case 'index.html' || '':
             index.video();
             index.formNewsletter();
             break;
