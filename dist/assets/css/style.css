@@ -4403,6 +4403,67 @@
 .account__item-input--orders {
     -ms-flex-pack: justify;
     justify-content: space-between;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    padding: 10px 15px;
+    position: relative;
+}
+
+.account__item-input--orders:last-child {
+    margin-bottom: 0;
+}
+
+.account__item-input--delivered {
+    border: 2px solid #735CFF;
+}
+
+.account__item-input--delivered .account__status {
+    color: #735CFF;
+}
+
+.account__item-input--processing {
+    border: 2px solid #939393;
+}
+
+.account__item-input--processing .account__status {
+    color: #939393;
+}
+
+.account__item-input--received {
+    border: 2px solid #4fbf3b;
+}
+
+.account__item-input--received .account__status {
+    color: #4fbf3b;
+}
+
+.account__item-input--shipped {
+    border: 2px solid #cf912e;
+}
+
+.account__item-input--shipped .account__status {
+    color: #cf912e;
+}
+
+.account__item-input--canceled {
+    border: 2px solid #b72f2f;
+}
+
+.account__item-input--canceled .account__status {
+    color: #b72f2f;
+}
+
+.account__status {
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .account__input, .account__label, .account__date, .account__products, .account__price {
@@ -5828,17 +5889,24 @@
         -ms-flex-direction: column;
         flex-direction: column;
         padding: 0;
+        padding-right: 15px;
     }
 
     .account__date {
         margin: 0;
     }
 
-    .account__date, .account__products, .account__price {
+    .account__date, .account__products {
         -ms-flex-align: start;
         align-items: start;
         text-align: left;
         width: 100%;
+    }
+
+    .account__price {
+        -ms-flex-align: start;
+        align-items: start;
+        text-align: left;
     }
 
     .account__item--orders {

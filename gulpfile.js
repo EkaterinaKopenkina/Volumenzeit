@@ -28,6 +28,7 @@ const path = {
         js:     distPath + "assets/js/",
         css:    distPath + "assets/css/",
         images: distPath + "assets/images/",
+        slider: distPath + "assets/slider/",
         fonts:  distPath + "assets/fonts/"
     },
     src: {
@@ -35,6 +36,7 @@ const path = {
         js:     srcPath + "assets/js/*.js",
         css:    srcPath + "assets/scss/*.scss",
         images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json,mp4,webm}",
+        slider: srcPath + "assets/slider/**/*.{min.css,min.js}",
         fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
     },
     watch: {
@@ -42,6 +44,7 @@ const path = {
         js:     srcPath + "assets/js/**/*.js",
         css:    srcPath + "assets/scss/**/*.scss",
         images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json,mp4,webm}",
+        slider: srcPath + "assets/slider/**/*.{min.css,min.js}",
         fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
     },
     clean: "./" + distPath
@@ -190,6 +193,14 @@ function images(cb) {
     cb();
 }
 
+function slider(cb) {
+    return src(path.src.slider)
+        .pipe(dest(path.build.slider))
+        .pipe(browserSync.reload({stream: true}));
+
+    cb();
+}
+
 function fonts(cb) {
     return src(path.src.fonts)
         .pipe(dest(path.build.fonts))
@@ -209,10 +220,11 @@ function watchFiles() {
     gulp.watch([path.watch.css], cssWatch);
     gulp.watch([path.watch.js], jsWatch);
     gulp.watch([path.watch.images], images);
+    gulp.watch([path.watch.slider], slider);
     gulp.watch([path.watch.fonts], fonts);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts));
+const build = gulp.series(clean, gulp.parallel(html, css, js, images, slider, fonts));
 const watch = gulp.parallel(build, watchFiles, serve);
 
 
@@ -222,6 +234,7 @@ exports.html = html;
 exports.css = css;
 exports.js = js;
 exports.images = images;
+exports.slider = slider;
 exports.fonts = fonts;
 exports.clean = clean;
 exports.build = build;
