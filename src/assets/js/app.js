@@ -15,7 +15,7 @@ const currentUrl = document.location.href.split('/');
 const currentPage = currentUrl[currentUrl.length - 1];
 
 window.addEventListener('load', () => {
-    if (currentPage == 'index.html' || currentPage == 'watches.html' || currentPage == 'product.html') {
+    if (currentPage == 'index.html' || currentPage == 'product.html') {
         slider.initSlider();
     }
 })
