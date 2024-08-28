@@ -1183,7 +1183,6 @@
   font-size: 14px;
   max-width: 350px;
   width: 100%;
-  flex-shrink: 0;
 }
 .products__btn:hover {
   background-color: #4729ff;
@@ -4240,6 +4239,20 @@
   .product__photo {
     height: 250px;
   }
+  .products__footer {
+    flex-direction: column;
+  }
+  .products__pagination-container {
+    order: 2;
+    padding: 0;
+    justify-content: center;
+  }
+  .products__btn {
+    order: 1;
+    margin: 0;
+    margin-bottom: 25px;
+    min-width: 100%;
+  }
   .guarantee {
     padding: 0;
   }
@@ -4406,19 +4419,6 @@
   }
   .products__items {
     grid-template-columns: 1fr;
-  }
-  .products__footer {
-    flex-direction: column;
-  }
-  .products__pagination-container {
-    order: 2;
-    padding: 0;
-  }
-  .products__btn {
-    order: 1;
-    margin: 0;
-    margin-bottom: 25px;
-    min-width: 100%;
   }
   .product {
     padding: 25px 0 0;

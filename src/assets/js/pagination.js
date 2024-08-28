@@ -111,6 +111,14 @@ const paginationView = (pagination, container, currentPages, maxPages) => {
 }
 
 const paginationMaxPages = () => {
+    const documentWidth = document.documentElement.clientWidth;
+    if (documentWidth < 376) {
+        return 7;
+    }
+    if (documentWidth < 769) {
+        return 9;
+    }
+
     return 13;
 }
 

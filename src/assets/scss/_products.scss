@@ -104,7 +104,6 @@
         @include btn($colorBlue, $colorBlue);
         max-width: 350px;
         width: 100%;
-        flex-shrink: 0;
     }
 
     &__filter-btn {
