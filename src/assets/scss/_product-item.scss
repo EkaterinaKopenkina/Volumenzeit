@@ -2,6 +2,12 @@
     display: flex;
     flex-direction: column;
 
+    &:hover {
+        & .product-item__hover {
+            opacity: 1;
+        }
+    }
+
     &__photo {
         @include photo(100%, 300px, 8px);
         margin-bottom: 15px;

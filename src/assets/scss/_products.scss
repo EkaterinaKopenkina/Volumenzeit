@@ -20,6 +20,10 @@
             background-color: $colorBgGray;
             align-items: center;
         }
+
+        &.active {
+            transform: translateX(0);
+        }
     }
 
     &__content {
@@ -58,30 +62,29 @@
     }
 
     &__pagination {
-        position: static;
-        display: grid;
-        grid-auto-columns: min-content;
-        grid-auto-flow: column;
+        margin: 0 !important;
+        display: flex;
+        background-color: $colorBgGray;
+        width: 28px;
+        height: 28px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3px;
+        font-size: 10px;
+        margin-right: 8px !important;
+        color: $colorText;
+        transition: all .2s linear;
+        opacity: 1;
+        cursor: pointer;
 
-        &>span {
-            margin: 0 !important;
-            display: flex;
-            background-color: $colorBgGray;
-            width: 28px;
-            height: 28px;
-            justify-content: center;
-            align-items: center;
-            border-radius: 3px;
-            font-size: 10px;
-            margin-right: 8px !important;
-            color: $colorText;
-            transition: all .2s linear;
-            opacity: 1;
+        &:hover {
+            background-color: $colorBlue;
+            color: $colorWhite;
+        }
 
-            &.swiper-pagination-bullet-active {
-                background-color: $colorBlue;
-                color: $colorTextWhite;
-            }
+        &.active {
+            background-color: $colorBlue;
+            color: $colorWhite;
         }
     }
 
@@ -90,15 +93,17 @@
         padding-right: 15px;
         display: flex;
         align-items: center;
-        @include scroll();
-        overflow-y: auto;
+    }
+
+    &__pagination-ellipsis {
+        font-size: 18px;
+        margin-right: 8px;
     }
 
     &__btn {
         @include btn($colorBlue, $colorBlue);
         max-width: 350px;
         width: 100%;
-        margin-left: 50px;
     }
 
     &__filter-btn {
