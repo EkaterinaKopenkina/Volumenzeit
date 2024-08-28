@@ -1105,6 +1105,9 @@
   background-color: #F9FAFE;
   align-items: center;
 }
+.products__filter.active {
+  transform: translateX(0);
+}
 .products__content {
   padding-top: 45px;
 }
@@ -1165,6 +1168,7 @@
 }
 .products__pagination-ellipsis {
   font-size: 18px;
+  margin-right: 8px;
 }
 .products__btn {
   display: inline-block;

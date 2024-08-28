@@ -20,6 +20,10 @@
             background-color: $colorBgGray;
             align-items: center;
         }
+
+        &.active {
+            transform: translateX(0);
+        }
     }
 
     &__content {
@@ -93,6 +97,7 @@
 
     &__pagination-ellipsis {
         font-size: 18px;
+        margin-right: 8px;
     }
 
     &__btn {

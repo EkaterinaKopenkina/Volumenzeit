@@ -4,12 +4,14 @@ var slider = require('./slider.js');
 var header = require('./header.js');
 var sort = require('./sort.js');
 var cart = require('./cart.js');
+var filter = require('./filter.js');
 
 var index = require('./index.js');
 var contact = require('./contact.js');
 var checkout = require('./checkout.js');
 var auth = require('./auth.js');
 var account = require('./account.js');
+var watches = require('./watches.js');
 
 const currentUrl = document.location.href.split('/');
 const currentPage = currentUrl[currentUrl.length - 1];
@@ -41,6 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
             index.formNewsletter();
             break;
         case 'watches.html':
+            filter.toggleFilter();
+            sort.sort();
+            watches.watchesMainFn();
             break;
         case 'product.html':
             break;
@@ -73,6 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
             index.formNewsletter();
             break;
         default:
-            window.location.replace('http://localhost:3000/404.html');
+            //window.location.replace('http://localhost:3000/404.html');
     }
 })

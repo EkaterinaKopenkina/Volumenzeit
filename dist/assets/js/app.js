@@ -36,7 +36,7 @@ eval("let count429 = 0;\r\n\r\nconst getToken = () => {\r\n    const token = doc
 /***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
-eval("\r\n\r\nvar slider = __webpack_require__(/*! ./slider.js */ \"./src/assets/js/slider.js\");\r\nvar header = __webpack_require__(/*! ./header.js */ \"./src/assets/js/header.js\");\r\nvar sort = __webpack_require__(/*! ./sort.js */ \"./src/assets/js/sort.js\");\r\nvar cart = __webpack_require__(/*! ./cart.js */ \"./src/assets/js/cart.js\");\r\n\r\nvar index = __webpack_require__(/*! ./index.js */ \"./src/assets/js/index.js\");\r\nvar contact = __webpack_require__(/*! ./contact.js */ \"./src/assets/js/contact.js\");\r\nvar checkout = __webpack_require__(/*! ./checkout.js */ \"./src/assets/js/checkout.js\");\r\nvar auth = __webpack_require__(/*! ./auth.js */ \"./src/assets/js/auth.js\");\r\nvar account = __webpack_require__(/*! ./account.js */ \"./src/assets/js/account.js\");\r\n\r\nconst currentUrl = document.location.href.split('/');\r\nconst currentPage = currentUrl[currentUrl.length - 1];\r\n\r\nwindow.addEventListener('load', () => {\r\n    if (currentPage == 'index.html' || currentPage == 'product.html') {\r\n        slider.initSlider();\r\n    }\r\n})\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n    const cookieLogin = document.cookie.match(/login=(.+?)(;|$)/);\r\n\r\n    // Header\r\n    header.headerFake();\r\n    header.burger();\r\n    header.navAccount(cookieLogin);\r\n    header.cart();\r\n    window.addEventListener('resize', header.headerFake);\r\n\r\n    // Cart\r\n    cart.cartMatching();\r\n    cart.cartDelete();\r\n\r\n    // Pages\r\n    switch(currentPage) {\r\n        case 'index.html' || 0:\r\n            index.video();\r\n            index.formNewsletter();\r\n            break;\r\n        case 'watches.html':\r\n            break;\r\n        case 'product.html':\r\n            break;\r\n        case 'contact.html':\r\n            contact.formContact();\r\n            break;\r\n        case 'buildWatch.html':\r\n            break;\r\n        case 'checkout.html':\r\n            checkout.accordion();\r\n            checkout.formCheckout();\r\n            sort.sort();\r\n            break;\r\n        case 'delivery.html':\r\n            break;\r\n        case 'authorization.html#login':\r\n            auth.tab();\r\n            auth.formLogin();\r\n            auth.formReg();\r\n            sort.sort();\r\n            break;\r\n        case 'authorization.html#reg':\r\n            auth.tab();\r\n            auth.formLogin();\r\n            auth.formReg();\r\n            sort.sort();\r\n            break;\r\n        case 'account.html':\r\n            account.account();\r\n            index.formNewsletter();\r\n            break;\r\n        default:\r\n            window.location.replace('http://localhost:3000/404.html');\r\n    }\r\n})\n\n//# sourceURL=webpack://brainscloud/./src/assets/js/app.js?");
+eval("\r\n\r\nvar slider = __webpack_require__(/*! ./slider.js */ \"./src/assets/js/slider.js\");\r\nvar header = __webpack_require__(/*! ./header.js */ \"./src/assets/js/header.js\");\r\nvar sort = __webpack_require__(/*! ./sort.js */ \"./src/assets/js/sort.js\");\r\nvar cart = __webpack_require__(/*! ./cart.js */ \"./src/assets/js/cart.js\");\r\nvar filter = __webpack_require__(/*! ./filter.js */ \"./src/assets/js/filter.js\");\r\n\r\nvar index = __webpack_require__(/*! ./index.js */ \"./src/assets/js/index.js\");\r\nvar contact = __webpack_require__(/*! ./contact.js */ \"./src/assets/js/contact.js\");\r\nvar checkout = __webpack_require__(/*! ./checkout.js */ \"./src/assets/js/checkout.js\");\r\nvar auth = __webpack_require__(/*! ./auth.js */ \"./src/assets/js/auth.js\");\r\nvar account = __webpack_require__(/*! ./account.js */ \"./src/assets/js/account.js\");\r\nvar watches = __webpack_require__(/*! ./watches.js */ \"./src/assets/js/watches.js\");\r\n\r\nconst currentUrl = document.location.href.split('/');\r\nconst currentPage = currentUrl[currentUrl.length - 1];\r\n\r\nwindow.addEventListener('load', () => {\r\n    if (currentPage == 'index.html' || currentPage == 'product.html') {\r\n        slider.initSlider();\r\n    }\r\n})\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n    const cookieLogin = document.cookie.match(/login=(.+?)(;|$)/);\r\n\r\n    // Header\r\n    header.headerFake();\r\n    header.burger();\r\n    header.navAccount(cookieLogin);\r\n    header.cart();\r\n    window.addEventListener('resize', header.headerFake);\r\n\r\n    // Cart\r\n    cart.cartMatching();\r\n    cart.cartDelete();\r\n\r\n    // Pages\r\n    switch(currentPage) {\r\n        case 'index.html' || 0:\r\n            index.video();\r\n            index.formNewsletter();\r\n            break;\r\n        case 'watches.html':\r\n            filter.toggleFilter();\r\n            sort.sort();\r\n            watches.watchesMainFn();\r\n            break;\r\n        case 'product.html':\r\n            break;\r\n        case 'contact.html':\r\n            contact.formContact();\r\n            break;\r\n        case 'buildWatch.html':\r\n            break;\r\n        case 'checkout.html':\r\n            checkout.accordion();\r\n            checkout.formCheckout();\r\n            sort.sort();\r\n            break;\r\n        case 'delivery.html':\r\n            break;\r\n        case 'authorization.html#login':\r\n            auth.tab();\r\n            auth.formLogin();\r\n            auth.formReg();\r\n            sort.sort();\r\n            break;\r\n        case 'authorization.html#reg':\r\n            auth.tab();\r\n            auth.formLogin();\r\n            auth.formReg();\r\n            sort.sort();\r\n            break;\r\n        case 'account.html':\r\n            account.account();\r\n            index.formNewsletter();\r\n            break;\r\n        default:\r\n            //window.location.replace('http://localhost:3000/404.html');\r\n    }\r\n})\n\n//# sourceURL=webpack://brainscloud/./src/assets/js/app.js?");
 
 /***/ }),
 
@@ -80,6 +80,16 @@ eval("var form = __webpack_require__(/*! ./form.js */ \"./src/assets/js/form.js\
 
 /***/ }),
 
+/***/ "./src/assets/js/filter.js":
+/*!*********************************!*\
+  !*** ./src/assets/js/filter.js ***!
+  \*********************************/
+/***/ (function(module) {
+
+eval("const toggleFilter = () => {\r\n    const filter = document.querySelector('.products__filter');\r\n    const btns = document.querySelectorAll('.products__filter-btn');\r\n\r\n    btns.forEach(btn => {\r\n        btn.addEventListener('click', (event) => {\r\n            event.preventDefault();\r\n    \r\n            filter.classList.toggle('active');\r\n        })\r\n    })\r\n}\r\n\r\nmodule.exports = {\r\n    toggleFilter: toggleFilter,\r\n}\n\n//# sourceURL=webpack://brainscloud/./src/assets/js/filter.js?");
+
+/***/ }),
+
 /***/ "./src/assets/js/form.js":
 /*!*******************************!*\
   !*** ./src/assets/js/form.js ***!
@@ -120,6 +130,16 @@ eval("const modalOpen = (btn) => {\r\n    const modalId = btn.dataset.modal;\r\n
 
 /***/ }),
 
+/***/ "./src/assets/js/pagination.js":
+/*!*************************************!*\
+  !*** ./src/assets/js/pagination.js ***!
+  \*************************************/
+/***/ (function(module) {
+
+eval("const paginationMainFn = () => {\r\n    const paginations = document.querySelector('.products__pagination-container');\r\n\r\n    const maxPages = paginationMaxPages();\r\n    const currentPages = 200;\r\n\r\n    loadPaginations(paginations, maxPages, currentPages);\r\n    onPaginationClick(paginations, currentPages, maxPages);\r\n}\r\n\r\nconst pastePagination = (container, num, where) => {\r\n    container.insertAdjacentHTML(where, `\r\n        <button class=\"products__pagination\">${num}</button>\r\n    `)\r\n}\r\n\r\nconst loadPaginations = (paginations, maxPages, currentPages) => {\r\n    paginations.innerHTML = '';\r\n\r\n    if (currentPages <= maxPages) {\r\n        for (let i = 0; i < currentPages; i ++) {\r\n            pastePagination(paginations, i + 1, 'beforeend');\r\n        }\r\n    } else {\r\n        for (let i = 0; i < maxPages - 2; i ++) {\r\n            pastePagination(paginations, i + 1, 'beforeend');\r\n        }\r\n\r\n        paginations.insertAdjacentHTML('beforeend', `\r\n            <div class=\"products__pagination-ellipsis\">...</div>\r\n            <button class=\"products__pagination\">${currentPages}</button>\r\n        `)\r\n    }\r\n}\r\n\r\nconst onPaginationClick = (paginations, currentPages, maxPages) => {\r\n    paginations.addEventListener('click', (event) => {\r\n        const pagination = event.target.closest('.products__pagination');\r\n        const paginationItems = paginations.querySelectorAll('.products__pagination');\r\n\r\n        event.preventDefault();\r\n\r\n        paginationItems.forEach(item => {\r\n            item.classList.remove('active');\r\n        })\r\n\r\n        if (pagination) {\r\n            pagination.classList.add('active');\r\n\r\n            paginationView(pagination, paginations, currentPages, maxPages);\r\n            paginationScroll();\r\n        }\r\n    })\r\n}\r\n\r\nconst paginationScroll = () => {\r\n    const container = document.querySelector('.products__content');\r\n\r\n    container.scrollIntoView({\r\n        block: 'start',\r\n        inline: 'center',\r\n        behavior: 'smooth',\r\n    })\r\n}\r\n\r\nconst paginationView = (pagination, container, currentPages, maxPages) => {\r\n    const nextPagination = pagination.nextElementSibling;\r\n    const previousPagination = pagination.previousElementSibling;\r\n    const thisPaginationNum = +pagination.textContent;\r\n    const items = container.children;\r\n\r\n    console.log(items.length);\r\n\r\n    if (thisPaginationNum === 1) {\r\n        loadPaginations(container, maxPages, currentPages);\r\n    }\r\n\r\n    if (nextPagination.classList.contains('products__pagination-ellipsis')) {\r\n        if (thisPaginationNum === currentPages - 1) {\r\n            nextPagination.outerHTML = '';\r\n            return;\r\n        }\r\n\r\n        pastePagination(pagination, thisPaginationNum + 1, 'afterend');\r\n\r\n        if (items[1].classList.contains('products__pagination')) {\r\n            items[1].outerHTML = '<div class=\"products__pagination-ellipsis\">...</div>';\r\n            return;\r\n        }\r\n\r\n        items[2].outerHTML = '';\r\n        return;\r\n    }\r\n\r\n    if (previousPagination.classList.contains('products__pagination-ellipsis')) {\r\n        if (thisPaginationNum === 2) {\r\n            previousPagination.outerHTML = '';\r\n            return;\r\n        }\r\n\r\n        if (items.length === maxPages) {\r\n            items[maxPages - 2].outerHTML = '<div class=\"products__pagination-ellipsis\">...</div>';\r\n            pastePagination(pagination, thisPaginationNum - 1, 'beforebegin');\r\n            return;\r\n        }\r\n\r\n        pastePagination(pagination, thisPaginationNum - 1, 'beforebegin');\r\n\r\n        items[maxPages - 1].outerHTML = '';\r\n    }\r\n}\r\n\r\nconst paginationMaxPages = () => {\r\n    return 13;\r\n}\r\n\r\nmodule.exports = {\r\n    paginationMainFn: paginationMainFn,\r\n}\n\n//# sourceURL=webpack://brainscloud/./src/assets/js/pagination.js?");
+
+/***/ }),
+
 /***/ "./src/assets/js/slider.js":
 /*!*********************************!*\
   !*** ./src/assets/js/slider.js ***!
@@ -137,6 +157,16 @@ eval("const initSlider = () => {\r\n    const mySliders = document.querySelector
 /***/ (function(module) {
 
 eval("const sort = () => {\r\n    const sorts = document.querySelectorAll('.sort');\r\n\r\n    sorts.forEach(sortItem => {\r\n        sortItem.addEventListener('click', (event) => {\r\n            event.preventDefault();\r\n            const item = event.target.closest('.sort-sub__item');\r\n\r\n            if (item) {\r\n                const link = item.querySelector('.sort-sub__link');\r\n                const value = link.innerHTML;\r\n                const btn = sortItem.querySelector('.sort__btn');\r\n\r\n                btn.innerHTML = value;\r\n            }\r\n        })\r\n    })\r\n}\r\n\r\nmodule.exports = {\r\n    sort: sort,\r\n}\n\n//# sourceURL=webpack://brainscloud/./src/assets/js/sort.js?");
+
+/***/ }),
+
+/***/ "./src/assets/js/watches.js":
+/*!**********************************!*\
+  !*** ./src/assets/js/watches.js ***!
+  \**********************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+eval("var pagination = __webpack_require__(/*! ./pagination */ \"./src/assets/js/pagination.js\");\r\n\r\nconst watchesMainFn = () => {\r\n    pagination.paginationMainFn();\r\n    console.log('hi');\r\n}\r\n\r\nmodule.exports = {\r\n    watchesMainFn: watchesMainFn,\r\n}\n\n//# sourceURL=webpack://brainscloud/./src/assets/js/watches.js?");
 
 /***/ })
 
@@ -178,12 +208,15 @@ eval("const sort = () => {\r\n    const sorts = document.querySelectorAll('.sort
 /******/ 	__webpack_require__("./src/assets/js/cart.js");
 /******/ 	__webpack_require__("./src/assets/js/checkout.js");
 /******/ 	__webpack_require__("./src/assets/js/contact.js");
+/******/ 	__webpack_require__("./src/assets/js/filter.js");
 /******/ 	__webpack_require__("./src/assets/js/form.js");
 /******/ 	__webpack_require__("./src/assets/js/header.js");
 /******/ 	__webpack_require__("./src/assets/js/index.js");
 /******/ 	__webpack_require__("./src/assets/js/modal.js");
+/******/ 	__webpack_require__("./src/assets/js/pagination.js");
 /******/ 	__webpack_require__("./src/assets/js/slider.js");
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/assets/js/sort.js");
+/******/ 	__webpack_require__("./src/assets/js/sort.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/assets/js/watches.js");
 /******/ 	
 /******/ })()
 ;
