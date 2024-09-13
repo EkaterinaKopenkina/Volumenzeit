@@ -1,10 +1,16 @@
 var form = require('../helpers/form.js');
 
-const video = () => {
+const indexMainFn = () => {
     const bg = document.querySelector('.about__video-bg');
     const thisVideo = document.querySelector('.about__video');
     const btnPlay = document.querySelector('.about__play');
+    const btnNewsletter = document.querySelector('.newsletter__btn');
 
+    video(bg, thisVideo, btnPlay);
+    formNewsletter(btnNewsletter);
+}
+
+const video = (bg, thisVideo, btnPlay) => {
     bg.addEventListener('click', () => {
         bg.style.display = 'none';
         btnPlay.style.display = 'none';
@@ -14,9 +20,7 @@ const video = () => {
     })
 }
 
-const formNewsletter = () => {
-    const btn = document.querySelector('.newsletter__btn');
-
+const formNewsletter = (btn) => {
     btn.addEventListener('click', (event) => {
         event.preventDefault();
 
@@ -52,6 +56,5 @@ const formNewsletter = () => {
 }
 
 module.exports = {
-    video: video,
-    formNewsletter: formNewsletter,
+    indexMainFn: indexMainFn,
 }

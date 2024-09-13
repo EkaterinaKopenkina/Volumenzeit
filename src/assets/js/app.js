@@ -2,9 +2,7 @@
 
 var slider = require('./helpers/slider.js');
 var header = require('./helpers/header.js');
-var sort = require('./helpers/sort.js');
 var cart = require('./helpers/cart.js');
-var filter = require('./helpers/filter.js');
 
 var index = require('./pages/index.js');
 var contact = require('./pages/contact.js');
@@ -39,8 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Pages
     switch(currentPage) {
         case 'index.html' || '':
-            index.video();
-            index.formNewsletter();
+            index.indexMainFn();
             break;
         case 'watches.html':
             filter.toggleFilter();
