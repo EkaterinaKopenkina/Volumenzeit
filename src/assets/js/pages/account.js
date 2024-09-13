@@ -1,9 +1,15 @@
 var form = require('../helpers/form.js');
+var formNewsletter = require('../helpers/formNewsletter.js');
 
-const account = () => {
+const accountMainFn = () => {
     const btnManage = document.querySelector('#accountManage');
     const btnSave = document.querySelector('#accountSave');
 
+    formNewsletter();
+    account();
+}
+
+const account = (btnManage, btnSave) => {
     btnManage.classList.add('active');
     btnManage.style.transform = 'scale(100%)';
 
@@ -115,5 +121,5 @@ const accountShow = (btn) => {
 }
 
 module.exports = {
-    account: account,
+    accountMainFn: accountMainFn,
 }
