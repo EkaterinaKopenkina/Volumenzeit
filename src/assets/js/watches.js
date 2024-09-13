@@ -1,4 +1,4 @@
-var pagination = require('./pagination');
+var pagination = require('./helpers/pagination');
 
 const watchesMainFn = () => {
     pagination.paginationMainFn();

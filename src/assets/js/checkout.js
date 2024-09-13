@@ -1,5 +1,5 @@
-var form = require('./form.js');
-var modal = require('./modal.js');
+var form = require('./helpers/form.js');
+var modal = require('./helpers/modal.js');
 
 var errorCount = 0;
 

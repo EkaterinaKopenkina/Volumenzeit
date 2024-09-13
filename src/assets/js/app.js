@@ -1,10 +1,10 @@
 'use strict'
 
-var slider = require('./slider.js');
-var header = require('./header.js');
-var sort = require('./sort.js');
-var cart = require('./cart.js');
-var filter = require('./filter.js');
+var slider = require('./helpers/slider.js');
+var header = require('./helpers/header.js');
+var sort = require('./helpers/sort.js');
+var cart = require('./helpers/cart.js');
+var filter = require('./helpers/filter.js');
 
 var index = require('./index.js');
 var contact = require('./contact.js');
