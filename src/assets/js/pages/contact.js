@@ -1,8 +1,12 @@
 var form = require('../helpers/form.js');
 
-const formContact = () => {
+const contactMainFn = () => {
     const btn = document.querySelector('.contact__btn');
 
+    formContact(btn);
+}
+
+const formContact = (btn) => {
     btn.addEventListener('click', (event) => {
         event.preventDefault();
 
@@ -45,5 +49,5 @@ const formContact = () => {
 }
 
 module.exports = {
-    formContact: formContact,
+    contactMainFn: contactMainFn,
 }

@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         case 'product.html':
             break;
         case 'contact.html':
-            contact.formContact();
+            contact.contactMainFn();
             break;
         case 'buildWatch.html':
             break;
