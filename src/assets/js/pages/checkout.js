@@ -1,11 +1,21 @@
 var form = require('../helpers/form.js');
 var modal = require('../helpers/modal.js');
+var sort = require('../helpers/sort.js');
 
 var errorCount = 0;
 
-const accordion = () => {
+const checkoutMainFn = () => {
     const accordions = document.querySelectorAll('.accordion');
+    const btnBasic = document.querySelector('#btnBasic');
+    const btnShipping = document.querySelector('#btnShipping');
+    const btnTotal = document.querySelector('#btnTotal');
 
+    sort.sort();
+    accordion(accordions);
+    formCheckout(btnBasic, btnShipping, btnTotal);
+}
+
+const accordion = (accordions) => {
     accordions.forEach(item => {
         const container = item.querySelector('.accordion__container');
         const header = item.querySelector('.accordion__header');
@@ -32,11 +42,7 @@ const accordion = () => {
     })
 }
 
-const formCheckout = () => {
-    const btnBasic = document.querySelector('#btnBasic');
-    const btnShipping = document.querySelector('#btnShipping');
-    const btnTotal = document.querySelector('#btnTotal');
-
+const formCheckout = (btnBasic, btnShipping, btnTotal) => {
     btnBasic.addEventListener('click', (event) => {
         event.preventDefault();
         formBasic();
@@ -191,6 +197,5 @@ const formCoupon = () => {
 }
 
 module.exports = {
-    accordion: accordion,
-    formCheckout: formCheckout,
+    checkoutMainFn: checkoutMainFn,
 }

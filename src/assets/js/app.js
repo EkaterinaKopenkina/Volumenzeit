@@ -50,9 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         case 'buildWatch.html':
             break;
         case 'checkout.html':
-            checkout.accordion();
-            checkout.formCheckout();
-            sort.sort();
+            checkout.checkoutMainFn();
             break;
         case 'delivery.html':
             break;
