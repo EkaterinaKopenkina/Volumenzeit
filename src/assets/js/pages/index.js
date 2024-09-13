@@ -1,4 +1,4 @@
-var form = require('./helpers/form.js');
+var form = require('../helpers/form.js');
 
 const video = () => {
     const bg = document.querySelector('.about__video-bg');

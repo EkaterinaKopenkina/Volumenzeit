@@ -6,12 +6,12 @@ var sort = require('./helpers/sort.js');
 var cart = require('./helpers/cart.js');
 var filter = require('./helpers/filter.js');
 
-var index = require('./index.js');
-var contact = require('./contact.js');
-var checkout = require('./checkout.js');
-var auth = require('./auth.js');
-var account = require('./account.js');
-var watches = require('./watches.js');
+var index = require('./pages/index.js');
+var contact = require('./pages/contact.js');
+var checkout = require('./pages/checkout.js');
+var auth = require('./pages/auth.js');
+var account = require('./pages/account.js');
+var watches = require('./pages/watches.js');
 
 const currentUrl = document.location.href.split('/');
 const currentPage = currentUrl[currentUrl.length - 1];

@@ -1,4 +1,4 @@
-var form = require('./helpers/form.js');
+var form = require('../helpers/form.js');
 
 const tab = () => {
     const url = document.URL;
