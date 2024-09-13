@@ -17,6 +17,4 @@ const sort = () => {
     })
 }
 
-module.exports = {
-    sort: sort,
-}
+export default sort;

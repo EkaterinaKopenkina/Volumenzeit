@@ -1,4 +1,4 @@
-const modalOpen = (btn) => {
+export const modalOpen = (btn) => {
     const modalId = btn.dataset.modal;
     const modal = document.querySelector(modalId);
     const container = modal.querySelector('.modal__container');
@@ -12,7 +12,7 @@ const modalOpen = (btn) => {
     }, 200)
 }
 
-const modalClose = (btn) => {
+export const modalClose = (btn) => {
     const modalId = btn.dataset.modal;
     const modal = document.querySelector(modalId);
     const container = modal.querySelector('.modal__container');
@@ -32,9 +32,4 @@ const modalClose = (btn) => {
             }
         })
     })
-}
-
-module.exports = {
-    modalOpen: modalOpen,
-    modalClose: modalClose,
 }

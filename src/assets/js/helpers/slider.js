@@ -66,6 +66,4 @@ const initSlider = () => {
     })
 }
 
-module.exports = {
-    initSlider: initSlider
-}
+export default initSlider;

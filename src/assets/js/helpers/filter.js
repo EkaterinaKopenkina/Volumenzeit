@@ -11,6 +11,4 @@ const toggleFilter = () => {
     })
 }
 
-module.exports = {
-    toggleFilter: toggleFilter,
-}
+export default toggleFilter;

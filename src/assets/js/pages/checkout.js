@@ -1,6 +1,6 @@
-var form = require('../helpers/form.js');
-var modal = require('../helpers/modal.js');
-var sort = require('../helpers/sort.js');
+import sort from "../helpers/sort";
+import {modalOpen, modalClose} from '../helpers/modal';
+import { formClear, formError, formBlur, formRBlur } from "../helpers/form";
 
 var errorCount = 0;
 
@@ -10,7 +10,7 @@ const checkoutMainFn = () => {
     const btnShipping = document.querySelector('#btnShipping');
     const btnTotal = document.querySelector('#btnTotal');
 
-    sort.sort();
+    sort();
     accordion(accordions);
     formCheckout(btnBasic, btnShipping, btnTotal);
 }
@@ -69,8 +69,9 @@ const formCheckout = (btnBasic, btnShipping, btnTotal) => {
             return;
         }
 
-        modal.modalOpen(btnTotal);
-        modal.modalClose(btnTotal);
+        
+        modalOpen(btnTotal);
+        modalClose(btnTotal);
     })
 }
 
@@ -91,63 +92,63 @@ const formBasic = () => {
     const code = document.querySelector('#accordionCode');
     const country = document.querySelector('#accordionCountry');
 
-    form.formClear(inputs);
+    formClear(inputs);
 
     errorForm.style.display = 'none';
     successForm.style.display = 'none';
 
     if (!rEmail.test(email.value)) {
-        form.formError(email, 'The field is filled in incorrectly');
-        form.formRBlur(email, rEmail);
+        formError(email, 'The field is filled in incorrectly');
+        formRBlur(email, rEmail);
         errorCount ++;
         return;
     }
 
     if (name.value == '') {
-        form.formError(name, 'Empty field');
-        form.formBlur(name);
+        formError(name, 'Empty field');
+        formBlur(name);
         errorCount ++;
         return;
     }
 
     if (lastname.value == '') {
-        form.formError(lastname, 'Empty field');
-        form.formBlur(lastname);
+        formError(lastname, 'Empty field');
+        formBlur(lastname);
         errorCount ++;
         return;
     }
 
     if (!rPhone.test(phone.value)) {
-        form.formError(phone, 'The field is filled in incorrectly');
-        form.formRBlur(phone, rPhone);
+        formError(phone, 'The field is filled in incorrectly');
+        formRBlur(phone, rPhone);
         errorCount ++;
         return;
     }
 
     if (address1.value == '') {
-        form.formError(address1, 'Empty field');
-        form.formBlur(address1);
+        formError(address1, 'Empty field');
+        formBlur(address1);
         errorCount ++;
         return;
     }
 
     if (address2.value == '') {
-        form.formError(address2, 'Empty field');
-        form.formBlur(address2);
+        formError(address2, 'Empty field');
+        formBlur(address2);
         errorCount ++;
         return;
     }
 
     if (city.value == '') {
-        form.formError(city, 'Empty field');
-        form.formBlur(city);
+        formError(city, 'Empty field');
+        formBlur(city);
         errorCount ++;
         return;
     }
 
     if (code.value == '') {
-        form.formError(code, 'Empty field');
-        form.formBlur(code);
+        formError(code, 'Empty field');
+        formBlur(code);
         errorCount ++;
         return;
     }
@@ -155,8 +156,8 @@ const formBasic = () => {
     if (country.innerHTML == 'Country') {
         const error = country.parentElement.nextElementSibling;
 
-        form.formError(code, 'Empty field', error);
-        form.formBlur(code, error);
+        formError(code, 'Empty field', error);
+        formBlur(code, error);
         errorCount ++;
         return;
     }
@@ -186,16 +187,14 @@ const formShipping = () => {
 const formCoupon = () => {
     const coupon = document.querySelector('#accordionCoupon');
 
-    form.formClear([coupon]);
+    formClear([coupon]);
 
     if (coupon.value == '') {
-        form.formError(coupon, 'Empty field');
-        form.formBlur(coupon);
+        formError(coupon, 'Empty field');
+        formBlur(coupon);
         errorCount ++;
         return;
     }
 }
 
-module.exports = {
-    checkoutMainFn: checkoutMainFn,
-}
+export default checkoutMainFn;

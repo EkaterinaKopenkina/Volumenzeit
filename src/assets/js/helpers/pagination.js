@@ -122,6 +122,4 @@ const paginationMaxPages = () => {
     return 13;
 }
 
-module.exports = {
-    paginationMainFn: paginationMainFn,
-}
+export default paginationMainFn;

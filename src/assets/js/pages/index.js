@@ -1,4 +1,4 @@
-var formNewsletter = require('../helpers/formNewsletter.js');
+import formNewsletter from "../helpers/formNewsletter";
 
 const indexMainFn = () => {
     const bg = document.querySelector('.about__video-bg');
@@ -20,6 +20,4 @@ const video = (bg, thisVideo, btnPlay) => {
     })
 }
 
-module.exports = {
-    indexMainFn: indexMainFn,
-}
+export default indexMainFn;

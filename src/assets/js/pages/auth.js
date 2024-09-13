@@ -1,5 +1,5 @@
-var form = require('../helpers/form.js');
-var sort = require('../helpers/sort.js');
+import sort from "../helpers/sort";
+import { formClear, formError, formBlur, formRBlur, formPassBlur, formConfirmBlur } from "../helpers/form";
 
 const authMainFn = () => {
     const url = document.URL;
@@ -12,9 +12,9 @@ const authMainFn = () => {
     const formReg = document.querySelector('#formReg');
 
     tab(thisTabHead, thisTabBlock);
-    formLogin(formLogin);
-    formReg(formReg);
-    sort.sort();
+    validateFormLogin(formLogin);
+    validateFormReg(formReg);
+    sort();
 }
 
 const tab = (thisTabHead, thisTabBlock) => {
@@ -54,7 +54,7 @@ const tabClear = () => {
     })
 }
 
-const formLogin = (thisForm) => {
+const validateFormLogin = (thisForm) => {
     const btn = thisForm.querySelector('.auth__submit');
 
     btn.addEventListener('click', (event) => {
@@ -67,17 +67,17 @@ const formLogin = (thisForm) => {
         const rEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
         const pass = document.querySelector('#loginPass');
 
-        form.formClear(inputs);
+        formClear(inputs);
 
         if (!rEmail.test(email.value)) {
-            form.formError(email, 'The field is filled in incorrectly');
-            form.formRBlur(email, rEmail);
+            formError(email, 'The field is filled in incorrectly');
+            formRBlur(email, rEmail);
             return;
         }
 
         if (pass.value.length < 8) {
-            form.formError(pass, 'The password must not be less than 8 characters');
-            form.formPassBlur(pass);
+            formError(pass, 'The password must not be less than 8 characters');
+            formPassBlur(pass);
             return;
         }
 
@@ -85,7 +85,7 @@ const formLogin = (thisForm) => {
     })
 }
 
-const formReg = (thisForm) => {
+const validateFormReg = (thisForm) => {
     const btn = thisForm.querySelector('.auth__submit');
 
     btn.addEventListener('click', (event) => {
@@ -105,47 +105,47 @@ const formReg = (thisForm) => {
         const pass = document.querySelector('#regPass');
         const confirmPass = document.querySelector('#regConfirmPass');
 
-        form.formClear(inputs);
+        formClear(inputs);
 
         if (name.value == '') {
-            form.formError(name, 'Empty field');
-            form.formBlur(name);
+            formError(name, 'Empty field');
+            formBlur(name);
             return;
         }
 
         if (lastname.value == '') {
-            form.formError(lastname, 'Empty field');
-            form.formBlur(lastname);
+            formError(lastname, 'Empty field');
+            formBlur(lastname);
             return;
         }
 
         if (!rPhone.test(phone.value)) {
-            form.formError(phone, 'The field is filled in incorrectly');
-            form.formRBlur(phone, rPhone);
+            formError(phone, 'The field is filled in incorrectly');
+            formRBlur(phone, rPhone);
             return;
         }
 
         if (!rEmail.test(email.value)) {
-            form.formError(email, 'The field is filled in incorrectly');
-            form.formRBlur(email, rEmail);
+            formError(email, 'The field is filled in incorrectly');
+            formRBlur(email, rEmail);
             return;
         }
 
         if (email.value != confirmEmail.value) {
-            form.formError(confirmEmail, "The emails don't match");
-            form.formConfirmBlur(confirmEmail, email);
+            formError(confirmEmail, "The emails don't match");
+            formConfirmBlur(confirmEmail, email);
             return;
         }
 
         if (pass.value.length < 8) {
-            form.formError(pass, 'The password must not be less than 8 characters');
-            form.formPassBlur(pass);
+            formError(pass, 'The password must not be less than 8 characters');
+            formPassBlur(pass);
             return;
         }
 
         if (pass.value != confirmPass.value) {
-            form.formError(confirmPass, "The emails don't match");
-            form.formConfirmBlur(confirmPass, pass);
+            formError(confirmPass, "The emails don't match");
+            formConfirmBlur(confirmPass, pass);
             return;
         }
 
@@ -153,6 +153,4 @@ const formReg = (thisForm) => {
     })
 }
 
-module.exports = {
-    authMainFn: authMainFn,
-}
+export default authMainFn;

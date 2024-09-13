@@ -1,12 +1,12 @@
-var form = require('../helpers/form.js');
-var formNewsletter = require('../helpers/formNewsletter.js');
+import formNewsletter from "../helpers/formNewsletter";
+import { formError, formBlur, formRBlur } from "../helpers/form";
 
 const accountMainFn = () => {
     const btnManage = document.querySelector('#accountManage');
     const btnSave = document.querySelector('#accountSave');
 
     formNewsletter();
-    account();
+    account(btnManage, btnSave);
 }
 
 const account = (btnManage, btnSave) => {
@@ -45,24 +45,24 @@ const formAccount = (btn) => {
         if (name.value == '') {
             const error = name.parentElement.nextElementSibling;
 
-            form.formError(name, 'Empty field', error);
-            form.formBlur(name, error);
+            formError(name, 'Empty field', error);
+            formBlur(name, error);
             return;
         }
 
         if (!rEmail.test(email.value)) {
             const error = email.parentElement.nextElementSibling;
 
-            form.formError(email, 'The field is filled in incorrectly', error);
-            form.formRBlur(email, rEmail, error);
+            formError(email, 'The field is filled in incorrectly', error);
+            formRBlur(email, rEmail, error);
             return;
         }
 
         if (!rPhone.test(phone.value)) {
             const error = phone.parentElement.nextElementSibling;
 
-            form.formError(phone, 'The field is filled in incorrectly', error);
-            form.formRBlur(phone, rPhone, error);
+            formError(phone, 'The field is filled in incorrectly', error);
+            formRBlur(phone, rPhone, error);
             return;
         }
 
@@ -120,6 +120,4 @@ const accountShow = (btn) => {
     }, 200)
 }
 
-module.exports = {
-    accountMainFn: accountMainFn,
-}
+export default accountMainFn;

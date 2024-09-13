@@ -1,65 +1,59 @@
 'use strict'
 
-var slider = require('./helpers/slider.js');
-var header = require('./helpers/header.js');
-var cart = require('./helpers/cart.js');
+import headerMainFn, { showHeaderFake } from './helpers/header.js';
+import initSlider from './helpers/slider.js';
+import { cartMatching, cartDelete } from './helpers/cart.js';
 
-var index = require('./pages/index.js');
-var contact = require('./pages/contact.js');
-var checkout = require('./pages/checkout.js');
-var auth = require('./pages/auth.js');
-var account = require('./pages/account.js');
-var watches = require('./pages/watches.js');
+import indexMainFn from './pages/index.js';
+import watchesMainFn from './pages/watches.js';
+import contactMainFn from './pages/contact.js';
+import checkoutMainFn from './pages/checkout.js';
+import authMainFn from './pages/auth.js';
+import accountMainFn from './pages/account.js';
 
 const currentUrl = document.location.href.split('/');
 const currentPage = currentUrl[currentUrl.length - 1];
 
 window.addEventListener('load', () => {
     if (currentPage == 'index.html' || currentPage == 'product.html') {
-        slider.initSlider();
+        initSlider();
     }
 })
 
 document.addEventListener('DOMContentLoaded', () => {
-    const cookieLogin = document.cookie.match(/login=(.+?)(;|$)/);
-
     // Header
-    header.headerFake();
-    header.burger();
-    header.navAccount(cookieLogin);
-    header.cart();
-    window.addEventListener('resize', header.headerFake);
+    headerMainFn();
+    window.addEventListener('resize', showHeaderFake);
 
     // Cart
-    cart.cartMatching();
-    cart.cartDelete();
+    cartMatching();
+    cartDelete();
 
     // Pages
     switch(currentPage) {
         case 'index.html' || '':
-            index.indexMainFn();
+            indexMainFn();
             break;
         case 'watches.html':
-            watches.watchesMainFn();
+            watchesMainFn();
             break;
         case 'product.html':
             break;
         case 'contact.html':
-            contact.contactMainFn();
+            contactMainFn();
             break;
         case 'buildWatch.html':
             break;
         case 'checkout.html':
-            checkout.checkoutMainFn();
+            checkoutMainFn();
             break;
         case 'delivery.html':
             break;
         case 'authorization.html#login' || 'authorization.html#reg':
-            auth.authMainFn();
+            authMainFn();
             break;
         case 'account.html':
-            account.account();
-            index.formNewsletter();
+            accountMainFn();
             break;
         default:
             //window.location.replace('http://localhost:3000/404.html');

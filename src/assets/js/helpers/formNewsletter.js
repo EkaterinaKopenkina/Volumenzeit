@@ -1,4 +1,4 @@
-var form = require('../helpers/form')
+import { formClear, formError, formBlur, formRBlur } from "./form";
 
 const formNewsletter = (btn) => {
     btn.addEventListener('click', (event) => {
@@ -14,19 +14,19 @@ const formNewsletter = (btn) => {
         const email = document.querySelector('#newsletterEmail');
         const rEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
 
-        form.formClear(inputs);
+        formClear(inputs);
         error.style.display = 'none';
         success.style.display = 'none';
 
         if (name.value == '') {
-            form.formError(name, 'Empty field');
-            form.formBlur(name);
+            formError(name, 'Empty field');
+            formBlur(name);
             return;
         }
 
         if (!rEmail.test(email.value)) {
-            form.formError(email, 'The field is filled in incorrectly');
-            form.formRBlur(email, rEmail);
+            formError(email, 'The field is filled in incorrectly');
+            formRBlur(email, rEmail);
             return;
         }
 
@@ -35,6 +35,4 @@ const formNewsletter = (btn) => {
     })
 }
 
-module.exports = {
-    formNewsletter: formNewsletter,
-}
+export default formNewsletter;

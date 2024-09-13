@@ -1,4 +1,4 @@
-const cartMatching = () => {
+export const cartMatching = () => {
     const btn = document.querySelector('#btnMatching');
     const item = document.querySelector('.cart__add');
     const itemHeight = item.offsetHeight;
@@ -20,7 +20,7 @@ const cartMatching = () => {
     })
 }
 
-const cartDelete = () => {
+export const cartDelete = () => {
     const products = document.querySelector('.cart__products');
 
     products.addEventListener('click', (event) => {
@@ -36,9 +36,4 @@ const cartDelete = () => {
             }, 400)
         }
     })
-}
-
-module.exports = {
-    cartMatching: cartMatching,
-    cartDelete: cartDelete,
 }

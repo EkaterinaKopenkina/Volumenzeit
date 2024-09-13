@@ -1,13 +1,11 @@
-var pagination = require('../helpers/pagination');
-var filter = require('../helpers/filter');
-var sort = require('../helpers/sort');
+import toggleFilter from '../helpers/filter';
+import paginationMainFn from '../helpers/pagination';
+import sort from '../helpers/sort';
 
 const watchesMainFn = () => {
-    pagination.paginationMainFn();
-    filter.toggleFilter();
-    sort.sort();
+    paginationMainFn();
+    toggleFilter();
+    sort();
 }
 
-module.exports = {
-    watchesMainFn: watchesMainFn,
-}
+export default watchesMainFn;

@@ -1,4 +1,4 @@
-var form = require('../helpers/form.js');
+import { formClear, formError, formBlur, formRBlur } from "../helpers/form";
 
 const contactMainFn = () => {
     const btn = document.querySelector('.contact__btn');
@@ -21,25 +21,25 @@ const formContact = (btn) => {
         const rEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
         const message = document.querySelector('#contactMessage');
 
-        form.formClear(inputs);
+        formClear(inputs);
         error.style.display = 'none';
         success.style.display = 'none';
 
         if (name.value == '') {
-            form.formError(name, 'Empty field');
-            form.formBlur(name);
+            formError(name, 'Empty field');
+            formBlur(name);
             return;
         }
 
         if (!rEmail.test(email.value)) {
-            form.formError(email, 'The field is filled in incorrectly');
-            form.formRBlur(email, rEmail);
+            formError(email, 'The field is filled in incorrectly');
+            formRBlur(email, rEmail);
             return;
         }
 
         if (message.value == '') {
-            form.formError(message, 'Empty field');
-            form.formBlur(message);
+            formError(message, 'Empty field');
+            formBlur(message);
             return;
         }
 
@@ -48,6 +48,4 @@ const formContact = (btn) => {
     })
 }
 
-module.exports = {
-    contactMainFn: contactMainFn,
-}
+export default contactMainFn;
