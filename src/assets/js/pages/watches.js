@@ -1,8 +1,11 @@
 var pagination = require('../helpers/pagination');
+var filter = require('../helpers/filter');
+var sort = require('../helpers/sort');
 
 const watchesMainFn = () => {
     pagination.paginationMainFn();
-    console.log('hi');
+    filter.toggleFilter();
+    sort.sort();
 }
 
 module.exports = {

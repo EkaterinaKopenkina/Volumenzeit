@@ -40,8 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
             index.indexMainFn();
             break;
         case 'watches.html':
-            filter.toggleFilter();
-            sort.sort();
             watches.watchesMainFn();
             break;
         case 'product.html':
