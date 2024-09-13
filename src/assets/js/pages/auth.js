@@ -1,12 +1,23 @@
 var form = require('../helpers/form.js');
+var sort = require('../helpers/sort.js');
 
-const tab = () => {
+const authMainFn = () => {
     const url = document.URL;
     const thisTabName = url.split('#')[1];
     const thisTabHead = document.querySelector(`#${thisTabName}`);
     const thisTabBlockName = thisTabHead.dataset.tab;
     const thisTabBlock = document.querySelector(thisTabBlockName);
 
+    const formLogin = document.querySelector('#formLogin');
+    const formReg = document.querySelector('#formReg');
+
+    tab(thisTabHead, thisTabBlock);
+    formLogin(formLogin);
+    formReg(formReg);
+    sort.sort();
+}
+
+const tab = (thisTabHead, thisTabBlock) => {
     tabClear();
 
     thisTabHead.classList.add('active');
@@ -43,8 +54,7 @@ const tabClear = () => {
     })
 }
 
-const formLogin = () => {
-    const thisForm = document.querySelector('#formLogin');
+const formLogin = (thisForm) => {
     const btn = thisForm.querySelector('.auth__submit');
 
     btn.addEventListener('click', (event) => {
@@ -75,8 +85,7 @@ const formLogin = () => {
     })
 }
 
-const formReg = () => {
-    const thisForm = document.querySelector('#formReg');
+const formReg = (thisForm) => {
     const btn = thisForm.querySelector('.auth__submit');
 
     btn.addEventListener('click', (event) => {
@@ -145,7 +154,5 @@ const formReg = () => {
 }
 
 module.exports = {
-    tab: tab,
-    formLogin: formLogin,
-    formReg: formReg,
+    authMainFn: authMainFn,
 }

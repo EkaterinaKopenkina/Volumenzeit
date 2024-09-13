@@ -54,17 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
             break;
         case 'delivery.html':
             break;
-        case 'authorization.html#login':
-            auth.tab();
-            auth.formLogin();
-            auth.formReg();
-            sort.sort();
-            break;
-        case 'authorization.html#reg':
-            auth.tab();
-            auth.formLogin();
-            auth.formReg();
-            sort.sort();
+        case 'authorization.html#login' || 'authorization.html#reg':
+            auth.authMainFn();
             break;
         case 'account.html':
             account.account();
