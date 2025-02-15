@@ -17,11 +17,11 @@ ___
 ___
 
 ### :rocket: Запуск проекта
-___
 - Перейдите в корневой каталог проекта
 - npm i
 - gulp
 - Перезагрузите страницу
+___
   
 ### :paperclip: Разработчики
 - [front-end разработчик](https://github.com/EkaterinaKopenkina)
