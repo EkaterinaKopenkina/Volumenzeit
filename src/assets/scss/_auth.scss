@@ -151,6 +151,8 @@
     }
 
     &__form-item {
+        padding-bottom: 25px;
+        position: relative;
         margin-bottom: 10px;
     }
 
@@ -159,7 +161,8 @@
     }
 
     &__submit-container {
-        margin-top: 30px;
+        margin-top: 10px;
+        padding-top: 25px;
         margin-bottom: 40px;
     }
 

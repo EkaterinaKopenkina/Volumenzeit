@@ -58,3 +58,18 @@
 		color: $colorText;
 	}
 }
+
+// Validate
+%tplValidate {
+	font-size: 14px;
+	margin-bottom: 15px;
+	position: absolute;
+	padding-left: 5px;
+	left: 0;
+	top: 0;
+	opacity: 0;
+
+	&.active {
+		opacity: 1;
+	}
+}

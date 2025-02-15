@@ -1,7 +1,7 @@
 export const formError = (element, message, error = element.nextElementSibling) => {
     element.classList.add('error');
     error.innerHTML = message;
-    error.style.display = "block";
+    error.classList.add('active');
 }
 
 export const formClear = (inputs) => {
@@ -9,7 +9,7 @@ export const formClear = (inputs) => {
         const error = input.nextElementSibling;
 
         input.classList.remove('error');
-        error.style.display = 'none';
+        error.classList.remove('active');
     })
 }
 

@@ -52,6 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
         case 'authorization.html#login' || 'authorization.html#reg':
             authMainFn();
             break;
+        case 'authorization.html#reg':
+            authMainFn();
+            break;
         case 'account.html':
             accountMainFn();
             break;

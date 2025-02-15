@@ -34,9 +34,11 @@ const loadPaginations = (paginations, maxPages, currentPages) => {
 }
 
 const onPaginationClick = (paginations, currentPages, maxPages) => {
+    const paginationItems = paginations.querySelectorAll('.products__pagination');
+    paginationItems[0].classList.add('active');
+
     paginations.addEventListener('click', (event) => {
         const pagination = event.target.closest('.products__pagination');
-        const paginationItems = paginations.querySelectorAll('.products__pagination');
 
         event.preventDefault();
 

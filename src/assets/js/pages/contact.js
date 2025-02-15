@@ -22,8 +22,8 @@ const formContact = (btn) => {
         const message = document.querySelector('#contactMessage');
 
         formClear(inputs);
-        error.style.display = 'none';
-        success.style.display = 'none';
+        error.classList.remove('active');
+        success.classList.remove('active');
 
         if (name.value == '') {
             formError(name, 'Empty field');
@@ -43,7 +43,7 @@ const formContact = (btn) => {
             return;
         }
 
-        success.style.display = 'block';
+        success.classList.add('active');
         console.log('Отправка формы');
     })
 }

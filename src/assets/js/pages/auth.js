@@ -7,6 +7,7 @@ const authMainFn = () => {
     const thisTabHead = document.querySelector(`#${thisTabName}`);
     const thisTabBlockName = thisTabHead.dataset.tab;
     const thisTabBlock = document.querySelector(thisTabBlockName);
+    console.log(thisTabHead)
 
     const formLogin = document.querySelector('#formLogin');
     const formReg = document.querySelector('#formReg');
@@ -82,6 +83,7 @@ const validateFormLogin = (thisForm) => {
         }
 
         console.log('Отправка формы');
+        window.location.replace('/account.html');
     })
 }
 
@@ -149,7 +151,7 @@ const validateFormReg = (thisForm) => {
             return;
         }
 
-        success.style.display = 'block';
+        success.classList.add('active');
     })
 }
 

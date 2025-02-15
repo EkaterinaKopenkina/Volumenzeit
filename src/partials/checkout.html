@@ -48,7 +48,7 @@
                                 </div>
 
                                 <div class="accordion__input-item">
-                                    <input type="number" class="accordion__input" placeholder="Zip Code" name="zip_code" id="accordionCode">
+                                    <input type="number" class="accordion__input" placeholder="Zip Code" min="0" name="zip_code" id="accordionCode">
                                     <div class="error__message"></div> 
                                 </div>
                             </div>
@@ -251,8 +251,11 @@
                 </div>
 
                 <h3 class="checkout__coupon-title">Apply Coupon</h3>
-                <input type="text" class="accordion__input" placeholder="Coupon Code" name="coupon" id="accordionCoupon">
-                <div class="error__message"></div> 
+
+                <div class="checkout__coupon-container">
+                    <input type="text" class="accordion__input" placeholder="Coupon Code" name="coupon" id="accordionCoupon">
+                    <div class="error__message"></div> 
+                </div>
             </div>
         </form>
     </div>

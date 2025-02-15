@@ -15,8 +15,8 @@ const formNewsletter = (btn) => {
         const rEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
 
         formClear(inputs);
-        error.style.display = 'none';
-        success.style.display = 'none';
+        error.classList.remove('active');
+        success.classList.remove('active');
 
         if (name.value == '') {
             formError(name, 'Empty field');
@@ -31,7 +31,7 @@ const formNewsletter = (btn) => {
         }
 
         console.log('Отправка формы');
-        success.style.display = 'block';
+        success.classList.add('active');
     })
 }
 

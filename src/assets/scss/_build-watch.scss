@@ -154,7 +154,12 @@
         &:focus,
         &:checked {
             &~.build-watch__label {
-                border: 2px solid $colorBlue;
+                &--color {
+                    border: 2px solid $colorBlue;
+                }
+                & > .build-watch__picture {
+                    border: 2px solid $colorBlue;
+                }
             }
         }
     }
@@ -180,7 +185,7 @@
 
     &__picture {
         @include photo(36px, 36px, 7px);
-        border: 3px solid inherit;
+        border: 2px solid inherit;
         transition: border .2s linear;
 
         &:hover {

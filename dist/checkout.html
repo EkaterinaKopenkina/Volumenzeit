@@ -58,7 +58,6 @@
                     <div class="header__left">
                         <nav class="nav">
                             <a href="watches.html" class="nav__item">Watches</a>
-                            <a href="accessories.html" class="nav__item">Accessories</a>
                             <a href="contact.html" class="nav__item">Contact Us</a>
                             <a href="delivery.html" class="nav__item">Delivery</a>
                             <a href="account.html" class="nav__item nav__item--mobile" id="accountMobile">
@@ -306,7 +305,7 @@
                                             </div>
             
                                             <div class="accordion__input-item">
-                                                <input type="number" class="accordion__input" placeholder="Zip Code" name="zip_code" id="accordionCode">
+                                                <input type="number" class="accordion__input" placeholder="Zip Code" min="0" name="zip_code" id="accordionCode">
                                                 <div class="error__message"></div> 
                                             </div>
                                         </div>
@@ -509,8 +508,11 @@
                             </div>
             
                             <h3 class="checkout__coupon-title">Apply Coupon</h3>
-                            <input type="text" class="accordion__input" placeholder="Coupon Code" name="coupon" id="accordionCoupon">
-                            <div class="error__message"></div> 
+            
+                            <div class="checkout__coupon-container">
+                                <input type="text" class="accordion__input" placeholder="Coupon Code" name="coupon" id="accordionCoupon">
+                                <div class="error__message"></div> 
+                            </div>
                         </div>
                     </form>
                 </div>

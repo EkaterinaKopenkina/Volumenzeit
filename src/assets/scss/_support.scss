@@ -20,25 +20,24 @@
 .error {
 	&__message {
 		padding-left: 8px;
-		margin-top: 8px;
 		font-size: 14px;
 		color: $colorError;
+		position: absolute;
+		z-index: $zDefault;
+		left: 0;
+		bottom: 0;
 	}
 
 	&__form {
-		font-size: 14px;
 		color: $colorError;
-		margin-bottom: 15px;
-		display: none;
+		@extend %tplValidate;
 	}
 }
 
 .success {
 	&__form {
-		font-size: 14px;
 		color: $colorSuccess;
-		margin-bottom: 15px;
-		display: none;
+		@extend %tplValidate;
 	}
 }
 
